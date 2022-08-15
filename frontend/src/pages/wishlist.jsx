@@ -1,7 +1,8 @@
 import React from 'react'
+import "./wishlist.scss"
 
 export default function wishlist() {
     return (
-        <div>wishlist</div>
+        <div className="wishlist">wishlist</div>
     )
 }
