@@ -2,14 +2,19 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 
+const { makeDoAuthMiddleware } = require("./auth/doAuthMiddleware");
 const { usersRouter } = require("./routes/users-router")
 const { productsRouter } = require("./routes/products-router")
 
 const Port = process.env.Port || 9000;
 const app = express();
 
+const doAuthMiddleware = makeDoAuthMiddleware("access");
+const doRefreshTokenMiddleware = makeDoAuthMiddleware("refresh");
+
 app.use(cors())
 app.use(morgan("dev"))
+app.use(express.static("uploads"));
 app.use(express.json())
 
 app.get("/", (_, res) => {
@@ -17,7 +22,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/users", usersRouter)
-app.use("/products", productsRouter)
+// app.use("/products", productsRouter)
 
 // in routes verschieben
 // app.get("/products", (_, res) => {
