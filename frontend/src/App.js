@@ -1,15 +1,15 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from "./pages/home";
-import Login from "./pages/login";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Maketplace from "./pages/marketplace";
-import Set_product from "./pages/set_product";
-import Wishlist from "./pages/wishlist";
-import Already_sold from "./pages/already_sold";
-import Product_detail from "./pages/product_detail";
-import About_us from "./pages/about_us";
+import Maketplace from "./pages/MarketPlace";
+import SetProduct from "./pages/SetProduct";
+import Wishlist from "./pages/WishList";
+import AlreadySold from "./pages/AlreadySold";
+import ProductDetail from "./pages/ProductDetail";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -19,11 +19,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="marketplace" element={<Maketplace />} />
-        <Route path="set_product" element={<Set_product />} />
-        <Route path="product_details" element={<Product_detail />} />
-        <Route path="sold" element={<Already_sold />} />
+        <Route path="set_product" element={<SetProduct />} />
+        <Route path="product_details" element={<ProductDetail />} />
+        <Route path="sold" element={<AlreadySold />} />
         <Route path="wishlist" element={<Wishlist />} />
-        <Route path="about_us" element={<About_us />} />
+        <Route path="about_us" element={<AboutUs />} />
       </Routes>
       <Footer />
     </div>
