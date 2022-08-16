@@ -22,12 +22,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/users", usersRouter);
-// app.use("/products", productsRouter)
-
-// in routes verschieben
-// app.get("/products", (_, res) => {
-//     getAllProducts().then((userArray) => res.json(userArray));
-// });
+app.use("/products", productsRouter);
 
 app.use((_, res) => {
   res.status(404).json({ error: "Not found" });

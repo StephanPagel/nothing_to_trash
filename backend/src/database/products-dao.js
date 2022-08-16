@@ -4,7 +4,7 @@ const { injectDB } = require("./getDB");
 const productsCollectionName = "products";
 
 async function insertNewProduct(productInfo) {
-  const db = await injectDB();
+  const db = await getDB();
   return db.collection(productsCollectionName).insertOne(productInfo);
 }
 
