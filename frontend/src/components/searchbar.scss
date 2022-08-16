@@ -1,0 +1,23 @@
+.searchbar {
+    background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    width: 100%;
+}
+
+.input_search {
+    background: radial-gradient(circle, rgba(202, 183, 215, 1) 10%, rgba(148, 158, 233, 1) 87%);
+    outline: none;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+    width: 20%;
+}
+
+.btn_search {
+    cursor: pointer;
+    background-color: #7854F7;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px;
+}
