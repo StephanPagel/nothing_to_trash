@@ -7,6 +7,7 @@ export default function marketplace() {
     return (
         <div className="marketplace">marketplace
         <Searchbar />
+        <Sidebar />
         </div>
     )
 }

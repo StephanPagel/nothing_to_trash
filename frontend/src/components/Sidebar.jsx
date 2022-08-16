@@ -57,7 +57,7 @@ export default function Sidebar() {
         </label>
       </div>
       <div>
-        <p>Preis</p>
+        <h3>Preis</h3>
         <input type="range" name="" id="" />
         <p>Slider wird noch umgebaut. Bitte mit Styling warten</p>
       </div>
