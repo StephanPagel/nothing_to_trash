@@ -13,7 +13,7 @@ import Product_detail from "./pages/product_detail";
 function App() {
   return (
     <div className="App">
-      <Footer />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
@@ -23,7 +23,7 @@ function App() {
         <Route path="sold" element={<Already_sold />} />
         <Route path="wishlist" element={<Wishlist />} />
       </Routes>
-      <Navbar />
+      <Footer />
     </div>
   );
 }
