@@ -3,6 +3,14 @@ import "./navbar.scss"
 
 export default function Navbar() {
     return (
-        <div className="navbar">Navbar</div>
+        <div className="navbar">
+            <ul>
+                <li>nothingtotrash</li>
+                <li>Marktplatz</li>
+                <li>Über Uns</li>
+                <li>Log In</li>
+            </ul>
+            <button>Registriere Dich</button>
+        </div>
     )
 }
