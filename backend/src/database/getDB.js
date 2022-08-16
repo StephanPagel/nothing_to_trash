@@ -20,5 +20,5 @@ async function injectDB() {
 }
 
 module.exports = {
-  injectDB,
+  injectDB
 };
