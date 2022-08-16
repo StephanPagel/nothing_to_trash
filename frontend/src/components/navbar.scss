@@ -1,3 +1,33 @@
 .navbar {
-    background-color: aquamarine;
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    color: black;
+    position: sticky;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar_li {
+    flex: 6;
+}
+
+.navbar_btn {
+    border: none;
+    border-radius: 6px;
+    background-color: #7854F7;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+}
+
+.navbar_btn_log {
+    border: none;
+    border-radius: 6px;
+    color: #7854F7;
+    cursor: pointer;
+    padding: 5px;
 }

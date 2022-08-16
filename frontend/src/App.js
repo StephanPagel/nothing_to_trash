@@ -9,6 +9,7 @@ import Set_product from "./pages/set_product";
 import Wishlist from "./pages/wishlist";
 import Already_sold from "./pages/already_sold";
 import Product_detail from "./pages/product_detail";
+import About_us from "./pages/about_us";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="product_details" element={<Product_detail />} />
         <Route path="sold" element={<Already_sold />} />
         <Route path="wishlist" element={<Wishlist />} />
+        <Route path="about_us" element={<About_us />} />
       </Routes>
       <Footer />
     </div>
