@@ -1,12 +1,12 @@
-function makeProduct({ _id, title, price, description }) {
+function makeProduct({ _id, title, description, price }) {
   return {
     _id,
     title,
-    price,
     description,
+    price
   };
 }
 
 module.exports = {
-  makeProduct,
+  makeProduct
 };
