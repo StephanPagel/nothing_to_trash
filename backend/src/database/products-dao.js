@@ -26,27 +26,20 @@ function addNewProduct(productInfo) {
   // return db.collection(productsCollectionName).insertOne(productInfo);
 }
 
-async function findProductById(id) {
-  const db = await getDB();
-  const findProduct = await db
-    .collection(usersCollectionName)
-    .findOne({ _id: ObjectId(id) });
-  return findProduct;
-}
-
-module.exports = { addNewProduct, findProductById };
-          return reject(result)
-        }
-      }).catch((err) => reject(err))
-  })
+function findProductById(id) {
+  return injectDB().then((db) =>
+    db.collection(usersCollectionName).findOne({ _id: ObjectId(id) })
+  );
 }
 
 function getAllProducts() {
-  return injectDB()
-    .then(db => db.collection(productsCollectionName).find().toArray())
+  return injectDB().then((db) =>
+    db.collection(productsCollectionName).find().toArray()
+  );
 }
 
 module.exports = {
   addNewProduct,
-  getAllProducts
+  getAllProducts,
+  findProductById,
 };
