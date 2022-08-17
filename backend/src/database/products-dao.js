@@ -35,3 +35,18 @@ async function findProductById(id) {
 }
 
 module.exports = { addNewProduct, findProductById };
+          return reject(result)
+        }
+      }).catch((err) => reject(err))
+  })
+}
+
+function getAllProducts() {
+  return injectDB()
+    .then(db => db.collection(productsCollectionName).find().toArray())
+}
+
+module.exports = {
+  addNewProduct,
+  getAllProducts
+};
