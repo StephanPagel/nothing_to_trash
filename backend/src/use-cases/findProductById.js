@@ -1,7 +1,7 @@
 const { ProductsDAO } = require("./../database/index");
 
-function findProductDetails() {
-  return ProductsDAO.findProductById();
+function findProductDetails(productId) {
+  return ProductsDAO.findProductById(productId);
 }
 
 module.exports = {
