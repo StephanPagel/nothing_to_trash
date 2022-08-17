@@ -1,6 +1,5 @@
 const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
-const { findProductById } = require("../database/products-dao");
 const { showProducts } = require("./../use-cases/showProducts");
 
 const productsRouter = express.Router();
@@ -25,7 +24,7 @@ productsRouter.post("/addnewProduct", (req, res) => {
     });
 });
 
-productsRouter.get("/products/details/:id", (req, res) => {
+productsRouter.get("/details/:id", (req, res) => {
   try {
     const productDetails = findProductById({ _id: ObjectId(id) });
     res.json(productDetails);
@@ -33,21 +32,15 @@ productsRouter.get("/products/details/:id", (req, res) => {
     console.log(err);
     res.status(500).json({ error: "Failed to find product" });
   }
-    createProduct(newItem)
-        .then((addedItem) => res.status(201).json(addedItem))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Failed to add product to database." });
-        });
 });
 
 productsRouter.get("/allproducts", (_, res) => {
-    showProducts()
-        .then(products => res.json(products))
-        .catch(err => {
-            console.log(err)
-            res.status(500).json({ error: "Failed to load products from database." })
-        })
-})
+  showProducts()
+    .then((products) => res.json(products))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to load products from database." });
+    });
+});
 
 module.exports = { productsRouter };
