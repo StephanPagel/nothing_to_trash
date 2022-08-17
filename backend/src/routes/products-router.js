@@ -2,6 +2,7 @@ const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
 const { findProductDetails } = require("./../use-cases/findProductById");
+const multer = require("multer");
 
 const productsRouter = express.Router();
 
@@ -10,7 +11,7 @@ const storage = multer.diskStorage({
     cb(null, "uploads");
   },
   filename: function (_, file, cb) {
-    cb(null, Date.now() + "_" + file.originalname); //Appending extension
+    cb(null, Date.now() + "_" + file.originalname);
   },
 });
 const uploadMiddleware = multer({ storage }).single("image");
