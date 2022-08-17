@@ -1,9 +1,6 @@
 const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
-
-const multer = require("multer");
-
 const { findProductDetails } = require("./../use-cases/findProductById");
 
 const productsRouter = express.Router();
@@ -56,21 +53,5 @@ productsRouter.get("/allproducts", (_, res) => {
       res.status(500).json({ error: "Failed to load products from database." });
     });
 });
-
-// app.post("/uploadProductImage", uploadFilesMiddleware, (req, res) => {
-//   console.log(req.body);
-//   console.log(req.file);
-//   console.log(req.files);
-
-//   const newUser = {
-//     id: nanoid(),
-//     username: req.body.username,
-//     email: req.body.email,
-//     avatarImgSrc: req.file.filename,
-//   };
-
-//   usersArray.push(newUser);
-//   res.json(usersArray);
-// });
 
 module.exports = { productsRouter };

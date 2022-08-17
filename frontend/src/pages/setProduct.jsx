@@ -1,9 +1,8 @@
 import "./set_product.scss"
 
 const setProduct = () => {
-    return (<div>
 
-    </div>);
+    return (<div></div>);
 }
 
 export default setProduct;
