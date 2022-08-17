@@ -9,19 +9,19 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar">
-      <div>
-        <h3>Kategorien</h3>
+      <h3>Kategorien</h3>
+      <div className="sidebar_category">
         <p>Kategorie Name</p>
-        <span>320</span>
+        <h6>320</h6>
         <p>Kategorie Name</p>
-        <span>112</span>
+        <h6>112</h6>
         <p>Kategorie Name</p>
-        <span>32</span>
+        <h6>32</h6>
         <p>Kategorie Name</p>
-        <span>48</span>
+        <h6>48</h6>
       </div>
-      <div>
-        <h3>Marken</h3>
+      <h3>Marken</h3>
+      <div className="sidebar_checkbox">
         <input type="checkbox" />
         <label>Nach Markenname filtern</label>
         <input type="checkbox" />
@@ -33,8 +33,8 @@ export default function Sidebar() {
         <input type="checkbox" />
         <label>Nach Markenname filtern</label>
       </div>
-      <div>
-        <h3>Bewertung</h3>
+      <h3>Bewertung</h3>
+      <div className="sidebar_rating">
         <input type="checkbox" />
         <label>
           <img src={oneStar} alt="rating" />
@@ -56,15 +56,15 @@ export default function Sidebar() {
           <img src={fiveStars} alt="rating" />
         </label>
       </div>
+      <h3>Preis</h3>
       <div>
-        <h3>Preis</h3>
         <input type="range" name="" id="" />
         <p>Slider wird noch umgebaut. Bitte mit Styling warten</p>
       </div>
-    <div>
-        <button>Anwenden</button>
-        <button>Reset</button>
-    </div>
+      <div>
+        <button className="sidebar_btn">Anwenden</button>
+        <button className="sidebar_btn_reset">Reset</button>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Home from "./pages/home";
+import Login from "./pages/login";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Maketplace from "./pages/MarketPlace";
-import SetProduct from "./pages/SetProduct";
-import Wishlist from "./pages/WishList";
-import AlreadySold from "./pages/AlreadySold";
-import ProductDetail from "./pages/ProductDetail";
-import AboutUs from "./pages/AboutUs";
+import Maketplace from "./pages/marketplace";
+import SetProduct from "./pages/setProduct";
+import Wishlist from "./pages/wishlist";
+import AlreadySold from "./pages/alreadySold";
+import ProductDetail from "./pages/productDetail";
+import AboutUs from "./pages/aboutUs";
 
 function App() {
   return (

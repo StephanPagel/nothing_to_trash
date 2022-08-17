@@ -1,7 +1,22 @@
 .footer {
-    display: flex;
-
     background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
     color: #272D4E;
-    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.footer_register {
+    background-color: #7854F7;
+    color: #fff;
+}
+
+.footer_btn {
+    background-color: #7854F7;
+    color: #fff;
+    border-style: solid;
+    border-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px;
+
 }

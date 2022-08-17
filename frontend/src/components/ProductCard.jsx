@@ -1,4 +1,4 @@
-import "./product_card.scss"
+import "./productCard.scss"
 import chair from '../images/marketplace_chair.jpg'
 
 export default function Product_card() {
