@@ -1,6 +1,6 @@
 import "./about_us.scss"
 
-export default function about_us() {
+export default function aboutUs() {
     return (
         <div className="about_us">about_us</div>
     )

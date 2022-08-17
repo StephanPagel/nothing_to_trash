@@ -1,7 +1,7 @@
 import React from 'react'
 import "./set_product.scss"
 
-export default function set_product() {
+export default function setProduct() {
     return (
         <div className="set_product">set_product</div>
     )
