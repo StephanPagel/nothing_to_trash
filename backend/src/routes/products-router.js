@@ -29,8 +29,11 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
         title: req.body.title,
         description: req.body.description,
         price: "$" + req.body.price,
-        filepath: req.body.filename,
+        // HIER MUSS DER PATH, aber wie??????
+        filepath: "uploads/" + req.body.image
     };
+
+    console.log(newItem)
 
     createProduct(newItem)
         .then((addedItem) => res.status(201).json(addedItem))
