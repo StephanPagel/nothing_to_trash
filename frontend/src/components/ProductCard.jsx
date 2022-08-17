@@ -1,7 +1,7 @@
 import "./productCard.scss"
 import chair from '../images/marketplace_chair.jpg'
 
-export default function Product_card() {
+export default function ProductCard() {
     return (
         <div className="product-card">
             <img src={chair} alt="product" />
