@@ -1,9 +1,9 @@
-import "./set_product.scss"
+import "./setProduct.scss"
 
-const setProduct = () => {
-    return (<div>
+import React from 'react'
 
-    </div>);
+export default function setProduct() {
+    return (
+        <div>setProduct</div>
+    )
 }
-
-export default setProduct;

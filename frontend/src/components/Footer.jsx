@@ -11,9 +11,15 @@ export default function Footer() {
         <button className="footer_btn"><Link to="/login">Registriere Dich</Link></button>
       </div>
       <div className="footer_container">
-        <AiOutlineTwitter />
-        <BsFacebook />
-        <AiFillInstagram />
+        <a target={''} className="twitter" href="https://twitter.com">
+          <i><AiOutlineTwitter /></i>
+        </a>
+        <a target={''} className="facebook" href="https://de-de.facebook.com/">
+          <i><BsFacebook /></i>
+        </a>
+        <a target={''} className="instagram" href="https://www.instagram.com">
+          <i><AiFillInstagram /></i>
+        </a>
         <p>COPYRIGHT nothingtotrash 2021 -<span>TERMS & CONDITIONS PRIVACY POLICY</span></p>
       </div>
     </div>
