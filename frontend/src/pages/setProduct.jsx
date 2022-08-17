@@ -1,16 +1,17 @@
-import "./set_product.scss";
+import "./setProduct.scss";
 import { useState } from "react";
 
-const [title, setTitle] = useState("");
-const [description, setDescription] = useState("");
-const [amount, setAmount] = useState("");
-const [price, setPrice] = useState("");
-const [zip, setZip] = useState("");
-const [city, setCity] = useState("");
-const [name, setName] = useState("");
-const [phone, setPhone] = useState("")
+const SetProduct = () => {
 
-const setProduct = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
+  const [price, setPrice] = useState("");
+  const [zip, setZip] = useState("");
+  const [city, setCity] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("")
+
   return (
     <form>
       <label>Anzeigentyp:</label>
@@ -144,4 +145,4 @@ const setProduct = () => {
   );
 };
 
-export default setProduct;
+export default SetProduct;
