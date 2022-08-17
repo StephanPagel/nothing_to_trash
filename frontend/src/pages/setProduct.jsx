@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import "./setProduct.scss"
+
+import React from 'react'
+
+export default function setProduct() {
+    return (
+        <div>setProduct</div>
+    )
+}
+=======
 import "./set_product.scss";
 
 const setProduct = () => {
@@ -95,3 +106,4 @@ const setProduct = () => {
 };
 
 export default setProduct;
+>>>>>>> 43ce1e2ae43996d31ab1173b448b8a9090a3b97e
