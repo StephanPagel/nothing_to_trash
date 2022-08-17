@@ -13,7 +13,7 @@ const SetProduct = () => {
   const [phone, setPhone] = useState("")
 
   return (
-    <form>
+    <form enctype="multipart/form-data">
       <label>Anzeigentyp:</label>
       <input
         type="radio"
