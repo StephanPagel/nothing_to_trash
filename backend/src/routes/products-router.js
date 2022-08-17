@@ -1,6 +1,7 @@
 const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
+const { findProductDetails } = require("./../use-cases/findProductById");
 
 const productsRouter = express.Router();
 
@@ -25,13 +26,12 @@ productsRouter.post("/addnewProduct", (req, res) => {
 });
 
 productsRouter.get("/details/:id", (req, res) => {
-  try {
-    const productDetails = findProductById({ _id: ObjectId(id) });
-    res.json(productDetails);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Failed to find product" });
-  }
+  findProductDetails()
+    .then((productDetails) => res.json(productDetails))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to find product." });
+    });
 });
 
 productsRouter.get("/allproducts", (_, res) => {

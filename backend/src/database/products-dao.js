@@ -28,7 +28,7 @@ function addNewProduct(productInfo) {
 
 function findProductById(id) {
   return injectDB().then((db) =>
-    db.collection(usersCollectionName).findOne({ _id: ObjectId(id) })
+    db.collection(productsCollectionName).findOne({ _id: ObjectId(id) })
   );
 }
 
