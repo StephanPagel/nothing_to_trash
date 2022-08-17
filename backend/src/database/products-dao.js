@@ -15,13 +15,18 @@ function addNewProduct(productInfo) {
             ...productInfo,
           })
         } else {
-          // result könnte ein error sein, daher reject...
           return reject(result)
         }
       }).catch((err) => reject(err))
   })
-  // const db = await injectDB();
-  // return db.collection(productsCollectionName).insertOne(productInfo);
 }
 
-module.exports = { addNewProduct };
+function getAllProducts() {
+  return injectDB()
+    .then(db => db.collection(productsCollectionName).find().toArray())
+}
+
+module.exports = {
+  addNewProduct,
+  getAllProducts
+};
