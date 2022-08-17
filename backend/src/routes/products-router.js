@@ -1,10 +1,13 @@
 const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
+const multer = require("multer");
 
 const productsRouter = express.Router();
+const upload = multer({ dest: 'uploads/' })
+const uploadFilesMiddleware = upload.single('avatar')
 
-productsRouter.post("/addnewProduct", (req, res) => {
+productsRouter.post("/addnewProduct", uploadFilesMiddleware, (req, res) => {
     if (!req.body) {
         res.status(400).json({ error: "Please include a item." });
         return;
@@ -33,4 +36,27 @@ productsRouter.get("/allproducts", (_, res) => {
         })
 })
 
+
+
+app.post("/uploadProductImage",
+    uploadFilesMiddleware,
+    (req, res) => {
+        console.log(req.body)
+        console.log(req.file)
+        console.log(req.files)
+
+        const newUser = {
+            id: nanoid(),
+            username: req.body.username,
+            email: req.body.email,
+            avatarImgSrc: req.file.filename
+        }
+
+        usersArray.push(newUser)
+        res.json(usersArray)
+    }
+)
+
 module.exports = { productsRouter };
+
+
