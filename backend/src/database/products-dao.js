@@ -41,5 +41,5 @@ function getAllProducts() {
 module.exports = {
   addNewProduct,
   getAllProducts,
-  findProductById,
+  findProductById
 };

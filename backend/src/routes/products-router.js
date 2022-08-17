@@ -1,10 +1,9 @@
 const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
+const { findProductDetails } = require("./../use-cases/findProductById");
 
 const multer = require("multer");
-
-const { findProductDetails } = require("./../use-cases/findProductById");
 
 
 const productsRouter = express.Router();
@@ -50,24 +49,24 @@ productsRouter.get("/allproducts", (_, res) => {
         });
 });
 
-app.post("/uploadProductImage",
-    uploadFilesMiddleware,
-    (req, res) => {
-        console.log(req.body)
-        console.log(req.file)
-        console.log(req.files)
+// app.post("/uploadProductImage",
+//     uploadFilesMiddleware,
+//     (req, res) => {
+//         console.log(req.body)
+//         console.log(req.file)
+//         console.log(req.files)
 
-        const newUser = {
-            id: nanoid(),
-            username: req.body.username,
-            email: req.body.email,
-            avatarImgSrc: req.file.filename
-        }
+//         const newUser = {
+//             id: nanoid(),
+//             username: req.body.username,
+//             email: req.body.email,
+//             avatarImgSrc: req.file.filename
+//         }
 
-        usersArray.push(newUser)
-        res.json(usersArray)
-    }
-)
+//         usersArray.push(newUser)
+//         res.json(usersArray)
+//     }
+// )
 
 module.exports = { productsRouter };
 
