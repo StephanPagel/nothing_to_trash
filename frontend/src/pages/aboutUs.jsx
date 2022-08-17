@@ -1,9 +1,7 @@
-import "./about_us.scss"
+import "./aboutUs.scss"
 
-const aboutUs = () => {
-    return (<div>
-
-    </div>);
+export default function aboutUs() {
+    return (
+        <div>aboutUs</div>
+    )
 }
-
-export default aboutUs;

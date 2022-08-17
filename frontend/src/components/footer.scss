@@ -2,21 +2,40 @@
     background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
     color: #272D4E;
     width: 100%;
-    text-decoration: none;
+
+    .instagram:hover {
+        color: red;
+    }
+
+    .facebook:hover {
+        color: blue;
+    }
+
+    .twitter:hover {
+        color: lightblue;
+    }
 }
 
 .footer_register {
     background-color: #7854F7;
     color: #fff;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    .footer_btn {
+        background-color: #7854F7;
+        color: #fff;
+        border-style: solid;
+        border-color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 5px;
+        margin: 10px;
+    }
 }
 
-.footer_btn {
-    background-color: #7854F7;
-    color: #fff;
-    border-style: solid;
-    border-color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 5px;
-
+.footer_container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 30px;
 }
