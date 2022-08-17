@@ -1,9 +1,9 @@
 import "./set_product.scss"
 
-const setProducts = () => {
+const setProduct = () => {
     return (<div>
 
     </div>);
 }
 
-export default setProducts;
+export default setProduct;
