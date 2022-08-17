@@ -5,11 +5,9 @@ const { findProductDetails } = require("./../use-cases/findProductById");
 
 const multer = require("multer");
 
-
 const productsRouter = express.Router();
-const upload = multer({ dest: 'uploads/' })
-const uploadFilesMiddleware = upload.single('avatar')
-
+const upload = multer({ dest: "uploads/" });
+const uploadFilesMiddleware = upload.single("avatar");
 
 productsRouter.post("/addnewProduct", uploadFilesMiddleware, (req, res) => {
     if (!req.body) {
@@ -31,12 +29,12 @@ productsRouter.post("/addnewProduct", uploadFilesMiddleware, (req, res) => {
         });
 });
 
-productsRouter.get("/details/:id", (req, res) => {
-    findProductDetails()
-        .then((productDetails) => res.json(productDetails))
+productsRouter.get("/allproducts/:id", (req, res) => {
+    const productId = req.params.id;
+    findProductDetails(productId)
+        .then((products) => res.json(products))
         .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Failed to find product." });
+            res.status(500).json({ error: "Failed to load products from database." });
         });
 });
 
@@ -68,6 +66,5 @@ productsRouter.get("/allproducts", (_, res) => {
 //     }
 // )
 
+
 module.exports = { productsRouter };
-
-
