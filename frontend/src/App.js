@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Maketplace from "./pages/marketplace";
 import SetProduct from "./pages/setProduct";
-import Wishlist from "./pages/wishList";
+import Wishlist from "./pages/wishlist";
 import AlreadySold from "./pages/alreadySold";
 import ProductDetail from "./pages/productDetail";
 import AboutUs from "./pages/aboutUs";
