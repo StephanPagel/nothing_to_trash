@@ -7,10 +7,18 @@ const multer = require("multer");
 const { findProductDetails } = require("./../use-cases/findProductById");
 
 const productsRouter = express.Router();
-const upload = multer({ dest: "uploads/" });
-const uploadFilesMiddleware = upload.single("avatar");
 
-productsRouter.post("/addnewProduct", uploadFilesMiddleware, (req, res) => {
+const storage = multer.diskStorage({
+  destination: function (_, _, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (_, file, cb) {
+    cb(null, Date.now() + "_" + file.originalname); //Appending extension
+  },
+});
+const uploadMiddleware = multer({ storage }).single("image");
+
+productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
   if (!req.body) {
     res.status(400).json({ error: "Please include a item." });
     return;
@@ -20,6 +28,7 @@ productsRouter.post("/addnewProduct", uploadFilesMiddleware, (req, res) => {
     title: req.body.title,
     description: req.body.description,
     price: "$" + req.body.price,
+    filepath: req.body.filename,
   };
 
   createProduct(newItem)
