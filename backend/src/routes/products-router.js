@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + "_" + file.originalname);
   },
 });
-const uploadMiddleware = multer({ storage }).single("image");
+const uploadMiddleware = multer({ storage }).single("imageFile");
 
 productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
   if (!req.body) {
@@ -24,9 +24,19 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
   }
 
   const newItem = {
+    adType: req.body.adType,
+    delivery: req.body.delivery,
     title: req.body.title,
     description: req.body.description,
-    price: "$" + req.body.price,
+    amount: req.body.amount,
+    price: "€" + req.body.price,
+    priceOptions: req.body.priceOptions,
+    category: req.body.category,
+    zip: req.body.zip,
+    city: req.body.city,
+    street: req.body.street,
+    name: req.body.name,
+    phone: req.body.phone,
     // HIER MUSS DER PATH, aber wie??????
     filename: req.file.filename,
   };

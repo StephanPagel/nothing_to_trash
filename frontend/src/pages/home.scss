@@ -5,9 +5,9 @@
     background-image: url("../images/home_workers_on_ricefield.jpg");
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 42% 80%;
     height: 100vh;
-    padding-top: 15%;
+    background-size: 40%;
+
 
     h1 {
         font-size: 50px;
@@ -15,6 +15,7 @@
         text-align: left;
         padding-right: 750px;
         margin-left: 150px;
+        margin-top: 150px;
     }
 
     p {
@@ -29,27 +30,35 @@
         background-color: #7854F7;
         color: #fff;
         cursor: pointer;
-        margin: 10px;
-        padding: 5px;
+        padding: 15px 35px;
+        margin-top: 40px;
     }
 }
 
 .home_image {
     background-image: url("../images/home_section_lebe_ecommerce.jpg");
-    display: flex;
     height: calc(100vh - 50px);
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
     background-size: cover;
 }
 
 .home_image_two {
-    background-image: url("../images/home_people.png");
-    display: flex;
-    height: calc(54vh - 50px);
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    background-image: url("../images/people1234.png");
+    height: calc(140vh - 50px);
     background-size: cover;
+}
+
+.home_image_three {
+    background-image: url("../images/home_people.png");
+    height: calc(54vh - 50px);
+    background-size: cover;
+}
+
+
+.btnbtn {
+    background-color: #FFBA49;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
 }

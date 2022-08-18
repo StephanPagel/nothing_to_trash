@@ -1,7 +1,5 @@
 * {
-    padding: 0px 5px;
     font-family: 'Roboto', sans-serif;
-    background-color: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
 
     a {
         text-decoration: none;
@@ -10,11 +8,14 @@
 
 .navbar {
     width: 100%;
-    height: 60px;
+    height: 70px;
     position: sticky;
+    top: 0;
     display: flex;
     list-style: none;
     align-items: center;
+    background-image: linear-gradient(to bottom, #7854f7, #9b80fd, #bcabff, #ddd5ff, #ffffff);
+    padding: 0px 5px;
 
     a {
         text-decoration: none;
