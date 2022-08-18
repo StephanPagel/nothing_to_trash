@@ -38,8 +38,22 @@ function getAllProducts() {
   );
 }
 
+function deleteProductById(id) {
+  return injectDB().then((db) =>
+    db.collection(productsCollectionName).deleteOne({ _id: ObjectId(id) })
+  );
+}
+
+function updateProductById(id) {
+  return injectDB().then((db) =>
+    db.collection(productsCollectionName).updateOne({ _id: ObjectId() })
+  );
+}
+
 module.exports = {
   addNewProduct,
   getAllProducts,
-  findProductById
+  findProductById,
+  deleteProductById,
+  updateProductById,
 };
