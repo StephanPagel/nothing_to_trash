@@ -5,11 +5,12 @@ import Login from "./pages/login";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Marketplace from "./pages/marketplace";
-import SetProduct from "./pages/setProduct";
+import SetProduct from "./components/SetProductForm";
 import Wishlist from "./pages/wishlist";
 import AlreadySold from "./pages/alreadySold";
 import ProductDetail from "./pages/productDetail";
 import AboutUs from "./pages/aboutUs";
+
 
 function App() {
   return (

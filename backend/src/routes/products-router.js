@@ -17,30 +17,36 @@ const storage = multer.diskStorage({
     },
 
 });
-const uploadMiddleware = multer({ storage }).single("image");
+const uploadMiddleware = multer({ storage }).single("imageFile");
 
 productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
-    if (!req.body) {
-        res.status(400).json({ error: "Please include a item." });
-        return;
-    }
+  if (!req.body) {
+    res.status(400).json({ error: "Please include a item." });
+    return;
+  }
 
-    const newItem = {
-        title: req.body.title,
-        description: req.body.description,
-        price: "$" + req.body.price,
+  const newItem = {
+    title: req.body.title,
+    description: req.body.description,
+    amount: req.body.amount,
+    price: "€" + req.body.price,
+    zip: req.body.zip,
+    city: req.body.city,
+    street: req.body.street,
+    name: req.body.name,
+    phone: req.body.phone,
         // HIER MUSS DER PATH, aber wie??????
-        filename: req.file.filename
-    };
+    filename: req.file.filename
+  };
 
-    console.log(newItem)
+  console.log(newItem);
 
-    createProduct(newItem)
-        .then((addedItem) => res.status(201).json(addedItem))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Failed to add item to database." });
-        });
+  createProduct(newItem)
+    .then((addedItem) => res.status(201).json(addedItem))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to add item to database." });
+    });
 });
 
 productsRouter.get("/allproducts/:id", (req, res) => {
