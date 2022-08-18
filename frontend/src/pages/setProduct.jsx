@@ -2,7 +2,8 @@ import "./setProduct.scss";
 import { useState } from "react";
 
 const SetProduct = () => {
-
+  
+  const [typeOfAd, setTypeOfAd] = useState ("")
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
@@ -20,6 +21,10 @@ const SetProduct = () => {
         name="typeOfAd"
         id="typeOfAdOffer"
         value="typeOfAdOffer"
+        onChange={(e) => {
+          setTypeOfAd(e.target.value);
+          console.log(typeOfAd);
+        }}
       />
       <label>Ich biete</label>
       <input
@@ -27,6 +32,10 @@ const SetProduct = () => {
         name="typeOfAd"
         id="typeOfAdSearch"
         value="typeOfAdSearch"
+        onChange={(e) => {
+          setTypeOfAd(e.target.value);
+          console.log(typeOfAd);
+        }}
       />
       <label>Ich suche</label>
       <label>Lieferung:</label>
@@ -146,3 +155,4 @@ const SetProduct = () => {
 };
 
 export default SetProduct;
+
