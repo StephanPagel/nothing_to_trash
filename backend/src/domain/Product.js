@@ -1,10 +1,28 @@
-function makeProduct({ _id, title, description, price, filepath }) {
+function makeProduct({
+  _id,
+  title,
+  description,
+  amount,
+  price,
+  zip,
+  city,
+  street,
+  name,
+  phone,
+  filepath
+}) {
   return {
     _id,
     title,
     description,
+    amount,
     price,
-    filepath,
+    zip,
+    city,
+    street,
+    name,
+    phone,
+    filepath
   };
 }
 
