@@ -3,10 +3,10 @@ import Sidebar from '../components/Sidebar'
 import ProductCard from '../components/ProductCard'
 import "./marketplace.scss"
 
-export default function marketplace() {
+export default function Marketplace() {
     return (
-        <div className="marketplace">marketplace
-            <h1>Hilf mit, die Umwelt zu schützen</h1>
+        <div className="marketplace">
+            <h1>Hilf mit die Umwelt zu schützen</h1>
             <p>
                 Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen
                 Abfälle gelangen jährlich in die Ozeane. Sie kosten Abertausende

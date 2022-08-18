@@ -1,7 +1,7 @@
 import "./productDetail.scss"
 import sofa from '../images/marketplace_sofa.jpg'
 
-const productDetail = () => {
+export default function ProductDetail() {
   return (
     <div>
       <img src={sofa} alt="product" />
@@ -29,7 +29,5 @@ const productDetail = () => {
       <button>Bearbeiten</button>
       <button>Verkauft</button>
     </div>
-  );
+  )
 }
-
-export default productDetail;
