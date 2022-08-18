@@ -4,7 +4,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Maketplace from "./pages/marketplace";
+import Marketplace from "./pages/marketplace";
 import SetProduct from "./pages/setProduct";
 import Wishlist from "./pages/wishlist";
 import AlreadySold from "./pages/alreadySold";
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="marketplace" element={<Maketplace />} />
+        <Route path="marketplace" element={<Marketplace />} />
         <Route path="set_product" element={<SetProduct />} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
