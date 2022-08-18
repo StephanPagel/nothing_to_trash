@@ -6,6 +6,7 @@ import { BsFacebook } from 'react-icons/bs'
 export default function Footer() {
   return (
     <div className="footer">
+      <img src="" alt="" />
       <div className="footer_register">
         <h3>nothingtotrash - eine online Plattform um Müll zu vermeiden.</h3>
         <button className="footer_btn"><Link to="/login">Registriere Dich</Link></button>
@@ -20,7 +21,7 @@ export default function Footer() {
         <a target={''} className="instagram" href="https://www.instagram.com">
           <i><AiFillInstagram /></i>
         </a>
-        <p>COPYRIGHT nothingtotrash 2021 -<span>TERMS & CONDITIONS PRIVACY POLICY</span></p>
+        <p> COPYRIGHT nothingtotrash 2021 -<span>TERMS & CONDITIONS PRIVACY POLICY </span></p>
       </div>
     </div>
   );

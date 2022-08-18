@@ -3,15 +3,17 @@ import Searchbar from "../components/Searchbar";
 import Sidebar from "../components/Sidebar";
 import "./alreadySold.scss"
 
-const alreadySold = () => {
+import React from 'react'
+
+export default function AlreadySold() {
   return (
     <div>
-      <h1>Mit diesen Artikeln konnten wir schon Müll vermeiden</h1>
-      <Searchbar />
-      <Sidebar />
-      <ProductCard />
+      <div>
+        <h1>Mit diesen Artikeln konnten wir schon Müll vermeiden</h1>
+        <Searchbar />
+        <Sidebar />
+        <ProductCard />
+      </div>
     </div>
-  );
+  )
 }
-
-export default alreadySold;
