@@ -11,12 +11,11 @@ import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
 
-console.log("%c****************", "color:yellow");
-console.log("%cNOTHING TO TRASH", "color:white");
-console.log(
-  "%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022",
-  "color:violet"
-);
+console.log("%c****************", 'color:yellow');
+console.log("%cNOTHING TO TRASH", 'color:white');
+console.log("%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022", 'color:violet');
+console.log("%c****************", 'color:yellow');
+
 
 function App() {
   return (
