@@ -1,16 +1,20 @@
-import "./set_product.scss";
+import "./setProduct.scss";
 import { useState } from "react";
 
-const [title, setTitle] = useState("");
-const [description, setDescription] = useState("");
-const [amount, setAmount] = useState("");
-const [price, setPrice] = useState("");
-const [zip, setZip] = useState("");
-const [city, setCity] = useState("");
-const [name, setName] = useState("");
-const [phone, setPhone] = useState("")
 
-const setProduct = () => {
+const SetProduct = () => {
+  
+  const [typeOfAd, setTypeOfAd] = useState ("")
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
+  const [price, setPrice] = useState("");
+  const [zip, setZip] = useState("");
+  const [city, setCity] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("")
+
+  
   return (
     <form>
       <label>Anzeigentyp:</label>
@@ -19,6 +23,10 @@ const setProduct = () => {
         name="typeOfAd"
         id="typeOfAdOffer"
         value="typeOfAdOffer"
+        onChange={(e) => {
+          setTypeOfAd(e.target.value);
+          console.log(typeOfAd);
+        }}
       />
       <label>Ich biete</label>
       <input
@@ -26,6 +34,10 @@ const setProduct = () => {
         name="typeOfAd"
         id="typeOfAdSearch"
         value="typeOfAdSearch"
+        onChange={(e) => {
+          setTypeOfAd(e.target.value);
+          console.log(typeOfAd);
+        }}
       />
       <label>Ich suche</label>
       <label>Lieferung:</label>
@@ -144,4 +156,5 @@ const setProduct = () => {
   );
 };
 
-export default setProduct;
+export default SetProduct;
+
