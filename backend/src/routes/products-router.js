@@ -2,20 +2,19 @@ const express = require("express");
 const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
 const { findProductDetails } = require("./../use-cases/findProductById");
+const { deleteProduct } = require("./../use-cases/deleteProduct");
+const { updateProductById } = require("./../use-cases/updateProduct");
 const multer = require("multer");
-
 
 const productsRouter = express.Router();
 
 const storage = multer.diskStorage({
-
-    destination: function (_, _, cb) {
-        cb(null, "uploads");
-    },
-    filename: function (_, file, cb) {
-        cb(null, Date.now() + "_" + file.originalname);
-    },
-
+  destination: function (_, _, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (_, file, cb) {
+    cb(null, Date.now() + "_" + file.originalname);
+  },
 });
 const uploadMiddleware = multer({ storage }).single("imageFile");
 
@@ -26,17 +25,24 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
   }
 
   const newItem = {
+    adType: req.body.adType,
+    delivery: req.body.delivery,
     title: req.body.title,
-    description: req.body.description,
+    condition: req.body.condition,
+    brand: req.body.brand,
+    descriptionShort: req.body.descriptionShort,
+    descriptionLong: req.body.descriptionLong,
     amount: req.body.amount,
     price: "€" + req.body.price,
+    priceOptions: req.body.priceOptions,
+    category: req.body.category,
     zip: req.body.zip,
     city: req.body.city,
     street: req.body.street,
     name: req.body.name,
     phone: req.body.phone,
-        // HIER MUSS DER PATH, aber wie??????
-    filename: req.file.filename
+    // HIER MUSS DER PATH, aber wie??????
+    filename: req.file.filename,
   };
 
   console.log(newItem);
@@ -50,21 +56,41 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
 });
 
 productsRouter.get("/allproducts/:id", (req, res) => {
-    const productId = req.params.id;
-    findProductDetails(productId)
-        .then((products) => res.json(products))
-        .catch((err) => {
-            res.status(500).json({ error: "Failed to load products from database." });
-        });
+  const productId = req.params.id;
+  findProductDetails(productId)
+    .then((products) => res.json(products))
+    .catch((err) => {
+      res.status(500).json({ error: "Failed to load products from database." });
+    });
 });
 
 productsRouter.get("/allproducts", (_, res) => {
-    showProducts()
-        .then((products) => res.json(products))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Failed to load products from database." });
-        });
+  showProducts()
+    .then((products) => res.json(products))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to load products from database." });
+    });
+});
+
+productsRouter.delete("/deletedProduct/:id", (req, res) => {
+  const productId = req.params.id;
+  deleteProduct(productId)
+    .then((products) => res.json(products))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to delete product" });
+    });
+});
+
+productsRouter.put("/edit/:id", (req, res) => {
+  const productId = req.params.id;
+  const updateProduct = req.body; // req body ist stellvertretend für alles key/value Paare im Object
+
+  updateProductById(productId, updateProduct)
+    .then((updatedElement) => res.json(updatedElement))
+    .catch((err) => console.log(err));
+  console.log(req.body);
 });
 
 module.exports = { productsRouter };

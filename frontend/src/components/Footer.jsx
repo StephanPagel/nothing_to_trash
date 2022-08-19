@@ -9,6 +9,7 @@ export default function Footer() {
       <img src="" alt="" />
       <div className="footer_register">
         <h3>nothingtotrash - eine online Plattform um Müll zu vermeiden.</h3>
+        <button className="footer_btn"><Link to="/register">Registriere Dich</Link></button>
       </div>
       <button className="footer_btn"><Link to="/login">Registriere Dich</Link></button>
       <div className="footer_container">

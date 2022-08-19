@@ -1,5 +1,5 @@
-import "./productCard.scss"
-import chair from '../images/marketplace_chair.jpg'
+import "./productCard.scss";
+import chair from "../images/marketplace_chair.jpg";
 
 export default function ProductCard() {
     return (

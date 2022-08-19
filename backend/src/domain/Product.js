@@ -1,28 +1,42 @@
 function makeProduct({
   _id,
+  adType,
+  delivery,
   title,
-  description,
+  condition,
+  brand,
+  descriptionShort,
+  descriptionLong,
   amount,
   price,
+  priceOptions,
+  category,
   zip,
   city,
   street,
   name,
   phone,
-  filepath
+  filename,
 }) {
   return {
     _id,
+    adType,
+    delivery,
     title,
-    description,
+    condition,
+    brand,
+    descriptionShort,
+    descriptionLong,
     amount,
     price,
+    priceOptions,
+    category,
     zip,
     city,
     street,
     name,
     phone,
-    filepath
+    filename,
   };
 }
 
