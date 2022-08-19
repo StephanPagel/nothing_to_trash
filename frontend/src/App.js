@@ -11,6 +11,7 @@ import Wishlist from "./pages/Wishlist";
 import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
+import Register from "./pages/Register";
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:white');
@@ -19,6 +20,10 @@ console.log("%c****************", 'color:yellow');
 
 
 function App() {
+
+const [token, setToken] = useState(null);
+const [allProducts, setAllProducts] = useState([])
+
   return (
     <div className="App">
       <Navbar />

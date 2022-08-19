@@ -68,27 +68,27 @@ const SetProductForm = () => {
     fetch(`${apiBaseUrl}products/addnewProduct`, {
       method: "post",
       body: formData,
+      // credentials: true
     })
       .then((response) => response.json())
       .then(() => {
-
-        setAdType("")
-        setDelivery("")
-        setTitle("")
-        setCondition("")
+        setAdType("");
+        setDelivery("");
+        setTitle("");
+        setCondition("");
         setBrand("");
-        setDescriptionShort("")
-        setDescriptionLong("")
-        setAmount("")
-        setPrice("")
-        setPriceOptions("")
-        setZip("")
-        setCity("")
-        setStreet("")
-        setName("")
-        setPhone("")
-        setImageFile(null)
-        fileInputRef.current.value = null
+        setDescriptionShort("");
+        setDescriptionLong("");
+        setAmount("");
+        setPrice("");
+        setPriceOptions("");
+        setZip("");
+        setCity("");
+        setStreet("");
+        setName("");
+        setPhone("");
+        setImageFile(null);
+        fileInputRef.current.value = null;
       });
   };
 
