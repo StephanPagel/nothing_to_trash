@@ -3,7 +3,10 @@ function makeProduct({
   adType,
   delivery,
   title,
-  description,
+  condition,
+  brand,
+  descriptionShort,
+  descriptionLong,
   amount,
   price,
   priceOptions,
@@ -13,14 +16,17 @@ function makeProduct({
   street,
   name,
   phone,
-  filename
+  filename,
 }) {
   return {
     _id,
     adType,
     delivery,
     title,
-    description,
+    condition,
+    brand,
+    descriptionShort,
+    descriptionLong,
     amount,
     price,
     priceOptions,
@@ -30,7 +36,7 @@ function makeProduct({
     street,
     name,
     phone,
-    filename
+    filename,
   };
 }
 

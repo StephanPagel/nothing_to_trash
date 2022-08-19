@@ -5,7 +5,10 @@ async function createProduct({
   adType,
   delivery,
   title,
-  description,
+  condition,
+  brand,
+  descriptionShort,
+  descriptionLong,
   amount,
   price,
   priceOptions,
@@ -15,13 +18,16 @@ async function createProduct({
   street,
   name,
   phone,
-  filename
+  filename,
 }) {
   const product = makeProduct({
     adType,
     delivery,
     title,
-    description,
+    condition,
+    brand,
+    descriptionShort,
+    descriptionLong,
     amount,
     price,
     priceOptions,
@@ -31,7 +37,7 @@ async function createProduct({
     street,
     name,
     phone,
-    filename
+    filename,
   });
   const insertResult = await ProductsDAO.addNewProduct(product);
   return makeProduct({ ...product, _id: insertResult.insertedId });
