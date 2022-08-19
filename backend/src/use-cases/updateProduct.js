@@ -1,9 +1,9 @@
 const { ProductsDAO } = require("./../database/index");
 
-function updateProduct(productId) {
-  return ProductsDAO.updateProductById(productId);
+function updateProductById(productId, updateProduct) {
+  return ProductsDAO.updateProduct(productId, updateProduct);
 }
 
 module.exports = {
-  deleteProduct,
+  updateProductById,
 };

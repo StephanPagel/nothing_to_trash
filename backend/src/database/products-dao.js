@@ -26,6 +26,40 @@ function addNewProduct(productInfo) {
   // return db.collection(productsCollectionName).insertOne(productInfo);
 }
 
+function updateProduct(id, updateProduct) {
+  return new Promise((resolve, reject) => {
+    injectDB()
+      .then((db) =>
+        db.collection(productsCollectionName).updateOne(
+          { _id: ObjectId(id) },
+          {
+            $set: {
+              adType: updateProduct.adType,
+              delivery: updateProduct.delivery,
+              title: updateProduct.title,
+              description: updateProduct.description,
+              amount: updateProduct.amount,
+              price: updateProduct.price,
+              priceOptions: updateProduct.priceOptions,
+              category: updateProduct.category,
+              zip: updateProduct.zip,
+              city: updateProduct.city,
+              street: updateProduct.street,
+              name: updateProduct.name,
+              phone: updateProduct.phone,
+              filename: updateProduct.filename,
+            },
+          }
+        )
+      )
+      .then((result) => {
+        console.log(result);
+        // if()
+        resolve(result);
+      });
+  });
+}
+
 function findProductById(id) {
   return injectDB().then((db) =>
     db.collection(productsCollectionName).findOne({ _id: ObjectId(id) })
@@ -44,16 +78,10 @@ function deleteProductById(id) {
   );
 }
 
-function updateProductById(id) {
-  return injectDB().then((db) =>
-    db.collection(productsCollectionName).updateOne({ _id: ObjectId() })
-  );
-}
-
 module.exports = {
   addNewProduct,
   getAllProducts,
   findProductById,
   deleteProductById,
-  updateProductById,
+  updateProduct,
 };

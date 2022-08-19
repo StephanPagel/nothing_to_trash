@@ -3,6 +3,7 @@ const { createProduct } = require("./../use-cases/createProduct");
 const { showProducts } = require("./../use-cases/showProducts");
 const { findProductDetails } = require("./../use-cases/findProductById");
 const { deleteProduct } = require("./../use-cases/deleteProduct");
+const { updateProductById } = require("./../use-cases/updateProduct");
 const multer = require("multer");
 
 const productsRouter = express.Router();
@@ -77,6 +78,16 @@ productsRouter.delete("/deletedProduct/:id", (req, res) => {
       console.log(err);
       res.status(500).json({ error: "Failed to delete product" });
     });
+});
+
+productsRouter.put("/edit/:id", (req, res) => {
+  const productId = req.params.id;
+  const updateProduct = req.body; // req body ist stellvertretend für alles key/value Paare im Object
+
+  updateProductById(productId, updateProduct)
+    .then((updatedElement) => res.json(updatedElement))
+    .catch((err) => console.log(err));
+  console.log(req.body);
 });
 
 module.exports = { productsRouter };
