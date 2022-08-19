@@ -6,7 +6,9 @@ export default function Login(props) {
     return (
         <div>
             <div>
-                <LoginForm setToken={props.setToken} />
+                <LoginForm setToken={props.setToken}
+                    errorMessage={props.errorMessage}
+                    setErrorMessage={props.setErrorMessage} />
             </div>
         </div>
     )
