@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
@@ -14,7 +13,7 @@ import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 
 console.log("%c****************", 'color:yellow');
-console.log("%cNOTHING TO TRASH", 'color:white');
+console.log("%cNOTHING TO TRASH", 'color:blue');
 console.log("%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022", 'color:violet');
 console.log("%c****************", 'color:yellow');
 
