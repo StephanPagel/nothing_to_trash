@@ -22,7 +22,7 @@ function App() {
 
   const [token, setToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const [allProducts, setAllProducts] = useState([]);
+  //const [allProducts, setAllProducts] = useState([]);
 
   return (
     <div className="App">
@@ -33,9 +33,7 @@ function App() {
         <Route path="marketplace" element={<Marketplace />} />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
-          path="marketplace"
-          element={<Marketplace allProducts={allProducts} />}
-        />
+          path="marketplace" element={<Marketplace />} />
         <Route path="set_product" element={<SetProduct />} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
@@ -49,3 +47,4 @@ function App() {
 }
 
 export default App;
+//element={<Marketplace allProducts={allProducts} 

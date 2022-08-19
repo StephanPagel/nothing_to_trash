@@ -39,7 +39,7 @@ const LoginForm = ({ setToken
     };
 
     return (
-        <div>
+        <div className="login">
             <label htmlFor="email">Emailaddress</label>
             <input type="text"
                 id="email"
