@@ -11,7 +11,6 @@ import Wishlist from "./pages/Wishlist";
 import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
-import Register from "./pages/Register";
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:white');
@@ -20,6 +19,7 @@ console.log("%c****************", 'color:yellow');
 
 
 function App() {
+
 
   const [token, setToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -31,6 +31,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login setToken={setToken} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
         <Route path="marketplace" element={<Marketplace />} />
+        <Route path="login" element={<Login setToken={setToken} />} />
+        <Route
+          path="marketplace"
+          element={<Marketplace allProducts={allProducts} />}
+        />
         <Route path="set_product" element={<SetProduct />} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
