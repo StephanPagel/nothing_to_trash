@@ -6,7 +6,10 @@ const SetProductForm = () => {
   const [adType, setAdType] = useState("");
   const [delivery, setDelivery] = useState("");
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [condition, setCondition] = useState("");
+  const [brand, setBrand] = useState("");
+  const [descriptionShort, setDescriptionShort] = useState("");
+  const [descriptionLong, setDescriptionLong] = useState("");
   const [amount, setAmount] = useState("");
   const [price, setPrice] = useState("");
   const [priceOptions, setPriceOptions] = useState("");
@@ -47,7 +50,10 @@ const SetProductForm = () => {
     formData.append("adType", adType);
     formData.append("delivery", delivery);
     formData.append("title", title);
-    formData.append("description", description);
+    formData.append("condition", condition);
+    formData.append("brand", brand);
+    formData.append("descriptionShort", descriptionShort);
+    formData.append("descriptionLong", descriptionLong);
     formData.append("amount", amount);
     formData.append("price", price);
     formData.append("priceOptions", priceOptions);
@@ -62,24 +68,27 @@ const SetProductForm = () => {
     fetch(`${apiBaseUrl}products/addnewProduct`, {
       method: "post",
       body: formData,
+      // credentials: true
     })
       .then((response) => response.json())
       .then(() => {
-
-        setAdType("")
-        setDelivery("")
-        setTitle("")
-        setDescription("")
-        setAmount("")
-        setPrice("")
-        setPriceOptions("")
-        setZip("")
-        setCity("")
-        setStreet("")
-        setName("")
-        setPhone("")
-        setImageFile(null)
-        fileInputRef.current.value = null
+        setAdType("");
+        setDelivery("");
+        setTitle("");
+        setCondition("");
+        setBrand("");
+        setDescriptionShort("");
+        setDescriptionLong("");
+        setAmount("");
+        setPrice("");
+        setPriceOptions("");
+        setZip("");
+        setCity("");
+        setStreet("");
+        setName("");
+        setPhone("");
+        setImageFile(null);
+        fileInputRef.current.value = null;
       });
   };
 
@@ -111,19 +120,29 @@ const SetProductForm = () => {
       />
       <label>Ich suche</label>
       <label>Lieferung:</label>
-      <input type="radio" name="delivery" id="deliveryYes" value="deliveryYes"
+      <input
+        type="radio"
+        name="delivery"
+        id="deliveryYes"
+        value="deliveryYes"
         checked={delivery === "deliveryYes"}
         onChange={(e) => {
           setDelivery(e.target.value);
           console.log(delivery);
-        }} />
+        }}
+      />
       <label>Ja</label>
-      <input type="radio" name="delivery" id="deliveryNo" value="deliveryNo"
+      <input
+        type="radio"
+        name="delivery"
+        id="deliveryNo"
+        value="deliveryNo"
         checked={delivery === "deliveryNo"}
         onChange={(e) => {
           setDelivery(e.target.value);
           console.log(delivery);
-        }} />
+        }}
+      />
       <label>Nein</label>
       <label>Titel der Anzeige:</label>
       <input
@@ -133,14 +152,79 @@ const SetProductForm = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label>Beschreibung:</label>
+      <label>Marke:</label>
+      <input
+        type="text"
+        name="brand"
+        id="brand"
+        value={brand}
+        onChange={(e) => setBrand(e.target.value)}
+      />
+      <label>Zustand:</label>
+      <input
+        type="radio"
+        name="condition"
+        id="conditionAsNew"
+        value="conditionAsNew"
+        checked={condition === "conditionAsNew"}
+        onChange={(e) => {
+          setCondition(e.target.value);
+          console.log(condition);
+        }}
+      />
+      <label>Wie neu</label>
+      <input
+        type="radio"
+        name="condition"
+        id="conditionGood"
+        value="conditionGood"
+        checked={condition === "conditionGood"}
+        onChange={(e) => {
+          setCondition(e.target.value);
+          console.log(condition);
+        }}
+      />
+      <label>Gut</label>
+      <input
+        type="radio"
+        name="condition"
+        id="conditionClearlyUsed"
+        value="conditionClearlyUsed"
+        checked={condition === "conditionClearlyUsed"}
+        onChange={(e) => {
+          setCondition(e.target.value);
+          console.log(condition);
+        }}
+      />
+      <label>Deutliche Gebrauchsspuren</label>
+      <input
+        type="radio"
+        name="condition"
+        id="conditionDefect"
+        value="conditionDefect"
+        checked={condition === "conditionDefect"}
+        onChange={(e) => {
+          setCondition(e.target.value);
+          console.log(condition);
+        }}
+      />
+      <label>Defekt</label>
+      <label>Beschreibung kurz:</label>
+      <input
+        type="text"
+        name="descriptionShort"
+        id="descriptionShort"
+        value={descriptionShort}
+        onChange={(e) => setDescriptionShort(e.target.value)}
+      ></input>
+      <label>Beschreibung lang:</label>
       <textarea
-        name="description"
-        id="description"
+        name="descriptionLong"
+        id="descriptionLong"
         cols="50"
         rows="5"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        value={descriptionLong}
+        onChange={(e) => setDescriptionLong(e.target.value)}
       ></textarea>
       <label>Anzahl:</label>
       <input
@@ -201,7 +285,12 @@ const SetProductForm = () => {
         onChange={onFileChange}
       />
       <label>Kategorie:</label>
-      <select value={category.value} onChange={(e) => { setCategory(e.target.value) }}>
+      <select
+        value={category.value}
+        onChange={(e) => {
+          setCategory(e.target.value);
+        }}
+      >
         <option value="moebel">Möbel</option>
         <option value="kleidung">Kleidung</option>
         <option value="trainer">Trainer</option>
@@ -256,7 +345,7 @@ const SetProductForm = () => {
         onChange={(e) => setPhone(e.target.value)}
       />
       <button onClick={submitForm}>Produkt einstellen</button>
-    </form >
+    </form>
   );
 };
 
