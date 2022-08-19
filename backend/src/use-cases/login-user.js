@@ -24,8 +24,8 @@ function loginUser({ email, password }) {
 
 function createToken(user) {
   const initatedAtTimestamp = Math.floor(Date.now() / 1000);
-  const ONE_HOUR_IN_SECONDS = 60 * 60;
-  const expiresAtTimestamp = initatedAtTimestamp + ONE_HOUR_IN_SECONDS;
+  const TEN_DAYS_IN_SECONDS = 60 * 60 * 24 * 10;
+  const expiresAtTimestamp = initatedAtTimestamp + TEN_DAYS_IN_SECONDS;
 
   const tokenPayload = {
     sub: user._id,
