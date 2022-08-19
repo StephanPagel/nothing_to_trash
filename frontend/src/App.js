@@ -1,5 +1,6 @@
+import { apiBaseUrl } from "./api";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -13,25 +14,41 @@ import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 
-console.log("%c****************", 'color:yellow');
-console.log("%cNOTHING TO TRASH", 'color:white');
-console.log("%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022", 'color:violet');
-console.log("%c****************", 'color:yellow');
-
+console.log("%c****************", "color:yellow");
+console.log("%cNOTHING TO TRASH", "color:white");
+console.log(
+  "%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022",
+  "color:violet"
+);
+console.log("%c****************", "color:yellow");
 
 function App() {
-
   const [token, setToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(`${apiBaseUrl}products/allproducts`)
+      .then((allProducts) => allProducts.json())
+      .then((productsArray) => setAllProducts(productsArray))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login setToken={setToken} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
-        <Route path="marketplace" element={<Marketplace />} />
+        <Route
+          path="login"
+          element={
+            <Login
+              setToken={setToken}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
+            />
+          }
+        />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
           path="marketplace"
