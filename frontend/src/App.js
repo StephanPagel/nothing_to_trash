@@ -19,11 +19,18 @@ console.log("%c****************", 'color:yellow');
 
 
 function App() {
+
+
+  const [token, setToken] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="login" element={<Login setToken={setToken} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
+        <Route path="marketplace" element={<Marketplace />} />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
           path="marketplace"
