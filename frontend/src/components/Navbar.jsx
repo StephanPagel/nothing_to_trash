@@ -12,7 +12,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <button className="navbar_btn_log"><Link to="/login">Login</Link></button>
-            <button className="navbar_btn"><Link to="/login">Registriere Dich</Link></button>
-        </div>
+            <button className="navbar_btn"><Link to="/register">Registriere Dich</Link></button>
+        </div >
     )
 }
