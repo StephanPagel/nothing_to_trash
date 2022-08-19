@@ -11,14 +11,22 @@ export default function Sidebar() {
     <div className="sidebar">
       <h3>Kategorien</h3>
       <div className="sidebar_category">
-        <p>Kategorie Name</p>
-        <h6>320</h6>
-        <p>Kategorie Name</p>
-        <h6>112</h6>
-        <p>Kategorie Name</p>
-        <h6>32</h6>
-        <p>Kategorie Name</p>
-        <h6>48</h6>
+        <tr>
+          <td>Kategorie Name</td>
+          <td>320</td>
+        </tr>
+        <tr>
+          <td>Kategorie Name</td>
+          <td>300</td>
+        </tr>
+        <tr>
+          <td>Kategorie Name</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Kategorie Name</td>
+          <td>30</td>
+        </tr>
       </div>
       <h3>Marken</h3>
       <div className="sidebar_checkbox">

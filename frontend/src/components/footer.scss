@@ -2,6 +2,7 @@
     background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
     color: #272D4E;
     width: 100%;
+    position: absolute;
 
     .instagram:hover {
         color: red;
@@ -27,6 +28,14 @@
     justify-content: center;
     padding: 60px;
     font-size: 22px;
+
+    h3 {
+        animation: typing 4s steps(36),
+            blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 50ch;
+    }
 
     .footer_btn {
         background-color: #7854F7;
@@ -57,5 +66,11 @@
 
     i {
         padding-left: 20px;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
     }
 }
