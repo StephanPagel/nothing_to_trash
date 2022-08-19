@@ -16,7 +16,7 @@ export default function Marketplace(props) {
             </p>
             <Searchbar />
             <Sidebar />
-            {props.allProducts.map((product) =>(
+            {/* {props.allProducts.map((product) =>(
             <ProductCard
             key={product.id}
             img={product.filename}
@@ -25,7 +25,7 @@ export default function Marketplace(props) {
             description={product.description}
 
             />
-            ))}
+            ))} */}
         </div>
     )
 }
