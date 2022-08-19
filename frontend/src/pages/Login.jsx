@@ -1,14 +1,12 @@
 import React from 'react'
 import "./login.scss"
+import LoginForm from "./../components/LoginForm"
 
-export default function Login() {
+export default function Login(props) {
     return (
         <div>
             <div>
-                <h2>Mit Email anmelden</h2>
-                <input type="email" name="" id="" />
-                <input type="password" name="" id="" />
-                <button>Registrieren</button>
+                <LoginForm setToken={props.setToken} />
             </div>
         </div>
     )

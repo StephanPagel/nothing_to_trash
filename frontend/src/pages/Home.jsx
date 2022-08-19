@@ -17,7 +17,7 @@ export default function Home() {
       </div>
       <div className="home_image"></div>
       <div className="home_image_two">
-        <div ClassName="home_details">
+        <div className="home_details">
           <h2>Ohne Limits</h2>
           <p> Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen
             Abfälle gelangen jährlich in die Ozeane. Sie kosten Abertausende
