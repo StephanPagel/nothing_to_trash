@@ -1,11 +1,11 @@
 import SetProductForm from "../components/SetProductForm";
 
 const SetProduct = () => {
-    return ( 
+    return (
         <div>
             <SetProductForm />
         </div>
-     );
+    );
 }
- 
+
 export default SetProduct;

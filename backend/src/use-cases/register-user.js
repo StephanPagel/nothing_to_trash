@@ -25,7 +25,7 @@ async function registerUser({ username, email, password }) {
 }
 
 module.exports = {
-  registerUser,
+  registerUser
 };
 
 // "password": "max123"
