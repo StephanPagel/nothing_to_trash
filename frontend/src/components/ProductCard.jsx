@@ -3,7 +3,6 @@ import chair from "../images/marketplace_chair.jpg";
 
 export default function ProductCard(props) {
   return (
-
     <div className="product-card">
       <img src={chair} alt="product" />
       <h3>45.00 EUR</h3>
