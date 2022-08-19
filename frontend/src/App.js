@@ -10,6 +10,9 @@ import Wishlist from "./pages/Wishlist";
 import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
+import {apiBaseUrl} from '../src/api'
+import { useState, useEffect } from "react";
+
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:white');
@@ -18,13 +21,23 @@ console.log("%c****************", 'color:yellow');
 
 
 function App() {
+
+  const [allProducts, setAllProducts] = useState([])
+
+useEffect(() => {
+  fetch(`${apiBaseUrl}allproducts`)
+    .then((allProducts) => allProducts.json())
+    .then((productsArray) => setAllProducts(productsArray))
+    .catch((err) => console.log(err));
+}, [])
+
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="marketplace" element={<Marketplace />} />
+        <Route path="marketplace" element={<Marketplace allProducts={allProducts} />} />
         <Route path="set_product" element={<SetProduct />} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
