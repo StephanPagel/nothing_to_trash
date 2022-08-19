@@ -1,24 +1,24 @@
 .sidebar {
-    height: 100%;
-    width: 220px;
-    position: fixed;
-    z-index: 1;
-    overflow-x: hidden;
+
+    width: 200px;
+    padding-left: 50px;
     top: 0;
     left: 0;
-    background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: yellow;
+
+    .sidebar_category {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .sidebar_checkbox,
+    .sidebar_rating {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 }
 
-.sidebar_category {
-    display: grid;
-    grid-template-columns: auto auto;
-}
 
-.sidebar_checkbox,
-.sidebar_rating {
-    display: grid;
-    grid-template-columns: auto auto;
-}
 
 
 .sidebar_btn {
