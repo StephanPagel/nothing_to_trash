@@ -4,6 +4,7 @@ import ProductCard from "../components/ProductCard";
 import "./marketplace.scss";
 
 export default function Marketplace(props) {
+
   console.log(props.allProducts);
   return (
     <div className="marketplace">
