@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar'
 import ProductCard from '../components/ProductCard'
 import "./marketplace.scss"
 
-export default function Marketplace() {
+export default function Marketplace(props) {
     return (
         <div className="marketplace">
             <h1>Hilf mit die Umwelt zu schützen</h1>
@@ -16,7 +16,16 @@ export default function Marketplace() {
             </p>
             <Searchbar />
             <Sidebar />
-            <ProductCard />
+            {props.allProducts.map((product) =>(
+            <ProductCard
+            key={product.id}
+            img={product.filename}
+            price={product.price}
+            title={product.title}
+            description={product.description}
+
+            />
+            ))}
         </div>
     )
 }
