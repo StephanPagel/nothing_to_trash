@@ -2,6 +2,26 @@ import "./productCard.scss";
 import { apiBaseUrl } from "../api";
 
 export default function ProductCard(props) {
+
+// conditionSwitch(props.condition) {
+//   switch(props.condition){
+//                 case "conditionAsNew":
+//                   return "Wie neu"
+//                 break;
+//                 case "conditionGood":
+//                   return "Gut"
+//                 break;
+//                 case "conditionClearlyUsed":
+//                   return "Deutliche Gebrauchsspuren"
+//                 break;
+//                 case "conditionDefect":
+//                   return "Defekt"
+//                 break;
+//                 default: 
+//                 return "Kein Zustand ausgewählt"
+//                 }
+// }
+
   return (
     <div className="product_card">
       <div className="product">
