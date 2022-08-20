@@ -1,5 +1,6 @@
 import "./searchbar.scss"
 import { AiOutlineSearch } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 export default function Searchbar() {
     return (
@@ -9,7 +10,7 @@ export default function Searchbar() {
                 <a className="search_btn" href="#"></a>
                 <i className="fa_searchbar"></i>
             </div>
-            <button className="btn_search">Produkt einstellen</button>
+            <button className="btn_search"><Link to="/set_product">Produkt einstellen</Link></button>
         </div>
     )
 }

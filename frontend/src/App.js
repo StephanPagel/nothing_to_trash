@@ -11,6 +11,7 @@ import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
+import AuthRequired from "./components/AuthRequired";
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:blue');
@@ -26,16 +27,17 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar errorMessageausLogin={errorMessage} setToken={setToken} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login setToken={setToken} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
-        <Route path="login" element={<Login setToken={setToken} />} />
-        <Route
-          path="marketplace"
-          element={<Marketplace allProducts={allProducts} />}
+
+        <Route path="marketplace" element={<Marketplace allProducts={allProducts} />}
         />
-        <Route path="set_product" element={<SetProduct />} />
+        <Route path="set_product" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <SetProduct token={token} setToken={setToken} />
+          </AuthRequired>} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="wishlist" element={<Wishlist />} />
