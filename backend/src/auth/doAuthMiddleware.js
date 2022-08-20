@@ -50,5 +50,5 @@ function extractTokenFromRequest(req, tokenType = "access") {
 }
 
 module.exports = {
-    makeDoAuthMiddleware,
+    makeDoAuthMiddleware
 };
