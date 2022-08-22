@@ -1,6 +1,7 @@
 import "./setProductForm.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
+import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 
 const SetProductForm = () => {
   const [adType, setAdType] = useState("");
@@ -94,7 +95,7 @@ const SetProductForm = () => {
 
   return (
 
-    <form encType="multipart/form-data">
+    <form className="form_setP" encType="multipart/form-data">
       <label>Anzeigentyp:</label>
       <input
         type="radio"
@@ -298,13 +299,11 @@ const SetProductForm = () => {
 
       <label>Zu verschenken</label>
       <label>Bilder:</label>
-      <input
-        type="file"
+      <MdOutlineAddPhotoAlternate type="file"
         name="uploadImage"
         id="uploadImage"
         ref={fileInputRef}
-        onChange={onFileChange}
-      />
+        onChange={onFileChange} />
 
       <label>Kategorie:</label>
       <select
