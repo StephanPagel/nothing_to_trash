@@ -61,7 +61,7 @@ function App() {
           }
         />
         <Route path="set_product" element={<SetProduct />} />
-        <Route path="product_details" element={<ProductDetail />} />
+        <Route path="product_details/:id" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="about_us" element={<AboutUs />} />

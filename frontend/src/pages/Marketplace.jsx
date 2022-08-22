@@ -5,7 +5,6 @@ import "./marketplace.scss";
 
 export default function Marketplace(props) {
 
-  console.log(props.allProducts);
   return (
     <div className="marketplace">
       <h1>Hilf mit die Umwelt zu schützen</h1>
@@ -22,6 +21,7 @@ export default function Marketplace(props) {
         props.allProducts.map((product) => (
           <ProductCard
             key={product._id}
+            id={product._id}
             adType={product.adType}
             delivery={product.delivery}
             title={product.title}

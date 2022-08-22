@@ -1,33 +1,41 @@
-import "./productDetail.scss"
-import sofa from '../images/marketplace_sofa.jpg'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { apiBaseUrl } from "../api";
+import "./productDetail.scss";
 
 export default function ProductDetail() {
+  const { id } = useParams();
+  const [productDetails, setProductDetails] = useState([]);
+
+  useEffect(() => {
+    fetch(`${apiBaseUrl}products/allproducts/` + id)
+      .then((productDetails) => productDetails.json())
+      .then((detailsArray) => setProductDetails(detailsArray))
+  }, []);
+
   return (
     <div>
-      <img src={sofa} alt="product" />
-      <span>Couch</span>
-      <h2>45.00 EUR</h2>
+      <img
+        src={
+          productDetails.filename && `${apiBaseUrl}/${productDetails.filename}`
+        }
+        alt="product"
+      />
+      <span>{productDetails.title}</span>
+      <h2>{productDetails.price}</h2>
       <p>Zustand</p>
-      <p>Wie neu</p>
+      <p>{productDetails.condition}</p>
       <p>Marke</p>
-      <p>SofaXL</p>
+      <p>{productDetails.brand}</p>
       <p>Lieferung</p>
-      <p>Ja</p>
-      <p>1 Stk</p>
+      <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
+      <p>Anzahl</p>
+      <p>{productDetails.amount}</p>
       <button>♡ Auf die Wunschliste</button>
       <span>Produktbeschreibung</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac id
-        elementum nec dolor. Ridiculus diam ac tellus id egestas mauris sed
-        etiam. Amet, at eu tristique quis. Massa fermentum eget pharetra magna
-        vitae vitae ultricies consequat. Amet, integer diam sit netus
-        adipiscing eu vestibulum vitae ut. Sem vel fringilla malesuada amet.
-        Tellus massa amet porta vel in. Viverra non proin tempus viverra
-        rhoncus volutpat ac. Accumsan facilisi orci et amet vitae mauris
-        scelerisque sed.
-      </p>
+      <p>{productDetails.descriptionLong}</p>
       <button>Bearbeiten</button>
       <button>Verkauft</button>
     </div>
-  )
+  );
 }

@@ -21,7 +21,7 @@ const SetProductForm = () => {
   const [phone, setPhone] = useState("");
   const [imageFile, setImageFile] = useState(null);
 
-  const fileInputRef = useRef()
+  const fileInputRef = useRef();
 
   const onFileChange = (e) => {
     const productImage = e.target.files[0];
@@ -30,19 +30,6 @@ const SetProductForm = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-
-    //NICE TO HAVE => Validierungskram
-    // const formIsFilled =
-    //   username &&
-    //   username.length > 0 &&
-    //   email &&
-    //   email.length > 0 &&
-    //   avatar !== null;
-    // if (!formIsFilled) {
-    //   return setErrorMessage(
-    //     "Please fill out the form completely... All the memebers are already waiting for you!"
-    //   );
-    // }
 
     const formData = new FormData();
 
