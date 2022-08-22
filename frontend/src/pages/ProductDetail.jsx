@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "../api";
 import "./productDetail.scss";
 
@@ -7,11 +7,22 @@ export default function ProductDetail() {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState([]);
 
+  const navigator = useNavigate();
+
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts/` + id)
       .then((productDetails) => productDetails.json())
-      .then((detailsArray) => setProductDetails(detailsArray))
+      .then((detailsArray) => setProductDetails(detailsArray));
   }, []);
+
+  const deleteProduct = () => {
+    fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then(() => navigator("/"))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
@@ -36,6 +47,7 @@ export default function ProductDetail() {
       <p>{productDetails.descriptionLong}</p>
       <button>Bearbeiten</button>
       <button>Verkauft</button>
+      <button onClick={deleteProduct}>Produkt löschen</button>
     </div>
   );
 }
