@@ -1,54 +1,41 @@
-import "./productDetail.scss"
-import sofa from '../images/marketplace_sofa.jpg'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { apiBaseUrl } from "../api";
+import "./productDetail.scss";
 
 export default function ProductDetail() {
+  const { id } = useParams();
+  const [productDetails, setProductDetails] = useState([]);
+
+  useEffect(() => {
+    fetch(`${apiBaseUrl}products/allproducts/` + id)
+      .then((productDetails) => productDetails.json())
+      .then((detailsArray) => setProductDetails(detailsArray))
+  }, []);
+
   return (
-    <div className="product_details">
-      <div className="product_img">
-        <img src={sofa} alt="product" />
-      </div>
-      <div className="product_box">
-        <h1>Couch</h1>
-        <h2>45.00 EUR</h2>
-        <tbody>
-          <tr>
-            <td>Zustand</td>
-            <td>Wie neu</td>
-          </tr>
-          <tr>
-            <td>Marke</td>
-            <td>Sofa XXL</td>
-          </tr>
-          <tr>
-            <td>Lieferung</td>
-            <td>ja</td>
-          </tr>
-          <tr>
-            <td>Anzahl</td>
-            <td>1st</td>
-          </tr>
-        </tbody>
-        <div className="product_detail_btn">
-          <button><Link to="/wishlist">Wunschliste ❤️</Link></button>
-        </div>
-        <h3>Produktbeschreibung</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac id
-          elementum nec dolor. Ridiculus diam ac tellus id egestas mauris sed
-          etiam. Amet, at eu tristique quis. Massa fermentum eget pharetra magna
-          vitae vitae ultricies consequat. Amet, integer diam sit netus
-          adipiscing eu vestibulum vitae ut. Sem vel fringilla malesuada amet.
-          Tellus massa amet porta vel in. Viverra non proin tempus viverra
-          rhoncus volutpat ac. Accumsan facilisi orci et amet vitae mauris
-          scelerisque sed.
-        </p>
-      </div>
-      <div className="product_btn">
-        <button>Bearbeiten</button>
-        <button>Verkauft</button>
-      </div>
-      <div></div>
+    <div>
+      <img
+        src={
+          productDetails.filename && `${apiBaseUrl}/${productDetails.filename}`
+        }
+        alt="product"
+      />
+      <span>{productDetails.title}</span>
+      <h2>{productDetails.price}</h2>
+      <p>Zustand</p>
+      <p>{productDetails.condition}</p>
+      <p>Marke</p>
+      <p>{productDetails.brand}</p>
+      <p>Lieferung</p>
+      <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
+      <p>Anzahl</p>
+      <p>{productDetails.amount}</p>
+      <button>♡ Auf die Wunschliste</button>
+      <span>Produktbeschreibung</span>
+      <p>{productDetails.descriptionLong}</p>
+      <button>Bearbeiten</button>
+      <button>Verkauft</button>
     </div>
   );
 }
