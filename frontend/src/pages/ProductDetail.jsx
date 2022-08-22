@@ -9,17 +9,30 @@ export default function ProductDetail() {
         <img src={sofa} alt="product" />
       </div>
       <div className="product_box">
-        <span>Couch</span>
+        <h1>Couch</h1>
         <h2>45.00 EUR</h2>
-        <p>Zustand</p>
-        <p>Wie neu</p>
-        <p>Marke</p>
-        <p>SofaXL</p>
-        <p>Lieferung</p>
-        <p>Ja</p>
-        <p>1 Stk</p>
-        <button><Link to="/wishlist">Wunschliste ❤️</Link></button>
-        <span>Produktbeschreibung</span>
+        <tbody>
+          <tr>
+            <td>Zustand</td>
+            <td>Wie neu</td>
+          </tr>
+          <tr>
+            <td>Marke</td>
+            <td>Sofa XXL</td>
+          </tr>
+          <tr>
+            <td>Lieferung</td>
+            <td>ja</td>
+          </tr>
+          <tr>
+            <td>Anzahl</td>
+            <td>1st</td>
+          </tr>
+        </tbody>
+        <div className="product_detail_btn">
+          <button><Link to="/wishlist">Wunschliste ❤️</Link></button>
+        </div>
+        <h3>Produktbeschreibung</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac id
           elementum nec dolor. Ridiculus diam ac tellus id egestas mauris sed
