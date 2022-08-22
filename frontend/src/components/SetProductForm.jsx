@@ -93,6 +93,7 @@ const SetProductForm = () => {
   };
 
   return (
+
     <form encType="multipart/form-data">
       <label>Anzeigentyp:</label>
       <input
@@ -106,6 +107,7 @@ const SetProductForm = () => {
           console.log(adType);
         }}
       />
+
       <label>Ich biete</label>
       <input
         type="radio"
@@ -118,6 +120,7 @@ const SetProductForm = () => {
           console.log(adType);
         }}
       />
+
       <label>Ich suche</label>
       <label>Lieferung:</label>
       <input
@@ -131,6 +134,7 @@ const SetProductForm = () => {
           console.log(delivery);
         }}
       />
+
       <label>Ja</label>
       <input
         type="radio"
@@ -143,6 +147,7 @@ const SetProductForm = () => {
           console.log(delivery);
         }}
       />
+
       <label>Nein</label>
       <label>Titel der Anzeige:</label>
       <input
@@ -152,6 +157,7 @@ const SetProductForm = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+
       <label>Marke:</label>
       <input
         type="text"
@@ -160,6 +166,7 @@ const SetProductForm = () => {
         value={brand}
         onChange={(e) => setBrand(e.target.value)}
       />
+
       <label>Zustand:</label>
       <input
         type="radio"
@@ -172,6 +179,7 @@ const SetProductForm = () => {
           console.log(condition);
         }}
       />
+
       <label>Wie neu</label>
       <input
         type="radio"
@@ -184,6 +192,7 @@ const SetProductForm = () => {
           console.log(condition);
         }}
       />
+
       <label>Gut</label>
       <input
         type="radio"
@@ -196,6 +205,7 @@ const SetProductForm = () => {
           console.log(condition);
         }}
       />
+
       <label>Deutliche Gebrauchsspuren</label>
       <input
         type="radio"
@@ -208,6 +218,7 @@ const SetProductForm = () => {
           console.log(condition);
         }}
       />
+
       <label>Defekt</label>
       <label>Beschreibung kurz:</label>
       <input
@@ -216,8 +227,11 @@ const SetProductForm = () => {
         id="descriptionShort"
         value={descriptionShort}
         onChange={(e) => setDescriptionShort(e.target.value)}
-      ></input>
+      >
+
+      </input>
       <label>Beschreibung lang:</label>
+
       <textarea
         name="descriptionLong"
         id="descriptionLong"
@@ -225,7 +239,9 @@ const SetProductForm = () => {
         rows="5"
         value={descriptionLong}
         onChange={(e) => setDescriptionLong(e.target.value)}
-      ></textarea>
+      >
+      </textarea>
+
       <label>Anzahl:</label>
       <input
         type="number"
@@ -234,6 +250,7 @@ const SetProductForm = () => {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
+
       <label>Preis:</label>
       <input
         type="number"
@@ -242,6 +259,7 @@ const SetProductForm = () => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+
       <label>EUR</label>
       <input
         type="radio"
@@ -253,6 +271,7 @@ const SetProductForm = () => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>Festpreis</label>
       <input
         type="radio"
@@ -264,6 +283,7 @@ const SetProductForm = () => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>VB</label>
       <input
         type="radio"
@@ -275,6 +295,7 @@ const SetProductForm = () => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>Zu verschenken</label>
       <label>Bilder:</label>
       <input
@@ -284,6 +305,7 @@ const SetProductForm = () => {
         ref={fileInputRef}
         onChange={onFileChange}
       />
+
       <label>Kategorie:</label>
       <select
         value={category.value}
@@ -295,6 +317,7 @@ const SetProductForm = () => {
         <option value="kleidung">Kleidung</option>
         <option value="trainer">Trainer</option>
       </select>
+
       <label>PLZ/Ort*</label>
       <input
         type="text"
@@ -305,6 +328,7 @@ const SetProductForm = () => {
         value={zip}
         onChange={(e) => setZip(e.target.value)}
       />
+
       <input
         type="text"
         name="city"
@@ -314,6 +338,7 @@ const SetProductForm = () => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
+
       <label>Straße/Nr.*</label>
       <input
         type="text"
@@ -324,6 +349,7 @@ const SetProductForm = () => {
         value={street}
         onChange={(e) => setStreet(e.target.value)}
       />
+
       <label>Name*</label>
       <input
         type="text"
@@ -334,6 +360,7 @@ const SetProductForm = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+
       <label>Telefonnummer</label>
       <input
         type="number"
@@ -344,8 +371,9 @@ const SetProductForm = () => {
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
+
       <button onClick={submitForm}>Produkt einstellen</button>
-    </form>
+    </form >
   );
 };
 
