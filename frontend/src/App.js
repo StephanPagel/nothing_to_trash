@@ -69,6 +69,7 @@ function App() {
         />
         <Route path="set_product" element={<SetProduct token={token} />} />
         <Route path="product_details/:id" element={<ProductDetail productDetails={productDetails} setProductDetails={setProductDetails} />} />
+
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
