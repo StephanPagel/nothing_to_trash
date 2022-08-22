@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../api";
 
 export default function Searchbar() {
+
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {

@@ -47,7 +47,7 @@ const AuthRequired = ({ token, children, setToken }) => {
     }
 
     if (!token) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/register" />;
     }
 
     return <>{children}</>;

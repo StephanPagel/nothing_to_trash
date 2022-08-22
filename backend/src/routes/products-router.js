@@ -4,7 +4,9 @@ const { showProducts } = require("./../use-cases/showProducts");
 const { findProductDetails } = require("./../use-cases/findProductById");
 const { deleteProduct } = require("./../use-cases/deleteProduct");
 const { updateProductById } = require("./../use-cases/updateProduct");
+const { makeDoAuthMiddleware } = require("./../auth/doAuthMiddleware");
 const multer = require("multer");
+const doAuthMiddleware = makeDoAuthMiddleware("access");
 
 const productsRouter = express.Router();
 
@@ -18,7 +20,9 @@ const storage = multer.diskStorage({
 });
 const uploadMiddleware = multer({ storage }).single("imageFile");
 
-productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
+productsRouter.post("/addnewProduct", doAuthMiddleware, uploadMiddleware, (req, res) => {
+
+  const userId = req.userClaims.sub;
   if (!req.body) {
     res.status(400).json({ error: "Please include a item." });
     return;
@@ -42,6 +46,7 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
     name: req.body.name,
     phone: req.body.phone,
     sold: false,
+    userId: userId,
     // HIER MUSS DER PATH, aber wie??????
     filename: req.file.filename,
   };

@@ -2,7 +2,7 @@ import "./setProductForm.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
 
-const SetProductForm = () => {
+const SetProductForm = ({ token }) => {
   const [adType, setAdType] = useState("");
   const [delivery, setDelivery] = useState("");
   const [title, setTitle] = useState("");
@@ -66,6 +66,9 @@ const SetProductForm = () => {
     formData.append("imageFile", imageFile, imageFile.name); // Blob = Binary Large Object
 
     fetch(`${apiBaseUrl}products/addnewProduct`, {
+      headers: {
+        token: `JWT ${token}`,
+      },
       method: "post",
       body: formData,
       // credentials: true
@@ -115,7 +118,6 @@ const SetProductForm = () => {
         checked={adType === "adTypeSearch"}
         onChange={(e) => {
           setAdType(e.target.value);
-          console.log(adType);
         }}
       />
       <label>Ich suche</label>
@@ -140,7 +142,6 @@ const SetProductForm = () => {
         checked={delivery === "deliveryNo"}
         onChange={(e) => {
           setDelivery(e.target.value);
-          console.log(delivery);
         }}
       />
       <label>Nein</label>
