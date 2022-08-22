@@ -31,7 +31,7 @@ const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
                 setToken(result.accessToken);
                 setErrorMessage(null);
                 // Route noch anpassen Wohin soll das gehen?
-                navigate("/marketplace");
+                navigate("/userprofil");
             });
     };
 

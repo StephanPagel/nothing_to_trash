@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
+import UsersProducts from "./components/UsersProducts";
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:blue');
@@ -25,6 +26,7 @@ function App() {
   const [token, setToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [allProducts, setAllProducts] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
@@ -71,7 +73,13 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="userprofil" element={
           <AuthRequired token={token} setToken={setToken}>
-            <UserProfil />
+            <UserProfil userData={userData} setUserData={setUserData}
+              token={token} setToken={setToken} setErrorMessage={setErrorMessage} allProducts={allProducts} />
+          </AuthRequired>
+        } />
+        <Route path="usersproducts" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <UsersProducts userData={userData} setUserData={setUserData} />
           </AuthRequired>
         } />
       </Routes>
