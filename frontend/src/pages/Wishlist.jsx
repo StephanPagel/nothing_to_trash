@@ -1,7 +1,7 @@
-import ProductCard from '../components/ProductCard';
-import Searchbar from '../components/Searchbar'
-import Sidebar from '../components/Sidebar';
-import "./wishlist.scss"
+import ProductCard from "../components/ProductCard";
+import Searchbar from "../components/Searchbar";
+import Sidebar from "../components/Sidebar";
+import "./wishlist.scss";
 
 export default function Wishlist(props) {
   return (

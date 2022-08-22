@@ -6,13 +6,11 @@ export default function ProductCard(props) {
   return (
     <div className="product_card">
       <div className="product">
-        {/* <img src={chair} alt="product" /> */}
-
-        <img
-          src={props.filename && `${apiBaseUrl}/${props.filename}`}
-          alt="product"
-        />
-
+                <img
+                    src={props.filename && `${apiBaseUrl}/${props.filename}`}
+                    alt="product"
+                />
+                
         <div className="product_title">
           <h3>{props.price}</h3>
           <h3>{props.title}</h3>

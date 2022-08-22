@@ -67,7 +67,7 @@ export default function Sidebar() {
       <h3>Preis</h3>
       <div>
         <input type="range" name="" id="" />
-        <p>Slider wird noch umgebaut. Bitte mit Styling warten</p>
+        <p></p>
       </div>
       <div>
         <button className="sidebar_btn">Anwenden</button>

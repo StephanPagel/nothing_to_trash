@@ -78,10 +78,32 @@ function deleteProductById(id) {
   );
 }
 
+function findProductsByUserId(userId) {
+  return new Promise(() => {
+    injectDB()
+      .then((db) => {
+        db.collection(productsCollectionName)
+          .find({ userId: userId })
+          .toArray();
+        return productsOfUser;
+      })
+  })
+};
+
+async function findProductsByUserId(userId) {
+  const db = await injectDB();
+  const productsOfUser = await db
+    .collection(productsCollectionName)
+    .find({ userId: userId })
+    .toArray();
+  return productsOfUser;
+}
+
 module.exports = {
   addNewProduct,
   getAllProducts,
   findProductById,
   deleteProductById,
   updateProduct,
+  findProductsByUserId
 };

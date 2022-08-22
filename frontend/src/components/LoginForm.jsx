@@ -31,7 +31,7 @@ const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
                 setToken(result.accessToken);
                 setErrorMessage(null);
                 // Route noch anpassen Wohin soll das gehen?
-                navigate("/marketplace");
+                navigate("/userprofil");
             });
     };
 
@@ -63,14 +63,14 @@ const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
                     Login
                 </button>
             </div>
-            /* {errorMessage && (
+            {errorMessage && (
 
-    <div>
-        <p>{errorMessage}</p>
-    </div>
-)}
-</div>
-);
+                <div>
+                    <p>{errorMessage}</p>
+                </div>
+            )}
+        </div>
+    );
 };
 
 export default LoginForm;

@@ -1,0 +1,41 @@
+.product_details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+    height: 50%;
+    background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+    img {
+        grid-area: 1 / 2;
+        width: 80%;
+        height: 80%;
+        margin: 20px;
+        border-radius: 6px;
+    }
+
+    p,
+    h2,
+    h3 {
+        padding: 15px 0px;
+    }
+
+    h1 {
+        padding-top: 40px;
+    }
+
+    .product_detail_btn {
+        padding-right: 590px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    button {
+        border: none;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    button:hover {
+        background-color: lightgrey;
+    }
+}

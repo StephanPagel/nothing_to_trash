@@ -36,10 +36,18 @@ input[type=search]:focus {
     padding-bottom: 20px;
 }
 
+.searchbar_box {
+    padding-bottom: 20px;
+}
+
 .btn_search {
     border: none;
     border-radius: 6px;
     color: #7854F7;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px 20px;
+}
+
+.btn_search:hover {
+    background-color: lightgrey;
 }
