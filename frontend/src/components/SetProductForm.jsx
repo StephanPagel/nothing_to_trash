@@ -165,8 +165,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionAsNew"
-        value="conditionAsNew"
-        checked={condition === "conditionAsNew"}
+        value="Wie neu"
+        checked={condition === "Wie neu"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -176,9 +176,9 @@ const SetProductForm = () => {
       <input
         type="radio"
         name="condition"
-        id="conditionGood"
-        value="conditionGood"
-        checked={condition === "conditionGood"}
+        id="Gut"
+        value="Gut"
+        checked={condition === "Gut"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -189,8 +189,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionClearlyUsed"
-        value="conditionClearlyUsed"
-        checked={condition === "conditionClearlyUsed"}
+        value="Deutliche Gebrauchsspuren"
+        checked={condition === "Deutliche Gebrauchsspuren"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -201,8 +201,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionDefect"
-        value="conditionDefect"
-        checked={condition === "conditionDefect"}
+        value="Defekt"
+        checked={condition === "Defekt"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
