@@ -1,7 +1,7 @@
 const { UsersDAO, ProductsDAO } = require("./../database");
 const { makeUser } = require("./../domain/User");
 
-async function showUserProfil({ userId }) {
+async function addProducttoUsersWishlist({ userId, productId }) {
     const foundUser = await UsersDAO.findUserById(userId);
     if (!foundUser) {
         throw new Error("User not found");
@@ -9,16 +9,16 @@ async function showUserProfil({ userId }) {
 
     const user = makeUser(foundUser);
 
-    const products = await ProductsDAO.findProductsByUserId(userId);
+    const product = await ProductsDAO.findProductById(productId);
+    const wishlistArray = []
 
     return {
         _id: user._id,
-        username: user.username,
-        email: user.email,
-        products: products
+        wishlist: wishlistArray.push(product)
     };
 }
 
+
 module.exports = {
-    showUserProfil
+    addProducttoUsersWishlist
 };

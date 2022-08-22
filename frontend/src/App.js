@@ -1,13 +1,13 @@
 import { apiBaseUrl } from "./api";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./App.scss"
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Marketplace from "./pages/Marketplace";
 import SetProduct from "./pages/SetProduct";
-import Wishlist from "./pages/Wishlist";
 import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
 import UsersProducts from "./components/UsersProducts";
+import Wishlist from "./components/Wishlist";
 
 console.log("%c****************", 'color:yellow');
 console.log("%cNOTHING TO TRASH", 'color:blue');
@@ -27,6 +28,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [allProducts, setAllProducts] = useState([]);
   const [userData, setUserData] = useState([]);
+  const [productDetails, setProductDetails] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
@@ -55,7 +57,7 @@ function App() {
         />
         <Route
           path="marketplace"
-          element={<Marketplace allProducts={allProducts} />}
+          element={<Marketplace allProducts={allProducts} token={token} setToken={setToken} />}
         />
         <Route
           path="set_product"
@@ -66,9 +68,9 @@ function App() {
           }
         />
         <Route path="set_product" element={<SetProduct token={token} />} />
-        <Route path="product_details/:id" element={<ProductDetail />} />
+        <Route path="product_details/:id" element={<ProductDetail productDetails={productDetails} setProductDetails={setProductDetails} />} />
+
         <Route path="sold" element={<AlreadySold />} />
-        <Route path="wishlist" element={<Wishlist />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
         <Route path="userprofil" element={
@@ -82,6 +84,7 @@ function App() {
             <UsersProducts userData={userData} setUserData={setUserData} />
           </AuthRequired>
         } />
+        <Route path="wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </div>
