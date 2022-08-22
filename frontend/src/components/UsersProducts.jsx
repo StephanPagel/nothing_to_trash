@@ -1,12 +1,10 @@
-import ProductCard from "./../components/ProductCard"
-import SidebarUserProfil from "./../components/SidebarUserProfil"
+import ProductCard from "./../components/ProductCard";
 
-const UserProfil = (props) => {
+const UsersProducts = (props) => {
+    console.log(props.userData.products)
     return (<div>
-
-        <SidebarUserProfil token={props.token} setToken={props.setToken} setUserData={props.setUserData} userData={props.userData} setErrorMessage={props.setErrorMessage} />
-        {props.allProducts &&
-            props.allProducts.map((product) => (
+        {props.userData &&
+            props.userData.products.map((product) => (
                 <ProductCard
                     key={product._id}
                     adType={product.adType}
@@ -26,4 +24,4 @@ const UserProfil = (props) => {
     </div>);
 }
 
-export default UserProfil;
+export default UsersProducts;

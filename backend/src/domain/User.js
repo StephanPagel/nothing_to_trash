@@ -1,4 +1,4 @@
-function makeUser({ _id, username, email, passwordHash, passwordSalt }) {
+function makeUser({ _id, username, email, passwordHash, passwordSalt, products }) {
   if (!email) {
     throw new Error("email must exist");
   }
@@ -9,6 +9,7 @@ function makeUser({ _id, username, email, passwordHash, passwordSalt }) {
     email,
     passwordHash,
     passwordSalt,
+    products
   };
 }
 
