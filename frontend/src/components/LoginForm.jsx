@@ -5,7 +5,7 @@ import "./loginForm.scss";
 
 const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
     const [email, setEmail] = useState("max.mustermann@gmail.com");
-    const [password, setPassword] = useState("max1234");
+    const [password, setPassword] = useState("max123");
 
     const navigate = useNavigate();
     const login = (event) => {
@@ -36,34 +36,41 @@ const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
     };
 
     return (
-        <div>
-            <label htmlFor="email">Emailaddress</label>
-            <input type="text"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="password">Passwort</label>
-            <input type="text"
-                name="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-                onClick={login}
-            >
-                Login
-            </button>
-
-            {errorMessage && (
-                <div>
-                    <p>{errorMessage}</p>
+        <div className="login">
+            <div className="login_container">
+                <h1>Log dich ein!</h1>
+                <div className="form">
+                    <input type="text"
+                        placeholder="E-Mail Adresse"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
-            )}
-        </div>
-    );
+                <div className="form">
+                    <input type="password"
+                        placeholder="Passwort"
+                        name="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button
+                    onClick={login}
+                >
+                    Login
+                </button>
+            </div>
+            /* {errorMessage && (
+
+    <div>
+        <p>{errorMessage}</p>
+    </div>
+)}
+</div>
+);
 };
 
 export default LoginForm;

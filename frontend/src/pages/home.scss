@@ -95,3 +95,18 @@
         height: 750px;
     }
 }
+
+.home_details {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+
+    h2 {
+        color: white;
+    }
+
+    p {
+        padding-right: 800px;
+        margin: 30px 0px;
+    }
+}

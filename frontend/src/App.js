@@ -48,7 +48,6 @@ function App() {
             />
           }
         />
-
         <Route
           path="marketplace"
           element={<Marketplace allProducts={allProducts} />}
@@ -74,3 +73,4 @@ function App() {
 }
 
 export default App;
+//element={<Marketplace allProducts={allProducts} 
