@@ -1,5 +1,5 @@
-import "./productDetail.scss"
-import sofa from '../images/marketplace_sofa.jpg'
+import "./productDetail.scss";
+import sofa from "../images/marketplace_sofa.jpg";
 
 export default function ProductDetail() {
   return (
@@ -20,14 +20,13 @@ export default function ProductDetail() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac id
         elementum nec dolor. Ridiculus diam ac tellus id egestas mauris sed
         etiam. Amet, at eu tristique quis. Massa fermentum eget pharetra magna
-        vitae vitae ultricies consequat. Amet, integer diam sit netus
-        adipiscing eu vestibulum vitae ut. Sem vel fringilla malesuada amet.
-        Tellus massa amet porta vel in. Viverra non proin tempus viverra
-        rhoncus volutpat ac. Accumsan facilisi orci et amet vitae mauris
-        scelerisque sed.
+        vitae vitae ultricies consequat. Amet, integer diam sit netus adipiscing
+        eu vestibulum vitae ut. Sem vel fringilla malesuada amet. Tellus massa
+        amet porta vel in. Viverra non proin tempus viverra rhoncus volutpat ac.
+        Accumsan facilisi orci et amet vitae mauris scelerisque sed.
       </p>
       <button>Bearbeiten</button>
       <button>Verkauft</button>
     </div>
-  )
+  );
 }
