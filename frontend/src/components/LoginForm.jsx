@@ -5,7 +5,7 @@ import "./loginForm.scss";
 
 const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
     const [email, setEmail] = useState("max.mustermann@gmail.com");
-    const [password, setPassword] = useState("max1234");
+    const [password, setPassword] = useState("max123");
 
     const navigate = useNavigate();
     const login = (event) => {
