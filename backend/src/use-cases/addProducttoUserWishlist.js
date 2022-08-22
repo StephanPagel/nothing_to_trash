@@ -1,15 +1,21 @@
 const { UsersDAO, ProductsDAO } = require("./../database");
-const { makeProduct } = require("./../domain/Product");
+const { makeUser } = require("./../domain/User");
 
 async function addProducttoUsersWishlist({ userId, productId }) {
-    const foundProduct = await ProductsDAO.findProductById(productId);
-    if (!foundProduct) {
-        throw new Error("Product not found");
+    const foundUser = await UsersDAO.findUserById(userId);
+    if (!foundUser) {
+        throw new Error("User not found");
     }
 
-    const product = makeProduct(foundProduct);
+    const user = makeUser(foundUser);
 
-    const wishlist = await ProductsDAO.findProductsByUserId(userId);
+    const product = await ProductsDAO.findProductById(productId);
+    const wishlistArray = []
+
+    return {
+        _id: user._id,
+        wishlist: wishlistArray.push(product)
+    };
 }
 
 

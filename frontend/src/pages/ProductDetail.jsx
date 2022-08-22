@@ -3,9 +3,8 @@ import { useParams } from "react-router-dom";
 import { apiBaseUrl } from "../api";
 import "./productDetail.scss";
 
-export default function ProductDetail() {
+export default function ProductDetail({ productDetails, setProductDetails }) {
   const { id } = useParams();
-  const [productDetails, setProductDetails] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts/` + id)

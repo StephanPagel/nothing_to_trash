@@ -1,8 +1,11 @@
 import "./productCard.scss";
 import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../api";
+import Wishlistbutton from "./Wishlistbutton";
 
 export default function ProductCard(props) {
+
+
 
     // conditionSwitch(props.condition) {
     //   switch(props.condition){
@@ -25,44 +28,27 @@ export default function ProductCard(props) {
 
     return (
         <div className="product_card">
-            <div className="product">
-
-                <img
-                    src={props.filename && `${apiBaseUrl}/${props.filename}`}
-                    alt="product"
-                />
-
-                <div className="product_title">
+            <div className="productCard">
+                <img src={props.filename && `${apiBaseUrl}/${props.filename}`} alt="product" />
+                <div className="productCard_title">
                     <h3>{props.price}</h3>
                     <h3>{props.title}</h3>
                     <h4>{props.descriptionShort}</h4>
+                    <div className="productCard_details">
+                        <h5>Zustand</h5>
+                        <p><span>{props.condition}</span></p>
+                        <h5>Marke</h5>
+                        <p>{props.brand}</p>
+                        <h5>Lieferung</h5>
+                        <p>{props.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
+                        <h5>Auf Lager</h5>
+                        <p><span>{props.amount}</span></p>
+                    </div>
                 </div>
-                <table className="product_details">
-                    <tbody>
-                        <tr>
-                            <td>Zustand</td>
-                            <td>
-                                <span>{props.condition}</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Marke</td>
-                            <td>{props.brand}</td>
-                        </tr>
-                        <tr>
-                            <td>Lieferung</td>
-                            <td>{props.delivery === "deliveryYes" ? "Ja" : "Nein"}</td>
-                        </tr>
-                        <tr>
-                            <td>Auf Lager</td>
-                            <td>
-                                <span>{props.amount}</span>
-                            </td>
-                        </tr>
-                        <button><Link to="/product_details">Details</Link></button>
-                        <button><Link to="/wishlist">Wunschliste ❤️</Link></button>
-                    </tbody>
-                </table>
+                <div className="productCard_buttons">
+                    <button className="btn_lila"><Link to={`/product_details/${props.id}`}>Details</Link></button>
+                    <Wishlistbutton productId={props.id} token={props.token} />
+                </div>
             </div >
         </div >
     );
