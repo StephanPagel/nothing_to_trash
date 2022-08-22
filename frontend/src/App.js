@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Marketplace from "./pages/Marketplace";
 import SetProduct from "./pages/SetProduct";
-import Wishlist from "./pages/Wishlist";
 import AlreadySold from "./pages/AlreadySold";
 import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
@@ -68,7 +67,6 @@ function App() {
         <Route path="set_product" element={<SetProduct token={token} />} />
         <Route path="product_details" element={<ProductDetail />} />
         <Route path="sold" element={<AlreadySold />} />
-        <Route path="wishlist" element={<Wishlist />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
         <Route path="userprofil" element={
