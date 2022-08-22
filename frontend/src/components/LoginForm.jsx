@@ -3,11 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "./../api";
 import "./loginForm.scss";
 
-const LoginForm = ({ setToken
-    // , errorMessage, setErrorMessage 
-}) => {
+const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
     const [email, setEmail] = useState("max.mustermann@gmail.com");
-    const [password, setPassword] = useState("max1234");
+    const [password, setPassword] = useState("max123");
 
     const navigate = useNavigate();
     const login = (event) => {
@@ -27,12 +25,11 @@ const LoginForm = ({ setToken
             .then((res) => res.json())
             .then((result) => {
                 if (result.message) {
-                    return
-                    // setErrorMessage(result.message);
+                    return setErrorMessage(result.message);
                 }
 
                 setToken(result.accessToken);
-                // setErrorMessage(null);
+                setErrorMessage(null);
                 // Route noch anpassen Wohin soll das gehen?
                 navigate("/marketplace");
             });
@@ -67,10 +64,11 @@ const LoginForm = ({ setToken
                 </button>
             </div>
             {/* {errorMessage && (
+
                 <div>
                     <p>{errorMessage}</p>
                 </div>
-            )} */}
+            )}
         </div>
     );
 };

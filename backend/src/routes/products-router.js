@@ -41,6 +41,7 @@ productsRouter.post("/addnewProduct", uploadMiddleware, (req, res) => {
     street: req.body.street,
     name: req.body.name,
     phone: req.body.phone,
+    sold: false,
     // HIER MUSS DER PATH, aber wie??????
     filename: req.file.filename,
   };

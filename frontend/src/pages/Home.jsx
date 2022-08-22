@@ -15,7 +15,7 @@ export default function Home() {
           Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll
           zu reduzieren und trashnothing.
         </p>
-        <button><Link to="/setProduct">Starte jetzt!</Link></button>
+        <button><Link to="/register">Starte jetzt!</Link></button>
       </div>
       <div className="home_image"></div>
       <div className="home_image_two">

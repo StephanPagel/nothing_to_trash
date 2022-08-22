@@ -18,6 +18,7 @@ async function createProduct({
   street,
   name,
   phone,
+  sold,
   filename,
 }) {
   const product = makeProduct({
@@ -37,6 +38,7 @@ async function createProduct({
     street,
     name,
     phone,
+    sold,
     filename,
   });
   const insertResult = await ProductsDAO.addNewProduct(product);
