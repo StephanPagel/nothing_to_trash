@@ -24,7 +24,7 @@ console.log(
 function App() {
   const [token, setToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  //const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
