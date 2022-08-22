@@ -41,11 +41,14 @@
         background-color: #7854F7;
         color: #fff;
         border-style: solid;
-        border-color: white;
+        border: none;
         border-radius: 6px;
         cursor: pointer;
         padding: 5px;
-        margin: 10px;
+    }
+
+    .footer_btn {
+        background-color: white;
     }
 }
 

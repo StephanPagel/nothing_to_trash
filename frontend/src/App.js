@@ -15,12 +15,11 @@ import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
 
-console.log("%c****************", "color:yellow");
-console.log("%cNOTHING TO TRASH", "color:white");
-console.log(
-  "%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022",
-  "color:violet"
-);
+console.log("%c****************", 'color:yellow');
+console.log("%cNOTHING TO TRASH", 'color:blue');
+console.log("%c© Emre, Stephan, Alex, Michaela und Elias / SuperCode 2022", 'color:violet');
+console.log("%c****************", 'color:yellow');
+
 
 function App() {
   const [token, setToken] = useState(null);
@@ -39,6 +38,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="login" element={<Login setToken={setToken} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
+        <Route path="marketplace" element={<Marketplace allProducts={allProducts} />} />
+        <Route path="login" element={<Login setToken={setToken} />} />
         <Route
           path="login"
           element={
