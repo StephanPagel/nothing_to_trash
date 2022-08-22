@@ -1,7 +1,6 @@
 import "./productCard.scss";
+import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../api";
-import { Link } from 'react-router-dom';
-import Wishlistbutton from "./Wishlistbutton";
 
 export default function ProductCard(props) {
 
@@ -27,8 +26,6 @@ export default function ProductCard(props) {
     return (
         <div className="product_card">
             <div className="product">
-
-                {/* <img src={chair} alt="product" /> */}
 
                 <img
                     src={props.filename && `${apiBaseUrl}/${props.filename}`}
@@ -63,7 +60,7 @@ export default function ProductCard(props) {
                             </td>
                         </tr>
                         <button><Link to="/product_details">Details</Link></button>
-                        <Wishlistbutton />
+                        <button><Link to="/wishlist">Wunschliste ❤️</Link></button>
                     </tbody>
                 </table>
             </div >
