@@ -1,4 +1,4 @@
-.login_container {
+.register {
     background-image: url("../images/login.jpg");
     background-repeat: no-repeat;
     background-position: cover;
@@ -40,4 +40,25 @@ input[type=submit] {
     cursor: pointer;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: #ffb949c5;
+}
+
+.register_login {
+    position: absolute;
+    top: 26%;
+    right: 20%;
+    border-radius: 100px;
+    border: none;
+    background-color: rgb(249, 79, 79);
+    box-shadow: 10px 20px 15px silver;
+    color: white;
+    width: 10%;
+
+    .register_login_circle {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

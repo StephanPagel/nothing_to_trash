@@ -50,7 +50,7 @@ const RegisterForm = ({ setToken }) => {
     };
 
     return (
-        <div className="login_container">
+        <div className="register">
             <form className="form_container">
                 <h1>Registriere dich gleich hier:</h1>
                 <div className="form">
@@ -85,9 +85,11 @@ const RegisterForm = ({ setToken }) => {
                     <button onClick={() => setRegisterSuccessfull(false)}>Schließen</button>
                 </div>
             }
-            <div>
-                <h2>Hast du schon ein Nutzerkonto?</h2>
-                <Link to="/login">Dann geht's hier zum Login</Link>
+            <div className="register_login">
+                <div className="register_login_circle">
+                    <h2>Hast du schon ein Nutzerkonto?</h2>
+                    <Link to="/login">Dann geht's hier zum Login</Link>
+                </div>
             </div>
         </div>
     );
