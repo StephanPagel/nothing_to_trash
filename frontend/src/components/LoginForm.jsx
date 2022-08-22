@@ -36,28 +36,35 @@ const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
     };
 
     return (
-        <div>
-            <label htmlFor="email">Emailaddress</label>
-            <input type="text"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="password">Passwort</label>
-            <input type="text"
-                name="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-                onClick={login}
-            >
-                Login
-            </button>
+        <div className="login">
+            <div className="login_container">
+                <h1>Log dich ein!</h1>
+                <div className="form">
+                    <input type="text"
+                        placeholder="E-Mail Adresse"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form">
+                    <input type="password"
+                        placeholder="Passwort"
+                        name="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button
+                    onClick={login}
+                >
+                    Login
+                </button>
+            </div>
+            {/* {errorMessage && (
 
-            {errorMessage && (
                 <div>
                     <p>{errorMessage}</p>
                 </div>

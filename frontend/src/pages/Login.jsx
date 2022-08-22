@@ -5,7 +5,7 @@ import LoginForm from "./../components/LoginForm"
 export default function Login(props) {
     return (
         <div>
-            <div>
+            <div className="login">
                 <LoginForm setToken={props.setToken}
                     errorMessage={props.errorMessage}
                     setErrorMessage={props.setErrorMessage} />

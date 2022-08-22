@@ -50,23 +50,19 @@ const RegisterForm = ({ setToken }) => {
     };
 
     return (
-        <div>
-            <h1>Registriere dich gleich hier:</h1>
-            <form>
-                <div>
-                    <label htmlFor="username">Benutzername:</label>
+        <div className="register">
+            <form className="form_container">
+                <h1>Registriere dich gleich hier:</h1>
+                <div className="form">
                     <input type="text" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Benutzername" required />
                 </div>
-                <div>
-                    <label htmlFor="email">Emailaddresse:</label>
+                <div className="form">
                     <input type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
                 </div>
-                <div>
-                    <label htmlFor="password">Passwort:</label>
+                <div className="form">
                     <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                 </div>
-                <div>
-                    <label htmlFor="confirmPassword">Passwortbestätigung:</label>
+                <div className="form">
                     <input type="password" name="confirmPassword" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Password hier nochmal wiederholen" required />
                 </div>
                 <input type="submit" value="Registrieren" onClick={neuenNutzerRegistrieren} />
@@ -89,9 +85,11 @@ const RegisterForm = ({ setToken }) => {
                     <button onClick={() => setRegisterSuccessfull(false)}>Schließen</button>
                 </div>
             }
-            <div>
-                <h2>Hast du schon ein Nutzerkonto?</h2>
-                <Link to="/login">Dann geht's hier zum Login</Link>
+            <div className="register_login">
+                <div className="register_login_circle">
+                    <h2>Hast du schon ein Nutzerkonto?</h2>
+                    <Link to="/login">Dann geht's hier zum Login</Link>
+                </div>
             </div>
         </div>
     );

@@ -1,0 +1,64 @@
+.register {
+    background-image: url("../images/login.jpg");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+
+    .form_container {
+        background-color: white;
+        width: 50%;
+        align-items: center;
+        margin-left: 355px;
+        margin-top: 200px;
+        box-shadow: 10px 20px 15px silver;
+        border-radius: 20px;
+
+        h1 {
+            padding-bottom: 20px;
+        }
+
+        .form {
+            padding-bottom: 20px;
+
+            input[type=text],
+            input[type=password] {
+                border-color: #E8E8E8;
+                padding: 10px 30px;
+            }
+        }
+    }
+}
+
+input[type=submit] {
+    background-color: #FFBA49;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: #ffb949c5;
+}
+
+.register_login {
+    position: absolute;
+    top: 26%;
+    right: 20%;
+    border-radius: 100px;
+    border: none;
+    background-color: rgb(249, 79, 79);
+    box-shadow: 10px 20px 15px silver;
+    color: white;
+    width: 10%;
+
+    .register_login_circle {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
