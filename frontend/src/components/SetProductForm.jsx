@@ -1,6 +1,7 @@
 import "./setProductForm.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
+import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 
 const SetProductForm = ({ token }) => {
   const [adType, setAdType] = useState("");
@@ -96,7 +97,8 @@ const SetProductForm = ({ token }) => {
   };
 
   return (
-    <form encType="multipart/form-data">
+
+    <form className="form_setP" encType="multipart/form-data">
       <label>Anzeigentyp:</label>
       <input
         type="radio"
@@ -109,6 +111,7 @@ const SetProductForm = ({ token }) => {
           console.log(adType);
         }}
       />
+
       <label>Ich biete</label>
       <input
         type="radio"
@@ -120,6 +123,7 @@ const SetProductForm = ({ token }) => {
           setAdType(e.target.value);
         }}
       />
+
       <label>Ich suche</label>
       <label>Lieferung:</label>
       <input
@@ -133,6 +137,7 @@ const SetProductForm = ({ token }) => {
           console.log(delivery);
         }}
       />
+
       <label>Ja</label>
       <input
         type="radio"
@@ -144,6 +149,7 @@ const SetProductForm = ({ token }) => {
           setDelivery(e.target.value);
         }}
       />
+
       <label>Nein</label>
       <label>Titel der Anzeige:</label>
       <input
@@ -153,6 +159,7 @@ const SetProductForm = ({ token }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+
       <label>Marke:</label>
       <input
         type="text"
@@ -161,6 +168,7 @@ const SetProductForm = ({ token }) => {
         value={brand}
         onChange={(e) => setBrand(e.target.value)}
       />
+
       <label>Zustand:</label>
       <input
         type="radio"
@@ -173,6 +181,7 @@ const SetProductForm = ({ token }) => {
           console.log(condition);
         }}
       />
+
       <label>Wie neu</label>
       <input
         type="radio"
@@ -185,6 +194,7 @@ const SetProductForm = ({ token }) => {
           console.log(condition);
         }}
       />
+
       <label>Gut</label>
       <input
         type="radio"
@@ -197,6 +207,7 @@ const SetProductForm = ({ token }) => {
           console.log(condition);
         }}
       />
+
       <label>Deutliche Gebrauchsspuren</label>
       <input
         type="radio"
@@ -209,6 +220,7 @@ const SetProductForm = ({ token }) => {
           console.log(condition);
         }}
       />
+
       <label>Defekt</label>
       <label>Beschreibung kurz:</label>
       <input
@@ -217,8 +229,11 @@ const SetProductForm = ({ token }) => {
         id="descriptionShort"
         value={descriptionShort}
         onChange={(e) => setDescriptionShort(e.target.value)}
-      ></input>
+      >
+
+      </input>
       <label>Beschreibung lang:</label>
+
       <textarea
         name="descriptionLong"
         id="descriptionLong"
@@ -226,7 +241,9 @@ const SetProductForm = ({ token }) => {
         rows="5"
         value={descriptionLong}
         onChange={(e) => setDescriptionLong(e.target.value)}
-      ></textarea>
+      >
+      </textarea>
+
       <label>Anzahl:</label>
       <input
         type="number"
@@ -235,6 +252,7 @@ const SetProductForm = ({ token }) => {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
+
       <label>Preis:</label>
       <input
         type="number"
@@ -243,6 +261,7 @@ const SetProductForm = ({ token }) => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+
       <label>EUR</label>
       <input
         type="radio"
@@ -254,6 +273,7 @@ const SetProductForm = ({ token }) => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>Festpreis</label>
       <input
         type="radio"
@@ -265,6 +285,7 @@ const SetProductForm = ({ token }) => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>VB</label>
       <input
         type="radio"
@@ -276,15 +297,15 @@ const SetProductForm = ({ token }) => {
           setPriceOptions(e.target.value);
         }}
       />
+
       <label>Zu verschenken</label>
       <label>Bilder:</label>
-      <input
-        type="file"
+      <MdOutlineAddPhotoAlternate type="file"
         name="uploadImage"
         id="uploadImage"
         ref={fileInputRef}
-        onChange={onFileChange}
-      />
+        onChange={onFileChange} />
+
       <label>Kategorie:</label>
       <select
         value={category.value}
@@ -296,6 +317,7 @@ const SetProductForm = ({ token }) => {
         <option value="kleidung">Kleidung</option>
         <option value="trainer">Trainer</option>
       </select>
+
       <label>PLZ/Ort*</label>
       <input
         type="text"
@@ -306,6 +328,7 @@ const SetProductForm = ({ token }) => {
         value={zip}
         onChange={(e) => setZip(e.target.value)}
       />
+
       <input
         type="text"
         name="city"
@@ -315,6 +338,7 @@ const SetProductForm = ({ token }) => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
+
       <label>Straße/Nr.*</label>
       <input
         type="text"
@@ -325,6 +349,7 @@ const SetProductForm = ({ token }) => {
         value={street}
         onChange={(e) => setStreet(e.target.value)}
       />
+
       <label>Name*</label>
       <input
         type="text"
@@ -335,6 +360,7 @@ const SetProductForm = ({ token }) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+
       <label>Telefonnummer</label>
       <input
         type="number"
@@ -345,8 +371,9 @@ const SetProductForm = ({ token }) => {
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
+
       <button onClick={submitForm}>Produkt einstellen</button>
-    </form>
+    </form >
   );
 };
 
