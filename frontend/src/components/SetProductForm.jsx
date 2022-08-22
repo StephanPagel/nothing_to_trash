@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
 import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 
-const SetProductForm = () => {
+const SetProductForm = ({ token }) => {
   const [adType, setAdType] = useState("");
   const [delivery, setDelivery] = useState("");
   const [title, setTitle] = useState("");
@@ -67,6 +67,9 @@ const SetProductForm = () => {
     formData.append("imageFile", imageFile, imageFile.name); // Blob = Binary Large Object
 
     fetch(`${apiBaseUrl}products/addnewProduct`, {
+      headers: {
+        token: `JWT ${token}`,
+      },
       method: "post",
       body: formData,
       // credentials: true
@@ -118,7 +121,6 @@ const SetProductForm = () => {
         checked={adType === "adTypeSearch"}
         onChange={(e) => {
           setAdType(e.target.value);
-          console.log(adType);
         }}
       />
 
@@ -145,7 +147,6 @@ const SetProductForm = () => {
         checked={delivery === "deliveryNo"}
         onChange={(e) => {
           setDelivery(e.target.value);
-          console.log(delivery);
         }}
       />
 
@@ -173,8 +174,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionAsNew"
-        value="conditionAsNew"
-        checked={condition === "conditionAsNew"}
+        value="Wie neu"
+        checked={condition === "Wie neu"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -185,9 +186,9 @@ const SetProductForm = () => {
       <input
         type="radio"
         name="condition"
-        id="conditionGood"
-        value="conditionGood"
-        checked={condition === "conditionGood"}
+        id="Gut"
+        value="Gut"
+        checked={condition === "Gut"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -199,8 +200,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionClearlyUsed"
-        value="conditionClearlyUsed"
-        checked={condition === "conditionClearlyUsed"}
+        value="Deutliche Gebrauchsspuren"
+        checked={condition === "Deutliche Gebrauchsspuren"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);
@@ -212,8 +213,8 @@ const SetProductForm = () => {
         type="radio"
         name="condition"
         id="conditionDefect"
-        value="conditionDefect"
-        checked={condition === "conditionDefect"}
+        value="Defekt"
+        checked={condition === "Defekt"}
         onChange={(e) => {
           setCondition(e.target.value);
           console.log(condition);

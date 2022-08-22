@@ -1,9 +1,9 @@
 import ProductCard from "../components/ProductCard";
 import Searchbar from "../components/Searchbar";
 import Sidebar from "../components/Sidebar";
-import "./alreadySold.scss"
+import "./alreadySold.scss";
 
-import React from 'react'
+import React from "react";
 
 export default function AlreadySold(props) {
   return (

@@ -17,6 +17,7 @@ function makeProduct({
   name,
   phone,
   sold,
+  userId,
   filename,
 }) {
   return {
@@ -38,6 +39,7 @@ function makeProduct({
     name,
     phone,
     sold,
+    userId,
     filename,
   };
 }
