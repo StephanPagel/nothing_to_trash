@@ -3,6 +3,8 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
 export default function Searchbar() {
+
+
     return (
         <div className="searchbar">
             <div className="searchbar_box">

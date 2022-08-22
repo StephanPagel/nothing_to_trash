@@ -4,7 +4,7 @@ import LogoutButton from "../components/LogoutButton";
 const SetProduct = (props) => {
     return (
         <div>
-            <SetProductForm />
+            <SetProductForm token={props.token} />
             <LogoutButton setToken={props.setToken} />
         </div>
     );
