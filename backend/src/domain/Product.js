@@ -16,6 +16,7 @@ function makeProduct({
   street,
   name,
   phone,
+  sold,
   filename,
 }) {
   return {
@@ -36,6 +37,7 @@ function makeProduct({
     street,
     name,
     phone,
+    sold,
     filename,
   };
 }
