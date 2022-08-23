@@ -6,12 +6,12 @@ import { useState } from "react";
 
 export default function Marketplace({ allProducts, token, setToken }) {
   const [searchResults, setSearchResults] = useState([]);
-  console.log(searchResults);
+  // console.log(searchResults);
 
   return (
     <div className="marketplace">
       <div style={{ background: "linear-gradient(#E5EFFF, #fff, #fff, #fff)" }}>
-        <Sidebar />
+        <Sidebar allProducts={allProducts} />
         <h1>Hilf mit die Umwelt zu schützen</h1>
         <p className="marketplace_p">
           Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen
