@@ -14,7 +14,18 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       .then((detailsArray) => setProductDetails(detailsArray));
   }, []);
 
-  const deleteProduct = () => {
+  const editProduct = (listId, checkPointId) => {
+    fetch(`${apiBaseUrl}products/edit/` + id, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((updatedProduct) => {
+        setProductDetails(updatedProduct);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const deleteProduct = (id) => {
     fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
       method: "DELETE",
     })
@@ -44,7 +55,7 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       <button>♡ Auf die Wunschliste</button>
       <span>Produktbeschreibung</span>
       <p>{productDetails.descriptionLong}</p>
-      <button>Bearbeiten</button>
+      <button onClick={editProduct}>Bearbeiten</button>
       <button>Verkauft</button>
       <button onClick={deleteProduct}>Produkt löschen</button>
     </div>
