@@ -2,9 +2,6 @@ const express = require("express");
 const { registerUser } = require("../use-cases/register-user");
 const { loginUser } = require("../use-cases/login-user");
 const { showUserProfil } = require("../use-cases/showUserProfil");
-const {
-  addProducttoUsersWishlist,
-} = require("./../use-cases/addProducttoUserWishlist");
 const { makeDoAuthMiddleware } = require("./../auth/doAuthMiddleware");
 
 const doAuthMiddleware = makeDoAuthMiddleware("access");
