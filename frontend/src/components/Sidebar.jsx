@@ -1,8 +1,3 @@
-import oneStar from "../images/already_sold_rating_1_star.jpg";
-import twoStars from "../images/already_sold_rating_2_stars.jpg";
-import threeStars from "../images/already_sold_rating_3_stars.jpg";
-import fourStars from "../images/already_sold_rating_4_stars.jpg";
-import fiveStars from "../images/already_sold_rating_5_stars.jpg";
 import "./sidebar.scss";
 
 export default function Sidebar() {
