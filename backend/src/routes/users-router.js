@@ -66,11 +66,6 @@ usersRouter.get("/userprofil", doAuthMiddleware, async (req, res) => {
   }
 });
 
-usersRouter.put("addProducttoWishlist/:id", (req, res) => {
-  const productId = req.params.id;
-  console.log(productId)
-});
-
 usersRouter.get("/logout", async (req, res) => {
   req.session.token = null;
   res.status(204).end();

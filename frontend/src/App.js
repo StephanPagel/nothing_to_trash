@@ -31,6 +31,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [userData, setUserData] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
@@ -56,7 +57,13 @@ function App() {
         />
         <Route
           path="marketplace"
-          element={<Marketplace allProducts={allProducts} />}
+          element={
+            <Marketplace
+              allProducts={allProducts}
+              searchResults={searchResults}
+              setSearchResults={setSearchResults}
+              token={token}
+              setToken={setToken} />}
         />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
@@ -66,16 +73,6 @@ function App() {
               setToken={setToken}
               errorMessage={errorMessage}
               setErrorMessage={setErrorMessage}
-            />
-          }
-        />
-        <Route
-          path="marketplace"
-          element={
-            <Marketplace
-              allProducts={allProducts}
-              token={token}
-              setToken={setToken}
             />
           }
         />
@@ -98,7 +95,7 @@ function App() {
             />
           }
         />
-        
+
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
@@ -113,6 +110,8 @@ function App() {
                 setToken={setToken}
                 setErrorMessage={setErrorMessage}
                 allProducts={allProducts}
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
               />
             </AuthRequired>
           }

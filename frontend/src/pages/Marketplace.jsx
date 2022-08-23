@@ -2,11 +2,8 @@ import Searchbar from "../components/Searchbar";
 import Sidebar from "../components/Sidebar";
 import ProductCard from "../components/ProductCard";
 import "./marketplace.scss";
-import { useState } from "react";
 
-export default function Marketplace({ allProducts, token, setToken }) {
-  const [searchResults, setSearchResults] = useState([]);
-  // console.log(searchResults);
+export default function Marketplace({ allProducts, token, setToken, searchResults, setSearchResults }) {
 
   return (
     <div className="marketplace">
