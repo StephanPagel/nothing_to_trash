@@ -4,7 +4,6 @@ import ProductCard from "../components/ProductCard";
 import "./marketplace.scss";
 
 export default function Marketplace({ allProducts, token, setToken }) {
-
   return (
     <div className="marketplace">
       <h1>Hilf mit die Umwelt zu schützen</h1>
@@ -15,7 +14,7 @@ export default function Marketplace({ allProducts, token, setToken }) {
         Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll zu
         reduzieren und trashnothing.
       </p>
-      <Searchbar />
+      <Searchbar allProducts={allProducts} />
       <Sidebar />
       {allProducts &&
         allProducts.map((product) => (
