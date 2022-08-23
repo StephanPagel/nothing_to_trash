@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { apiBaseUrl } from "../api";
+import EditProduct from "../components/EditProduct";
 import "./productDetail.scss";
 
 export default function ProductDetail({ productDetails, setProductDetails }) {
   const { id } = useParams();
+
+  const [showEditor, setShowEditor] = useState(false);
 
   const navigator = useNavigate();
 
@@ -14,17 +17,7 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       .then((detailsArray) => setProductDetails(detailsArray));
   }, []);
 
-  const editProduct = (listId, checkPointId) => {
-    fetch(`${apiBaseUrl}products/edit/` + id, {
-      method: "PUT",
-    })
-      .then((res) => res.json())
-      .then((updatedProduct) => {
-        setProductDetails(updatedProduct);
-      })
-      .catch((err) => console.log(err));
-  };
-
+  
   const deleteProduct = (id) => {
     fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
       method: "DELETE",
@@ -55,9 +48,12 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       <button>♡ Auf die Wunschliste</button>
       <span>Produktbeschreibung</span>
       <p>{productDetails.descriptionLong}</p>
-      <button onClick={editProduct}>Bearbeiten</button>
+
+      <button onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
+
       <button>Verkauft</button>
       <button onClick={deleteProduct}>Produkt löschen</button>
+      {showEditor && <EditProduct productId={id} />}
     </div>
   );
 }
