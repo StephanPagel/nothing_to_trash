@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../api";
 
-export default function Searchbar({ allProducts }) {
+export default function Searchbar({ allProducts, setSearchResults }) {
   const [search, setSearch] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const filterProducts = allProducts.filter((product) => {
@@ -15,7 +14,8 @@ export default function Searchbar({ allProducts }) {
         .toLowerCase()
         .includes(search.toLowerCase());
     });
-    console.log(filterProducts);
+    // console.log(filterProducts);
+    return setSearchResults(filterProducts);
   }, [search]);
 
   return (
@@ -34,11 +34,6 @@ export default function Searchbar({ allProducts }) {
       <button className="btn_search">
         <Link to="/set_product">Produkt einstellen</Link>
       </button>
-      <div>
-        {searchResults.map((product) => (
-          <p>{product.price}</p>
-        ))}
-      </div>
     </div>
   );
 }
