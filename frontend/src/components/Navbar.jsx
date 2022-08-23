@@ -7,14 +7,14 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <div className="navbar_li">
-                <p><Link to="/">nothingtotrash</Link></p>
+                <Link className="linktohome" to="/">nothingtotrash</Link>
                 <ul>
-                    <li className="nav"><Link to="/marketplace">Marktplatz</Link></li>
-                    <li><Link to="/about_us">Über uns</Link></li>
+                    <li><Link className="navbarlink" to="/marketplace">Marktplatz</Link></li>
+                    <li><Link className="navbarlink" to="/about_us">Über uns</Link></li>
                 </ul>
             </div>
             <button className="navbar_btn_log">
-                <Link to="/login">Login</Link>
+                <Link to="/login">LogIn</Link>
             </button>
             <button className="navbar_btn"><Link to="/register">Registriere Dich</Link></button>
         </div >
