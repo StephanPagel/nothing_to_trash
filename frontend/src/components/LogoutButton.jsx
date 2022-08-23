@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "./../api";
+import "./logoutbutton.scss";
 
 
 const LogoutButton = ({ setToken }) => {
@@ -18,7 +19,7 @@ const LogoutButton = ({ setToken }) => {
 
     return (<div>
 
-        <div><button className="navbar_btn_log" onClick={logout}>Logout</button></div>
+        <div><button className="logoutbutton" onClick={logout}>Logout</button></div>
 
     </div>);
 }
