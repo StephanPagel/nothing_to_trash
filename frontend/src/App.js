@@ -99,7 +99,7 @@ function App() {
             />
           }
         />
-        
+
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
