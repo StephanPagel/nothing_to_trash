@@ -7,6 +7,7 @@ export default function Marketplace({ allProducts, token, setToken }) {
   return (
     <div className="marketplace">
       <div style={{ background: "linear-gradient(#E5EFFF, #fff, #fff, #fff)" }}>
+        <Sidebar />
         <h1>Hilf mit die Umwelt zu schützen</h1>
         <p className="marketplace_p">
           Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen
@@ -16,7 +17,7 @@ export default function Marketplace({ allProducts, token, setToken }) {
           reduzieren und trashnothing.
         </p>
         <Searchbar allProducts={allProducts} />
-        <Sidebar />
+
         {allProducts &&
           allProducts.map((product) => (
             <ProductCard
