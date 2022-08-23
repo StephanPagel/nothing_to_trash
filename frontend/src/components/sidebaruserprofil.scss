@@ -1,1 +1,17 @@
-.sidebaruserprofil {}
+.sidebaruserprofil {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    width: 18vw;
+    padding: 5vh 0 0 3vw;
+}
+
+.sidebaruserprofil_a {
+    display: block;
+    margin-top: 2vh;
+    color: #272D4E;
+}
+
+.sidebaruserprofil_a:hover {
+    color: #272d4e82;
+}
