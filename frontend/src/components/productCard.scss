@@ -1,9 +1,11 @@
 .productCard {
     display: flex;
     justify-content: space-between;
-    margin: 2vh 20vw;
+    margin: 2vh auto;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
+    width: 55vw;
+    background-color: #fff;
 
     img {
         width: 15vw;
@@ -15,7 +17,7 @@
 
 .productCard_title {
     text-align: left;
-    width: 30vw;
+    width: 25vw;
     padding: 2vh 0 0 2vw;
 
     h4 {
@@ -27,7 +29,7 @@
 .productCard_details {
     display: grid;
     grid-template-columns: 10vw 20vw;
-    width: 30vw;
+    width: 25vw;
 
     p {
         text-align: left;

@@ -11,65 +11,71 @@ export default function Sidebar() {
     <div className="sidebar">
       <h3>Kategorien</h3>
       <div className="sidebar_category">
-        <tr>
-          <td>Kategorie Name</td>
-          <td>320</td>
-        </tr>
-        <tr>
-          <td>Kategorie Name</td>
-          <td>300</td>
-        </tr>
-        <tr>
-          <td>Kategorie Name</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>Kategorie Name</td>
-          <td>30</td>
-        </tr>
+        <div>
+          <input type="checkbox" />
+          <label>Möbel</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Kleidung</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Trainer</label>
+        </div>
       </div>
       <h3>Marken</h3>
       <div className="sidebar_checkbox">
-        <input type="checkbox" />
-        <label>Nach Markenname filtern</label>
-        <input type="checkbox" />
-        <label>Nach Markenname filtern</label>
-        <input type="checkbox" />
-        <label>Nach Markenname filtern</label>
-        <input type="checkbox" />
-        <label>Nach Markenname filtern</label>
-        <input type="checkbox" />
-        <label>Nach Markenname filtern</label>
+        <div>
+          <input type="checkbox" />
+          <label>Nach Markenname filtern</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Nach Markenname filtern</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Nach Markenname filtern</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Nach Markenname filtern</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>Nach Markenname filtern</label>
+        </div>
       </div>
       <h3>Bewertung</h3>
       <div className="sidebar_rating">
-        <input type="checkbox" />
-        <label>
-          <img src={oneStar} alt="rating" />
-        </label>
-        <input type="checkbox" />
-        <label>
-          <img src={twoStars} alt="rating" />
-        </label>
-        <input type="checkbox" />
-        <label>
-          <img src={threeStars} alt="rating" />
-        </label>
-        <input type="checkbox" />
-        <label>
-          <img src={fourStars} alt="rating" />
-        </label>
-        <input type="checkbox" />
-        <label>
-          <img src={fiveStars} alt="rating" />
-        </label>
+        <div>
+          <input type="checkbox" />
+          <label>⭐️</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>⭐️⭐️</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>⭐️⭐️⭐️</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>⭐️⭐️⭐️⭐️</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>⭐️⭐️⭐️⭐️⭐️</label>
+        </div>
       </div>
       <h3>Preis</h3>
       <div>
         <input type="range" name="" id="" />
         <p></p>
       </div>
-      <div>
+      <div className="sidebar_buttons">
         <button className="sidebar_btn">Anwenden</button>
         <button className="sidebar_btn_reset">Reset</button>
       </div>
