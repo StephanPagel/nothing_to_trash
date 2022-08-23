@@ -1,45 +1,37 @@
 import "./sidebar.scss";
+import { useState, useEffect } from "react";
 
-export default function Sidebar() {
+export default function Sidebar({ allProducts }) {
+  const [productCategory, setProductCategory] = useState([]);
+  // const [filteredCategory, setFilteredCategory] = useState([]);
+
+  const handleChange = (e) => {
+    if (e.target.checked) {
+      setProductCategory([...productCategory, e.target.value]);
+    } else {
+      setProductCategory(
+        productCategory.filter((category) => category !== e.target.value)
+      );
+    }
+  };
+
+  console.log(productCategory);
 
   return (
     <div className="sidebar">
       <h3>Kategorien</h3>
       <div className="sidebar_category">
         <div>
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleChange} value={"möbel"} />
           <label>Möbel</label>
         </div>
         <div>
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleChange} value={"kleidung"} />
           <label>Kleidung</label>
         </div>
         <div>
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleChange} value={"trainer"} />
           <label>Trainer</label>
-        </div>
-      </div>
-      <h3>Marken</h3>
-      <div className="sidebar_checkbox">
-        <div>
-          <input type="checkbox" />
-          <label>Nach Markenname filtern</label>
-        </div>
-        <div>
-          <input type="checkbox" />
-          <label>Nach Markenname filtern</label>
-        </div>
-        <div>
-          <input type="checkbox" />
-          <label>Nach Markenname filtern</label>
-        </div>
-        <div>
-          <input type="checkbox" />
-          <label>Nach Markenname filtern</label>
-        </div>
-        <div>
-          <input type="checkbox" />
-          <label>Nach Markenname filtern</label>
         </div>
       </div>
       <h3>Bewertung</h3>

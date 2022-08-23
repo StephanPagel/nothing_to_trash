@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
 import UsersProducts from "./components/UsersProducts";
+import EditProduct from "./components/EditProduct";
 
 console.log("%c****************", "color:yellow");
 console.log("%cNOTHING TO TRASH", "color:blue");
@@ -78,6 +79,7 @@ function App() {
             />
           }
         />
+        <Route path="editproduct/:id" element={<EditProduct />} />
         <Route
           path="set_product"
           element={
@@ -96,7 +98,7 @@ function App() {
             />
           }
         />
-
+        
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
