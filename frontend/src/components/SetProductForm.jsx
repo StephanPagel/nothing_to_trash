@@ -1,7 +1,6 @@
 import "./setProductForm.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
-import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 
 const SetProductForm = ({ token }) => {
   const [adType, setAdType] = useState("");
@@ -287,7 +286,7 @@ const SetProductForm = ({ token }) => {
 
       <label>Zu verschenken</label>
       <label>Bilder:</label>
-      <MdOutlineAddPhotoAlternate type="file"
+      <input type="file"
         name="uploadImage"
         id="uploadImage"
         ref={fileInputRef}

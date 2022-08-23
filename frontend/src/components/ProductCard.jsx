@@ -1,7 +1,6 @@
 import "./productCard.scss";
 import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../api";
-import Wishlistbutton from "./Wishlistbutton";
 
 export default function ProductCard(props) {
 
@@ -47,7 +46,7 @@ export default function ProductCard(props) {
                 </div>
                 <div className="productCard_buttons">
                     <button className="btn_lila"><Link to={`/product_details/${props.id}`}>Details</Link></button>
-                    <Wishlistbutton productId={props.id} token={props.token} />
+                    <button className="btn_grey">♡ Auf die Wunschliste</button>
                 </div>
             </div >
         </div >

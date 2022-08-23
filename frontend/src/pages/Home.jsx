@@ -53,8 +53,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div class="section_three">
-        <div class="ohne_limits">
+      <div className="section_three">
+        <div className="ohne_limits">
           <img src={homesection3top} alt="zwei Frauen mit Macbook" />
           <div>
             <h2>Ohne</h2>
@@ -64,10 +64,10 @@ export default function Home() {
               Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher
               Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll
               zu reduzieren und trashnothing.</p>
-            <button class="btnbtn"><Link to="">Zur Dokumentation</Link></button>
+            <button className="btnbtn"><Link to="">Zur Dokumentation</Link></button>
           </div>
         </div>
-        <div class="kenne_deine_community">
+        <div className="kenne_deine_community">
           <div>
             <h2>Kenne deine</h2>
             <h2>Community</h2>
@@ -76,128 +76,128 @@ export default function Home() {
               Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher
               Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll
               zu reduzieren und trashnothing.</p>
-            <button class="btnbtn"><Link to="">Zur Dokumentation</Link></button>
+            <button className="btnbtn"><Link to="">Zur Dokumentation</Link></button>
           </div>
           <img src={homesection3bottom} alt="Meeting in einem modernen Büro mit Whiteboard" />
         </div>
-        <div class="circle_big_top_left"></div>
-        <div class="circle_small_top_left"></div>
-        <div class="circle_big_bottom_right"></div>
-        <div class="circle_small_bottom_right"></div>
-        <div class="dot_grid_big">
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
+        <div className="circle_big_top_left"></div>
+        <div className="circle_small_top_left"></div>
+        <div className="circle_big_bottom_right"></div>
+        <div className="circle_small_bottom_right"></div>
+        <div className="dot_grid_big">
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
         </div>
-        <div class="dot_grid_small">
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
+        <div className="dot_grid_small">
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
         </div>
       </div>
-      <div class="section_four">
+      <div className="section_four">
         <h2>Von echten Menschen unterstützt</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus faucibus egestas neque, quis nunc in
           turpis cursus eget.</p>
-        <div class="circle_section4_one"></div>
-        <div class="circle_section4_two"></div>
-        <div class="circle_section4_three"></div>
-        <div class="dot_grid_fivedots">
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
-          <div class="one_dot"></div>
+        <div className="circle_section4_one"></div>
+        <div className="circle_section4_two"></div>
+        <div className="circle_section4_three"></div>
+        <div className="dot_grid_fivedots">
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
+          <div className="one_dot"></div>
         </div>
-        <div class="dot_grid_dreimalachtdots">
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
-          <div class="one_dotred"></div>
+        <div className="dot_grid_dreimalachtdots">
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
+          <div className="one_dotred"></div>
         </div>
       </div>
     </div>

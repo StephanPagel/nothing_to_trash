@@ -15,7 +15,6 @@ import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
 import UsersProducts from "./components/UsersProducts";
-import Wishlist from "./components/Wishlist";
 import EditProduct from "./components/EditProduct";
 
 console.log("%c****************", "color:yellow");
@@ -32,6 +31,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [userData, setUserData] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
@@ -57,7 +57,13 @@ function App() {
         />
         <Route
           path="marketplace"
-          element={<Marketplace allProducts={allProducts} />}
+          element={
+            <Marketplace
+              allProducts={allProducts}
+              searchResults={searchResults}
+              setSearchResults={setSearchResults}
+              token={token}
+              setToken={setToken} />}
         />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
@@ -67,16 +73,6 @@ function App() {
               setToken={setToken}
               errorMessage={errorMessage}
               setErrorMessage={setErrorMessage}
-            />
-          }
-        />
-        <Route
-          path="marketplace"
-          element={
-            <Marketplace
-              allProducts={allProducts}
-              token={token}
-              setToken={setToken}
             />
           }
         />
@@ -114,6 +110,8 @@ function App() {
                 setToken={setToken}
                 setErrorMessage={setErrorMessage}
                 allProducts={allProducts}
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
               />
             </AuthRequired>
           }
@@ -126,7 +124,6 @@ function App() {
             </AuthRequired>
           }
         />
-        <Route path="wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </div>
