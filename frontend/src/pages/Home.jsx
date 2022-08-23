@@ -76,7 +76,7 @@ export default function Home() {
               Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher
               Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll
               zu reduzieren und trashnothing.</p>
-            <button class="btnbtn"><Link to="">Zur Dokumentation</Link></button>
+            <button className="btnbtn"><Link to="">Zur Dokumentation</Link></button>
           </div>
           <img src={homesection3bottom} alt="Meeting in einem modernen Büro mit Whiteboard" />
         </div>
