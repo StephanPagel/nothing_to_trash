@@ -17,7 +17,8 @@ const UserProfil = (props) => {
                     Nahrung, Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll zu
                     reduzieren und trashnothing.
                 </p>
-                <Searchbar allProducts={props.allProducts} />
+                <Searchbar allProducts={props.allProducts}
+                    setSearchResults={props.setSearchResults} />
                 <SidebarUserProfil token={props.token} setToken={props.setToken} setUserData={props.setUserData} userData={props.userData} setErrorMessage={props.setErrorMessage} />
                 {props.allProducts &&
                     props.allProducts.map((product) => (

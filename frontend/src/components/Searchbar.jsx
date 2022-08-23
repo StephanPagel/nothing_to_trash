@@ -1,8 +1,6 @@
 import "./searchbar.scss";
-import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { apiBaseUrl } from "../api";
 
 export default function Searchbar({ allProducts, setSearchResults }) {
   const [search, setSearch] = useState("");
