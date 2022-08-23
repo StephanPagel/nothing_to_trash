@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "../api";
 import EditProduct from "../components/EditProduct";
 import "./productDetail.scss";
@@ -28,32 +28,34 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
   };
 
   return (
-    <div>
-      <img
-        src={
-          productDetails.filename && `${apiBaseUrl}/${productDetails.filename}`
-        }
-        alt="product"
-      />
-      <span>{productDetails.title}</span>
-      <h2>{productDetails.price}</h2>
-      <p>Zustand</p>
-      <p>{productDetails.condition}</p>
-      <p>Marke</p>
-      <p>{productDetails.brand}</p>
-      <p>Lieferung</p>
-      <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
-      <p>Anzahl</p>
-      <p>{productDetails.amount}</p>
-      <button>♡ Auf die Wunschliste</button>
-      <span>Produktbeschreibung</span>
-      <p>{productDetails.descriptionLong}</p>
-
-      <button onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
-
-      <button>Verkauft</button>
-      <button onClick={deleteProduct}>Produkt löschen</button>
-      {showEditor && <EditProduct productId={id} />}
+    <div className="product_details">
+      <div>
+        <img
+          src={
+            productDetails.filename && `${apiBaseUrl}/${productDetails.filename}`
+          }
+          alt="product"
+        />
+      </div>
+      <div>
+        <span>{productDetails.title}</span>
+        <h2>{productDetails.price}</h2>
+        <p>Zustand</p>
+        <p>{productDetails.condition}</p>
+        <p>Marke</p>
+        <p>{productDetails.brand}</p>
+        <p>Lieferung</p>
+        <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
+        <p>Anzahl</p>
+        <p>{productDetails.amount}</p>
+        <button>♡ Auf die Wunschliste</button>
+        <span>Produktbeschreibung</span>
+        <p>{productDetails.descriptionLong}</p>
+        <button onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
+        <button>Verkauft</button>
+        <button onClick={deleteProduct}>Produkt löschen</button>
+        {showEditor && <EditProduct productId={id} />}
+      </div>
     </div>
   );
 }
