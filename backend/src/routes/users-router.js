@@ -2,7 +2,6 @@ const express = require("express");
 const { registerUser } = require("../use-cases/register-user");
 const { loginUser } = require("../use-cases/login-user");
 const { showUserProfil } = require("../use-cases/showUserProfil");
-const { addProducttoUsersWishlist } = require("./../use-cases/addProducttoUserWishlist");
 const { makeDoAuthMiddleware } = require("./../auth/doAuthMiddleware");
 
 const doAuthMiddleware = makeDoAuthMiddleware("access");
@@ -35,22 +34,28 @@ usersRouter.post("/login", async (req, res) => {
     res.json({ accessToken, refreshToken });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: err.toString() || "Internal Server Error." });
-  };
-});
-
-usersRouter.post("/refreshtoken", doRefreshTokenMiddleware, async (req, res) => {
-  try {
-    const userId = req.userClaims.sub;
-    const accessToken = await refreshUserToken({ userId });
-    res.json({ token: accessToken });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      message: err.toString() || "Internal Server Error.",
-    });
+    res
+      .status(500)
+      .json({ message: err.toString() || "Internal Server Error." });
   }
 });
+
+usersRouter.post(
+  "/refreshtoken",
+  doRefreshTokenMiddleware,
+  async (req, res) => {
+    try {
+      const userId = req.userClaims.sub;
+      const accessToken = await refreshUserToken({ userId });
+      res.json({ token: accessToken });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        message: err.toString() || "Internal Server Error.",
+      });
+    }
+  }
+);
 
 usersRouter.get("/userprofil", doAuthMiddleware, async (req, res) => {
   try {
