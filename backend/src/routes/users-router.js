@@ -66,19 +66,9 @@ usersRouter.get("/userprofil", doAuthMiddleware, async (req, res) => {
   }
 });
 
-usersRouter.put("addProducttoWishlist/:id", async (req, res) => {
-  try {
-    const userId = req.userClaims.sub;
-    const productId = req.params.id;
-    const usersWishlist = await addProducttoUsersWishlist({ userId, productId });
-    res.json(usersWishlist);
-  } catch (err) {
-    console.log(err);
-
-    res.status(500).json({
-      message: err.toString() || "Internal Server Error.",
-    });
-  }
+usersRouter.put("addProducttoWishlist/:id", (req, res) => {
+  const productId = req.params.id;
+  console.log(productId)
 });
 
 usersRouter.get("/logout", async (req, res) => {

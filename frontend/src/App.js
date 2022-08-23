@@ -15,7 +15,6 @@ import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
 import UserProfil from "./pages/UserProfil";
 import UsersProducts from "./components/UsersProducts";
-import Wishlist from "./components/Wishlist";
 import EditProduct from "./components/EditProduct";
 
 console.log("%c****************", "color:yellow");
@@ -126,7 +125,6 @@ function App() {
             </AuthRequired>
           }
         />
-        <Route path="wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </div>
