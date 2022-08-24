@@ -36,7 +36,7 @@ export default function Navbar(props) {
             }
             {props.token &&
                 <div>
-                    <Link to="/userprofil"><img className="profilfoto" src={profilfoto} alt="Profilfoto" /></Link>
+                    <button className="btn_profilfoto"><img className="profilfoto" src={profilfoto} alt="Profilfoto" /></button>
                 </div>
             }
 
