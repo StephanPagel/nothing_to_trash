@@ -6,7 +6,6 @@ const SetProduct = (props) => {
     return (
         <div>
             <SetProductForm token={props.token} />
-            <LogoutButton setToken={props.setToken} />
         </div>
     );
 }
