@@ -1,6 +1,6 @@
 import "./navbar.scss";
 import { Link } from 'react-router-dom';
-import profilfoto from "./../images/profilfoto.png";
+import profilfoto from "../images/profilfoto.png";
 
 export default function Navbar(props) {
 
