@@ -3,17 +3,13 @@ const morgan = require("morgan");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 
-const { makeDoAuthMiddleware } = require("./auth/doAuthMiddleware");
 const { usersRouter } = require("./routes/users-router");
 const { productsRouter } = require("./routes/products-router");
 
-const Port = process.env.Port || 9000;
+const Port = process.env.PORT || 9000;
 const app = express();
 
-const doAuthMiddleware = makeDoAuthMiddleware("access");
-const doRefreshTokenMiddleware = makeDoAuthMiddleware("refresh");
-
-app.use(cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
+app.use('*', cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
 
 const oneDayInMs = 24 * 60 * 60 * 1000;
 const isLocalHost = process.env.FRONTEND_URL === "http://localhost:3000";

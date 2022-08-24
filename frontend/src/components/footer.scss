@@ -1,79 +1,80 @@
 .footer {
-    background: radial-gradient(circle, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-    color: #272D4E;
-    width: 100%;
-    position: absolute;
+  color: #272d4e;
+  width: 100%;
+  position: absolute;
 
-    .instagram:hover {
-        color: red;
-    }
+  .instagram:hover {
+    color: red;
+  }
 
-    .facebook:hover {
-        color: blue;
-    }
+  .facebook:hover {
+    color: blue;
+  }
 
-    .twitter:hover {
-        color: lightblue;
-    }
-
-    img {
-        float: right;
-    }
+  .twitter:hover {
+    color: lightblue;
+  }
 }
 
 .footer_register {
-    background-color: #7854F7;
+  display: flex;
+  background-color: #7854f7;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 20%;
+  font-size: 22px;
+
+  h3 {
+    width: 80%;
+  }
+
+  .footer_btn {
+    background-color: #7854f7;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 60px;
-    font-size: 22px;
-
-    h3 {
-        animation: typing 4s steps(36),
-            blink .5s step-end infinite alternate;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 50ch;
-    }
-
-    .footer_btn {
-        background-color: #7854F7;
-        color: #fff;
-        border-style: solid;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    .footer_btn {
-        background-color: white;
-    }
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px 30px;
+  }
 }
 
 .footer_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 30px;
+  font-size: 12px;
+
+  span {
+    text-decoration: underline;
+  }
+
+  a {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  .footer_icons {
+    color: #272d4e;
     display: flex;
-    justify-content: space-evenly;
-    padding: 30px;
-    font-size: 12px;
+    gap: 25px;
+  }
 
-    span {
-        text-decoration: underline;
-    }
+  i {
+    color: #272d4e;
+  }
 
-    a {
-        font-size: 20px;
-        margin: 5px;
-    }
-
-    i {
-        padding-left: 20px;
-    }
+  .circle {
+    position: relative;
+    bottom: 80px;
+    right: -100px;
+  }
 }
 
 @keyframes typing {
-    from {
-        width: 0
-    }
+  from {
+    width: 0;
+  }
 }

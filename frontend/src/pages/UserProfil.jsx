@@ -50,5 +50,4 @@ const UserProfil = (props) => {
     </div>
   );
 };
-
 export default UserProfil;

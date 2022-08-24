@@ -1,5 +1,5 @@
-DB_URL="mongodb+srv://nothingtotrash:supercode321@nothingtotrash.hfkbq9e.mongodb.net/?retryWrites=true&w=majority"
-DB_NAME="nothingtotrash"
+DB_URL=""
+DB_NAME=""
 
 JWT_SECRET=""
 
