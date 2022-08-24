@@ -32,6 +32,9 @@ function App() {
   const [userData, setUserData] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [productCategory, setProductCategory] = useState([]);
+  const [productCondition, setProductCondition] = useState([]);
+  const [productDelivery, setProductDelivery] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
@@ -42,9 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar
-        token={token}
-      />
+      <Navbar token={token} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -65,7 +66,15 @@ function App() {
               searchResults={searchResults}
               setSearchResults={setSearchResults}
               token={token}
-              setToken={setToken} />}
+              setToken={setToken}
+              productCategory={productCategory}
+              setProductCategory={setProductCategory}
+              productCondition={productCondition}
+              setProductCondition={setProductCondition}
+              productDelivery={productDelivery}
+              setProductDelivery={setProductDelivery}
+            />
+          }
         />
         <Route path="login" element={<Login setToken={setToken} />} />
         <Route
