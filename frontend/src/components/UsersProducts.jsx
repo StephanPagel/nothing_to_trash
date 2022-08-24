@@ -1,11 +1,11 @@
-import ProductCard from "./../components/ProductCard";
+import ProductCardUser from "./../components/ProductCardUser";
 
 const UsersProducts = (props) => {
     console.log(props.userData.products)
     return (<div>
         {props.userData &&
             props.userData.products.map((product) => (
-                <ProductCard
+                <ProductCardUser
                     id={product._id}
                     key={product._id}
                     adType={product.adType}

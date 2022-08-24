@@ -1,31 +1,16 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { apiBaseUrl } from "../api";
-import EditProduct from "../components/EditProduct";
 import "./productDetail.scss";
 
 export default function ProductDetail({ productDetails, setProductDetails }) {
   const { id } = useParams();
 
-  const [showEditor, setShowEditor] = useState(false);
-
-  const navigator = useNavigate();
-
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts/` + id)
       .then((productDetails) => productDetails.json())
       .then((detailsArray) => setProductDetails(detailsArray));
-  }, []);
-
-
-  const deleteProduct = () => {
-    fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => navigator("/"))
-      .catch((err) => console.log(err));
-  };
+  }, [id, setProductDetails]);
 
   return (
     <div className="detail_container">
@@ -37,7 +22,6 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
           }
           alt="product"
         />
-
         <div className="product_facts">
           <h1>{productDetails.title}</h1>
           <h2>{productDetails.price}</h2>
@@ -56,16 +40,6 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
           <p>{productDetails.descriptionLong}</p>
         </div>
       </div>
-      <div className="buttons">
-        <button className="btn_edit" onClick={() => setShowEditor(!showEditor)}>
-          Bearbeiten
-        </button>
-        <button className="btn_sold">Verkauft</button>
-        <button className="btn_delete" onClick={deleteProduct}>
-          Produkt löschen
-        </button>
-        {showEditor && <EditProduct productId={id} />}
-      </div>
-    </div>
+    </div >
   );
 }

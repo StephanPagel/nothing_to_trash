@@ -149,6 +149,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div6">
           <input
+            className="input1"
             type="text"
             name="title"
             id="title"
@@ -161,6 +162,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div8">
           <input
+            className="input1"
             type="text"
             name="brand"
             id="brand"
@@ -226,6 +228,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div12">
           <input
+            className="input1"
             type="text"
             name="descriptionShort"
             id="descriptionShort"
@@ -251,6 +254,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div16">
           <input
+            className="input2"
             type="number"
             name="amount"
             id="amount"
@@ -263,6 +267,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div18">
           <input
+            className="input2"
             type="number"
             name="price"
             id="price"
@@ -336,6 +341,7 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div24">
           <input
+            className="input2"
             type="text"
             name="zip"
             id="zip"
@@ -345,6 +351,7 @@ const SetProductForm = ({ token }) => {
             onChange={(e) => setZip(e.target.value)}
           />
           <input
+            className="input3"
             type="text"
             name="city"
             id="city"
@@ -359,11 +366,11 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div26">
           <input
+            className="input1"
             type="text"
             name="street"
             id="street"
             required
-            placeholder="Straße/Nr."
             value={street}
             onChange={(e) => setStreet(e.target.value)}
           />
@@ -373,11 +380,11 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div28">
           <input
+            className="input1"
             type="text"
             name="name"
             id="name"
             required
-            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -387,18 +394,18 @@ const SetProductForm = ({ token }) => {
         </div>
         <div className="div28">
           <input
+            className="input1"
             type="number"
             name="phone"
             id="phone"
             required
-            placeholder="Telefon"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
       </div>
-      <div className="btn-submitProduct">
-        <button onClick={submitForm}>Produkt einstellen</button>
+      <div>
+        <button className="btn-submitProduct" onClick={submitForm}>Produkt einstellen</button>
       </div>
     </form>
   );
