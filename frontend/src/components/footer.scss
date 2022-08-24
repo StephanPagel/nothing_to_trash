@@ -2,18 +2,6 @@
   color: #272d4e;
   width: 100%;
   position: absolute;
-
-  .instagram:hover {
-    color: red;
-  }
-
-  .facebook:hover {
-    color: blue;
-  }
-
-  .twitter:hover {
-    color: lightblue;
-  }
 }
 
 .footer_register {
@@ -65,12 +53,12 @@
   i {
     color: #272d4e;
   }
+}
 
-  .circle {
-    position: relative;
-    bottom: 80px;
-    right: -100px;
-  }
+.circle {
+  position: absolute;
+  bottom: 9vh;
+  right: 10vw;
 }
 
 @keyframes typing {

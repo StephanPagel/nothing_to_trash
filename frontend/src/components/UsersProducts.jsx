@@ -6,6 +6,7 @@ const UsersProducts = (props) => {
         {props.userData &&
             props.userData.products.map((product) => (
                 <ProductCard
+                    id={product._id}
                     key={product._id}
                     adType={product.adType}
                     delivery={product.delivery}
