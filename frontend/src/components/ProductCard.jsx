@@ -45,7 +45,7 @@ export default function ProductCard(props) {
                     </div>
                 </div>
                 <div className="productCard_buttons">
-                    <button className="btn_lila"><Link to={`/product_details/${props.id}`}>Details</Link></button>
+                    <Link className="btn_lila" to={`/product_details/${props.id}`}>Details</Link>
                     <button className="btn_grey">♡ Auf die Wunschliste</button>
                 </div>
             </div >
