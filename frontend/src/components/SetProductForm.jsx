@@ -79,6 +79,7 @@ const SetProductForm = ({ token }) => {
         setPhone("");
         setImageFile(null);
         fileInputRef.current.value = null;
+        navigate("/marketplace");
       });
   };
 
