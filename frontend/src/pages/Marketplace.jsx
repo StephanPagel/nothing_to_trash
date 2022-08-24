@@ -15,7 +15,7 @@ export default function Marketplace({
   productCategory,
   setProductCategory,
   productCondition,
-  setProductCondition,
+  setProductCondition
 }) {
   const [filteredResult, setFilteredResult] = useState([]);
 
@@ -45,27 +45,6 @@ export default function Marketplace({
           allProducts={allProducts}
           setSearchResults={setSearchResults}
         />
-        {filteredResult &&
-          filteredResult.map((searchResult) => (
-            <ProductCard
-              key={searchResult._id}
-              id={searchResult._id}
-              adType={searchResult.adType}
-              delivery={searchResult.delivery}
-              title={searchResult.title}
-              condition={searchResult.condition}
-              brand={searchResult.brand}
-              descriptionShort={searchResult.descriptionShort}
-              descriptionLong={searchResult.descriptionLong}
-              amount={searchResult.amount}
-              price={searchResult.price}
-              priceOptions={searchResult.priceOptions}
-              category={searchResult.category}
-              filename={searchResult.filename}
-              token={token}
-              setToken={setToken}
-            />
-          ))}
         {allProducts &&
           !searchResults &&
           !productCondition &&
@@ -87,6 +66,27 @@ export default function Marketplace({
               priceOptions={product.priceOptions}
               category={product.category}
               filename={product.filename}
+              token={token}
+              setToken={setToken}
+            />
+          ))}
+        {filteredResult &&
+          filteredResult.map((searchResult) => (
+            <ProductCard
+              key={searchResult._id}
+              id={searchResult._id}
+              adType={searchResult.adType}
+              delivery={searchResult.delivery}
+              title={searchResult.title}
+              condition={searchResult.condition}
+              brand={searchResult.brand}
+              descriptionShort={searchResult.descriptionShort}
+              descriptionLong={searchResult.descriptionLong}
+              amount={searchResult.amount}
+              price={searchResult.price}
+              priceOptions={searchResult.priceOptions}
+              category={searchResult.category}
+              filename={searchResult.filename}
               token={token}
               setToken={setToken}
             />

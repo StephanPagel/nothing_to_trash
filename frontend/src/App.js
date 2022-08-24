@@ -13,7 +13,6 @@ import ProductDetail from "./pages/ProductDetail";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import AuthRequired from "./components/AuthRequired";
-import UserProfil from "./pages/UserProfil";
 import UsersProducts from "./components/UsersProducts";
 import EditProduct from "./components/EditProduct";
 
@@ -45,7 +44,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar token={token} />
+      <Navbar
+        token={token}
+        setToken={setToken}
+        setUserData={setUserData}
+        userData={userData}
+        setErrorMessage={setErrorMessage}
+
+
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -110,23 +117,6 @@ function App() {
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
-        <Route
-          path="userprofil"
-          element={
-            <AuthRequired token={token} setToken={setToken}>
-              <UserProfil
-                userData={userData}
-                setUserData={setUserData}
-                token={token}
-                setToken={setToken}
-                setErrorMessage={setErrorMessage}
-                allProducts={allProducts}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-              />
-            </AuthRequired>
-          }
-        />
         <Route
           path="usersproducts"
           element={

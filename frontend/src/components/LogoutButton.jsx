@@ -3,7 +3,7 @@ import { apiBaseUrl } from "./../api";
 import "./logoutbutton.scss";
 
 
-const LogoutButton = ({ setToken }) => {
+const LogoutButton = ({ setToken, setShowSidebarUserProfil }) => {
 
     const navigate = useNavigate();
 
@@ -13,6 +13,7 @@ const LogoutButton = ({ setToken }) => {
             .then((res) => {
                 console.log(res)
                 setToken(null);
+                setShowSidebarUserProfil(false);
                 navigate("/");
             });
     };
