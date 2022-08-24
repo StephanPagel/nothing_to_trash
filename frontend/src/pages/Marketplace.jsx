@@ -2,13 +2,37 @@ import Searchbar from "../components/Searchbar";
 import Sidebar from "../components/Sidebar";
 import ProductCard from "../components/ProductCard";
 import "./marketplace.scss";
+import { useState } from "react";
 
-export default function Marketplace({ allProducts, token, setToken, searchResults, setSearchResults }) {
+export default function Marketplace({
+  allProducts,
+  token,
+  setToken,
+  searchResults,
+  setSearchResults,
+  productDelivery,
+  setProductDelivery,
+  productCategory,
+  setProductCategory,
+  productCondition,
+  setProductCondition,
+}) {
+  const [filteredResult, setFilteredResult] = useState([]);
 
   return (
     <div className="marketplace">
       <div style={{ background: "linear-gradient(#E5EFFF, #fff, #fff, #fff)" }}>
-        <Sidebar allProducts={allProducts} />
+        <Sidebar
+          allProducts={allProducts}
+          searchResults={searchResults}
+          productCategory={productCategory}
+          setProductCategory={setProductCategory}
+          productCondition={productCondition}
+          setProductCondition={setProductCondition}
+          productDelivery={productDelivery}
+          setProductDelivery={setProductDelivery}
+          setFilteredResult={setFilteredResult}
+        />
         <h1>Hilf mit die Umwelt zu schützen</h1>
         <p className="marketplace_p">
           Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen
@@ -21,8 +45,8 @@ export default function Marketplace({ allProducts, token, setToken, searchResult
           allProducts={allProducts}
           setSearchResults={setSearchResults}
         />
-        {searchResults &&
-          searchResults.map((searchResult) => (
+        {filteredResult &&
+          filteredResult.map((searchResult) => (
             <ProductCard
               key={searchResult._id}
               id={searchResult._id}
@@ -44,6 +68,9 @@ export default function Marketplace({ allProducts, token, setToken, searchResult
           ))}
         {allProducts &&
           !searchResults &&
+          !productCondition &&
+          !productDelivery &&
+          !productCategory &&
           allProducts.map((product) => (
             <ProductCard
               key={product._id}
