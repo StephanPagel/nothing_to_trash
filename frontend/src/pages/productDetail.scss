@@ -2,14 +2,13 @@
 //   background: linear-gradient(#e5efff, #fff, #fff, #fff);
 // }
 .detail_container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(#e5efff, #fff, #fff, #fff);
   padding-bottom: 10%;
 
-//   margin: 10%;
+  //   margin: 10%;
   .product_details {
-    
     display: flex;
     justify-content: space-between;
     padding: 10% 10% 5% 10%;
@@ -30,34 +29,36 @@
         gap: 10px;
       }
     }
-    
   }
 }
-.btn_edit, .btn_sold, .btn_delete {
-      border: 1px solid #7854F7;
-      color: #7854F7;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
-    padding: 1vh 1vw;
-    margin: 0 .2%;
-    }
+.btn_edit,
+.btn_sold,
+.btn_delete {
+  border: 1px solid #7854f7;
+  color: #7854f7;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 1vh 1vw;
+  margin: 0 0.2%;
+}
 
-.btn_edit:hover, .btn_sold:hover, .btn_delete:hover {
-    //   border: 1px solid #7854F7;
-      color: #fff;
-    background-color: #7854F7;
-    }
+.btn_edit:hover,
+.btn_sold:hover,
+.btn_delete:hover {
+  color: #fff;
+  background-color: #7854f7;
+}
 
-    .buttons {
-        padding-left: 10%;
-    }
+.buttons {
+  padding-left: 10%;
+}
 
-    .btn_wish {
-    border: none;
-    border-radius: 5px;
-    background-color: #F5F5F5;
-    width: 12vw;
-    padding: 1vh 0;
-    font-size: 16px;
+.btn_wish {
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  width: 12vw;
+  padding: 1vh 0;
+  font-size: 16px;
 }
