@@ -1,6 +1,7 @@
 import "./setProductForm.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
+import { useNavigate } from "react-router-dom";
 
 const SetProductForm = ({ token }) => {
   const [adType, setAdType] = useState("");
@@ -22,6 +23,7 @@ const SetProductForm = ({ token }) => {
   const [imageFile, setImageFile] = useState(null);
 
   const fileInputRef = useRef();
+  const navigate = useNavigate();
 
   const onFileChange = (e) => {
     const productImage = e.target.files[0];
