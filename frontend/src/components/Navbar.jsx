@@ -1,9 +1,8 @@
-import "./navbar.scss"
-import { Link } from 'react-router-dom'
-import profilfoto from "./../images/profilfoto.png"
+import "./navbar.scss";
+import { Link } from 'react-router-dom';
+import profilfoto from "./../images/profilfoto.png";
 
 export default function Navbar(props) {
-
 
     return (
         <div className="navbar">
@@ -36,10 +35,9 @@ export default function Navbar(props) {
             }
             {props.token &&
                 <div>
-                    <button className="btn_profilfoto"><img className="profilfoto" src={profilfoto} alt="Profilfoto" /></button>
+                    <Link className="btn_profilfoto" to="/userprofil"><img className="profilfoto" src={profilfoto} alt="Profilfoto" /></Link>
                 </div>
             }
-
         </div >
     )
 }

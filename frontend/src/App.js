@@ -42,7 +42,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar token={token} />
+      <Navbar
+        token={token}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
