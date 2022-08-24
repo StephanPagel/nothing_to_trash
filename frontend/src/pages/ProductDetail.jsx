@@ -17,7 +17,6 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       .then((detailsArray) => setProductDetails(detailsArray));
   }, []);
 
-  
   const deleteProduct = (id) => {
     fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
       method: "DELETE",
@@ -30,15 +29,14 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
   return (
     <div className="detail_container">
       <div className="product_details">
-        <div>
-          <img
-            src={
-              productDetails.filename &&
-              `${apiBaseUrl}/${productDetails.filename}`
-            }
-            alt="product"
-          />
-        </div>
+        <img
+          src={
+            productDetails.filename &&
+            `${apiBaseUrl}/${productDetails.filename}`
+          }
+          alt="product"
+        />
+
         <div className="product_facts">
           <h1>{productDetails.title}</h1>
           <h2>{productDetails.price}</h2>
@@ -58,9 +56,13 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
         </div>
       </div>
       <div className="buttons">
-        <button className="btn_edit" onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
+        <button className="btn_edit" onClick={() => setShowEditor(!showEditor)}>
+          Bearbeiten
+        </button>
         <button className="btn_sold">Verkauft</button>
-        <button className="btn_delete" onClick={deleteProduct}>Produkt löschen</button>
+        <button className="btn_delete" onClick={deleteProduct}>
+          Produkt löschen
+        </button>
         {showEditor && <EditProduct productId={id} />}
       </div>
     </div>
