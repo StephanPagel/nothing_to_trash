@@ -1,0 +1,7 @@
+DB_URL=""
+DB_NAME=""
+
+JWT_SECRET=""
+
+COOKIE_SESSION_SECRET="" //denkt man sich selber aus
+FRONTEND_URL=""

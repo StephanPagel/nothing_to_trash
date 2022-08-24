@@ -1,0 +1,95 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    padding: 0 3vw;
+    z-index: 5;
+    background-color: transparent;
+
+  .navbar_li {
+    display: flex;
+    padding-left: 30px;
+    justify-content: space-between;
+    width: 45vw;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 20vw;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.linktohome {
+  font-weight: 600;
+  color: #272d4e;
+  font-size: 20px;
+}
+
+.navbarlink {
+  color: #272d4e;
+  font-size: 16px;
+}
+
+.linktohome:hover {
+  color: #272d4e82;
+}
+
+.navbarlink:hover {
+  color: #272d4e82;
+}
+
+.navbar_btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #7854f7;
+  cursor: pointer;
+  padding: 1vh 1vw;
+}
+
+.navbar_btn a {
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar_btn:hover {
+  background-color: #7754f7b1;
+}
+
+.navbar_btn_log {
+    border: none;
+    background-color: transparent;
+    padding: 1vh 3vw;
+    cursor: pointer;
+    margin: 0 3vw 0 25vw;
+    border-radius: 5px;
+}
+
+.navbar_btn_log a {
+  color: #272d4e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar_btn_log a:hover {
+    color: #7854F7;
+}
+
+.profilfoto {
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+
+}
+
+.btn_profilfoto {
+    margin: 0 3vw 0 45vw;
+    border: none;
+    background-color: transparent;
+}

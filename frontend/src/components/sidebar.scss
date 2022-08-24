@@ -1,0 +1,48 @@
+.sidebar {
+    width: 18vw;
+    position: fixed;
+    top: 10vh;
+    padding: 5vh 0 0 3vw;
+}
+
+.sidebar h3 {
+    padding-bottom: 1vh;
+}
+
+.sidebar_category,
+.sidebar_checkbox,
+.sidebar_rating {
+    padding-bottom: 3vh;
+}
+
+.sidebar_buttons {
+    padding-top: 3vh;
+}
+
+.sidebar div label {
+    padding-left: 1vw;
+}
+
+
+.sidebar_btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #7854F7;
+    color: #fff;
+    cursor: pointer;
+    padding: 1vh 1vw;
+    font-size: 16px;
+}
+
+.sidebar_btn_reset {
+    border: none;
+    background-color: #fff;
+    color: #7854F7;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #272D4E;
+    padding: 1vh 1vw;
+    margin-left: 2vw;
+    font-size: 16px;
+}
