@@ -1,9 +1,30 @@
 body {
-    background: red;
-       background: linear-gradient(#E5EFFF, #fff, #fff, #fff);
-
+  background: linear-gradient(#e5efff, #fff, #fff, #fff);
 }
-
-.product_details {
-   background: linear-gradient(#E5EFFF, #fff, #fff, #fff);
+.detail_container {
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  .product_details {
+    display: flex;
+    justify-content: space-around;
+    img {
+      width: 50%;
+    }
+    .product_facts {
+      display: flex;
+      width: 40%;
+      flex-direction: column;
+      justify-content: space-around;
+      .facts_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+    }
+    .btn_edit {
+        border: 1px solid red;
+    }
+  }
 }

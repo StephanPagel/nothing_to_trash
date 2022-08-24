@@ -28,32 +28,39 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
   };
 
   return (
-    <div className="product_details">
-      <div>
-        <img
-          src={
-            productDetails.filename && `${apiBaseUrl}/${productDetails.filename}`
-          }
-          alt="product"
-        />
+    <div className="detail_container">
+      <div className="product_details">
+        <div>
+          <img
+            src={
+              productDetails.filename &&
+              `${apiBaseUrl}/${productDetails.filename}`
+            }
+            alt="product"
+          />
+        </div>
+        <div className="product_facts">
+          <h1>{productDetails.title}</h1>
+          <h2>{productDetails.price}</h2>
+          <div className="facts_grid">
+            <p>Zustand</p>
+            <p>{productDetails.condition}</p>
+            <p>Marke</p>
+            <p>{productDetails.brand}</p>
+            <p>Lieferung</p>
+            <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
+            <p>Anzahl</p>
+            <p>{productDetails.amount}</p>
+          </div>
+          <button>♡ Auf die Wunschliste</button>
+          <span>Produktbeschreibung</span>
+          <p>{productDetails.descriptionLong}</p>
+        </div>
       </div>
-      <div>
-        <span>{productDetails.title}</span>
-        <h2>{productDetails.price}</h2>
-        <p>Zustand</p>
-        <p>{productDetails.condition}</p>
-        <p>Marke</p>
-        <p>{productDetails.brand}</p>
-        <p>Lieferung</p>
-        <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
-        <p>Anzahl</p>
-        <p>{productDetails.amount}</p>
-        <button>♡ Auf die Wunschliste</button>
-        <span>Produktbeschreibung</span>
-        <p>{productDetails.descriptionLong}</p>
-        <button onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
-        <button>Verkauft</button>
-        <button onClick={deleteProduct}>Produkt löschen</button>
+      <div className="buttons">
+        <button className="btn_edit" onClick={() => setShowEditor(!showEditor)}>Bearbeiten</button>
+        <button className="btn_sold">Verkauft</button>
+        <button className="btn_delete" onClick={deleteProduct}>Produkt löschen</button>
         {showEditor && <EditProduct productId={id} />}
       </div>
     </div>
