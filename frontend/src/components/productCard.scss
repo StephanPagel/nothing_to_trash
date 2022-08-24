@@ -22,8 +22,14 @@
     padding: 2vh 0 0 2vw;
     color: #272D4E;
 
-    h4 {
+    h3 {
         font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 1vh;
+    }
+
+    h4 {
+        font-size: 12px;
         font-weight: 400;
     }
 }
@@ -32,10 +38,21 @@
     display: grid;
     grid-template-columns: 10vw 20vw;
     width: 25vw;
+    gap: 1vh;
+    padding-top: 2vh;
+
+    h5 {
+        font-size: 14px;
+        font-weight: 400;
+    }
 
     p {
         text-align: left;
+        font-size: 14px;
+    }
 
+    span {
+        color: #7854F7;
     }
 }
 
@@ -56,6 +73,7 @@
     margin-bottom: 3vh;
     border-radius: 5px;
     width: 12vw;
+    text-align: center;
 }
 
 .btn_lila a {
