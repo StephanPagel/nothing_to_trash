@@ -17,8 +17,8 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
       .then((detailsArray) => setProductDetails(detailsArray));
   }, []);
 
-  
-  const deleteProduct = (id) => {
+
+  const deleteProduct = () => {
     fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
       method: "DELETE",
     })
