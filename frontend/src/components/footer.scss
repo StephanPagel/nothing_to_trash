@@ -1,80 +1,77 @@
 .footer {
-    color: #272D4E;
-    width: 100%;
-    position: absolut;
+  color: #272d4e;
+  width: 100%;
+  position: absolute;
 
-    .instagram:hover {
-        color: red;
-    }
+  .instagram:hover {
+    color: red;
+  }
 
-    .facebook:hover {
-        color: blue;
-    }
+  .facebook:hover {
+    color: blue;
+  }
 
-    .twitter:hover {
-        color: lightblue;
-    }
-
+  .twitter:hover {
+    color: lightblue;
+  }
 }
 
 .footer_register {
-    display: flex;
-    background-color: #7854F7;
-    border: 1px solid #fff;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 5% 20%;
-    font-size: 22px;
-    h3 {
-        width:80%;
-    }
+  display: flex;
+  background-color: #7854f7;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 20%;
+  font-size: 22px;
+  h3 {
+    width: 80%;
+  }
 
-    .footer_btn {
-        background-color: #7854F7;
-        color: #fff;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 15px 30px;
-    }
+  .footer_btn {
+    background-color: #7854f7;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px 30px;
+  }
 }
 
 .footer_container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    padding: 30px;
-    font-size: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 30px;
+  font-size: 12px;
 
-    span {
-        text-decoration: underline;
-    }
+  span {
+    text-decoration: underline;
+  }
 
-    a {
-        font-size: 20px;
-        margin: 5px;
-    }
+  a {
+    font-size: 20px;
+    margin: 5px;
+  }
 
-   .footer_icons {
-    color: #272D4E;
+  .footer_icons {
+    color: #272d4e;
     display: flex;
     gap: 25px;
-   }
-   i {
-        color: #272D4E;
-
-}
-.circle {
-    position: absolute;
-    bottom: 5px;
-right:100px;
-}
+  }
+  i {
+    color: #272d4e;
+  }
+  .circle {
+    position: relative;
+    bottom: 80px;
+    right: -100px;
+  }
 }
 
 @keyframes typing {
-    from {
-        width: 0
-    }
+  from {
+    width: 0;
+  }
 }
-
