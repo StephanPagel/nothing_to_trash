@@ -9,7 +9,7 @@ const { productsRouter } = require("./routes/products-router");
 const Port = process.env.Port || 9000;
 const app = express();
 
-app.use(cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
+app.use('*', cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
 
 const oneDayInMs = 24 * 60 * 60 * 1000;
 const isLocalHost = process.env.FRONTEND_URL === "https://nothingtotrash-frontend.herokuapp.com";
