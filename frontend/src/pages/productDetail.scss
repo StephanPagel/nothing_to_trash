@@ -11,7 +11,7 @@
   .product_details {
     display: flex;
     justify-content: space-between;
-    padding: 10% 10% 5% 10%;
+    padding: 10% 20% 5% 20%;
 
     img {
       width: 40%;
@@ -33,29 +33,6 @@
       }
     }
   }
-}
-
-.btn_edit,
-.btn_sold,
-.btn_delete {
-  border: 1px solid #7854f7;
-  color: #7854f7;
-  border-radius: 5px;
-  background-color: #fff;
-  cursor: pointer;
-  padding: 1vh 1vw;
-  margin: 0 0.2%;
-}
-
-.btn_edit:hover,
-.btn_sold:hover,
-.btn_delete:hover {
-  color: #fff;
-  background-color: #7854f7;
-}
-
-.buttons {
-  padding-left: 10%;
 }
 
 .btn_wish {
