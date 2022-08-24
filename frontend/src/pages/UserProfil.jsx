@@ -24,6 +24,7 @@ const UserProfil = (props) => {
                     props.allProducts.map((product) => (
                         <ProductCard
                             key={product._id}
+                            id={product._id}
                             adType={product.adType}
                             delivery={product.delivery}
                             title={product.title}
