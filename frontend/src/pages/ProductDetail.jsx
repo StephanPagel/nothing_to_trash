@@ -51,7 +51,7 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
             <p>Anzahl</p>
             <p>{productDetails.amount}</p>
           </div>
-          <button>♡ Auf die Wunschliste</button>
+          <button className="btn_wish">♡ Auf die Wunschliste</button>
           <span>Produktbeschreibung</span>
           <p>{productDetails.descriptionLong}</p>
         </div>
