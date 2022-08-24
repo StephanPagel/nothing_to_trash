@@ -6,7 +6,7 @@ const cookieSession = require("cookie-session");
 const { usersRouter } = require("./routes/users-router");
 const { productsRouter } = require("./routes/products-router");
 
-const Port = process.env.Port || 9000;
+const Port = process.env.PORT || 9000;
 const app = express();
 
 app.use('*', cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
