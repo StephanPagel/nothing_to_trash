@@ -42,7 +42,7 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorM
             method: "DELETE",
         })
             .then((res) => res.json())
-            .then(() => navigator("/"))
+            .then(() => navigator("/usersproducts"))
             .catch((err) => console.log(err));
     };
 
@@ -58,7 +58,7 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorM
                 />
                 <div className="product_facts_u">
                     <h1>{productDetails.title}</h1>
-                    <h2>{productDetails.price}</h2>
+                    <h2>{productDetails.price} EUR</h2>
                     <div className="facts_grid_u">
                         <p>Zustand</p>
                         <p>{productDetails.condition}</p>
