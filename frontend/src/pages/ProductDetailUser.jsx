@@ -14,8 +14,8 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorM
 
     useEffect(() => {
         fetch(`${apiBaseUrl}products/allproducts/` + id)
-            .then((productDetails) => productDetails.json())
-            .then((detailsArray) => setProductDetails(detailsArray));
+            .then((response) => response.json())
+            .then((productDetails) => setProductDetails(productDetails));
     }, [id, setProductDetails]);
 
     const changeStatusSold = () => {
@@ -83,7 +83,7 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorM
                     Produkt löschen
                 </button>
             </div>
-            {showEditor && <EditProduct productId={id} productDetails={productDetails} />}
+            {showEditor && <EditProduct productId={id} productDetails={productDetails} setProductDetails={setProductDetails} />}
         </div >
     );
 }

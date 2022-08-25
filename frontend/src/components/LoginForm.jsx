@@ -16,8 +16,8 @@ import Schatten29 from "./../images/Schatten29.png";
 import Schatten30 from "./../images/Schatten30.png";
 
 const LoginForm = ({ setToken, errorMessage, setErrorMessage }) => {
-    const [email, setEmail] = useState("max.mustermann@gmail.com");
-    const [password, setPassword] = useState("max123");
+    const [email, setEmail] = useState("erika.mustermann@gmail.com");
+    const [password, setPassword] = useState("erika123");
 
     const navigate = useNavigate();
     const login = (event) => {
