@@ -53,6 +53,7 @@ const ProductDetailUser = ({
             });
     };
 
+    
     const deleteProduct = () => {
         const updatedProductArray = allProducts.filter((e) => e._id !== id);
         console.log(updatedProductArray);
