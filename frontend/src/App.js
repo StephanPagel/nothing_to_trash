@@ -60,9 +60,9 @@ function App() {
         <Route
           path="/"
           element={
-            <AuthRequired token={token} setToken={setToken}>
-              <Home />
-            </AuthRequired>
+
+            <Home />
+
           }
         />
 
@@ -79,23 +79,23 @@ function App() {
         <Route
           path="marketplace"
           element={
-            <AuthRequired token={token} setToken={setToken}>
-              <Marketplace
-                allProducts={allProducts}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                token={token}
-                setToken={setToken}
-                productCategory={productCategory}
-                setProductCategory={setProductCategory}
-                productCondition={productCondition}
-                setProductCondition={setProductCondition}
-                productDelivery={productDelivery}
-                setProductDelivery={setProductDelivery}
-                productPrice={productPrice}
-                setProductPrice={setProductPrice}
-              />
-            </AuthRequired>
+
+            <Marketplace
+              allProducts={allProducts}
+              searchResults={searchResults}
+              setSearchResults={setSearchResults}
+              token={token}
+              setToken={setToken}
+              productCategory={productCategory}
+              setProductCategory={setProductCategory}
+              productCondition={productCondition}
+              setProductCondition={setProductCondition}
+              productDelivery={productDelivery}
+              setProductDelivery={setProductDelivery}
+              productPrice={productPrice}
+              setProductPrice={setProductPrice}
+            />
+
           }
         />
         <Route
@@ -122,12 +122,12 @@ function App() {
         <Route
           path="product_details/:id"
           element={
-            <AuthRequired token={token} setToken={setToken}>
-              <ProductDetail
-                productDetails={productDetails}
-                setProductDetails={setProductDetails}
-              />
-            </AuthRequired>
+
+            <ProductDetail
+              productDetails={productDetails}
+              setProductDetails={setProductDetails}
+            />
+
           }
         />
         <Route
@@ -151,9 +151,9 @@ function App() {
         <Route
           path="about_us"
           element={
-            <AuthRequired token={token} setToken={setToken}>
-              <AboutUs />
-            </AuthRequired>
+
+            <AboutUs />
+
           }
         />
         <Route path="register" element={<Register />} />
