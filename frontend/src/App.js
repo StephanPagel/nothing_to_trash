@@ -117,6 +117,7 @@ function App() {
         <Route path="product_details_user/:id" element={<ProductDetailUser
           productDetails={productDetails}
           setProductDetails={setProductDetails}
+          token={token}
         />} />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />

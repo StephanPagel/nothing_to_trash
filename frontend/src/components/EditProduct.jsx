@@ -4,6 +4,7 @@ import { apiBaseUrl } from "../api";
 import {useNavigate} from "react-router-dom"
 
 const EditProduct = ({ productId }) => {
+
   const [adType2, setAdType2] = useState("");
   const [delivery2, setDelivery2] = useState("");
   const [title2, setTitle2] = useState("");
@@ -29,6 +30,7 @@ const EditProduct = ({ productId }) => {
     const productImage = e.target.files[0];
     setImageFile2(productImage);
   };
+
 
   // const formData = new FormData();
 
@@ -231,6 +233,7 @@ const EditProduct = ({ productId }) => {
         value={descriptionShort2}
         onChange={(e) => setDescriptionShort2(e.target.value)}
       ></input>
+      
       <label>Beschreibung lang:</label>
 
       <textarea
@@ -240,6 +243,7 @@ const EditProduct = ({ productId }) => {
         rows="5"
         value={descriptionLong2}
         onChange={(e) => setDescriptionLong2(e.target.value)}
+
       ></textarea>
 
       <label>Anzahl:</label>

@@ -27,7 +27,7 @@ function addNewProduct(productInfo) {
 }
 
 function updateProduct(id, updateProduct) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _) => {
     injectDB()
       .then((db) =>
         db.collection(productsCollectionName).updateOne(
@@ -49,7 +49,8 @@ function updateProduct(id, updateProduct) {
               phone: updateProduct.phone,
               filename: updateProduct.filename,
             },
-          }
+          },
+          { returnDocument: "after" }
         )
       )
       .then((result) => {
