@@ -35,6 +35,7 @@ function App() {
   const [productCategory, setProductCategory] = useState([]);
   const [productCondition, setProductCondition] = useState([]);
   const [productDelivery, setProductDelivery] = useState([]);
+  const [productPrice, setProductPrice] = useState([]);
 
   console.log(token)
   useEffect(() => {
@@ -43,7 +44,7 @@ function App() {
       .then((productsArray) => productsArray.filter((product) => { return product.sold === false }))
       .then((productsforSale) => setAllProducts(productsforSale))
       .catch((err) => console.log(err));
-  }, []);
+  }, [productDelivery, productPrice]);
 
   return (
     <div className="App">
@@ -84,6 +85,8 @@ function App() {
               setProductCondition={setProductCondition}
               productDelivery={productDelivery}
               setProductDelivery={setProductDelivery}
+              productPrice={productPrice}
+              setProductPrice={setProductPrice}
             />
           </AuthRequired>}
         />

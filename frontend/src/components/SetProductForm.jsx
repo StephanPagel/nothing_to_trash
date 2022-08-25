@@ -390,7 +390,9 @@ const SetProductForm = ({ token, setAllProducts, allproducts }) => {
         </div>
       </div>
       <div>
-        <button className="btn-submitProduct" onClick={submitForm}>Produkt einstellen</button>
+        <button className="btn-submitProduct" onClick={submitForm}>
+          Produkt einstellen
+        </button>
       </div>
     </form>
   );
