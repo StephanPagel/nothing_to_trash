@@ -63,3 +63,20 @@
     padding: 1vh 0;
     font-size: 16px;
 }
+
+.deletePopUp {
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    div {
+        width: 50vw;
+        height: 50vh;
+        background-color: #fff;
+        border-radius: 20px;
+        text-align: center;
+    }
+}

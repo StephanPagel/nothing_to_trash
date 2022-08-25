@@ -84,6 +84,7 @@ productsRouter.delete("/deletedProduct/:id", (req, res) => {
   const productId = req.params.id;
   deleteProduct(productId)
     .then((products) => res.json(products))
+    .then((result) => console.log(result))
     .catch((err) => {
       console.log(err);
       res.status(500).json({ error: "Failed to delete product" });
