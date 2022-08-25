@@ -40,6 +40,7 @@ export default function Navbar(props) {
                         userData={props.userData}
                         setErrorMessage={props.setErrorMessage}
                         setShowSidebarUserProfil={setShowSidebarUserProfil}
+                        allProducts={props.allProducts}
                     />
                 </div>
             }
