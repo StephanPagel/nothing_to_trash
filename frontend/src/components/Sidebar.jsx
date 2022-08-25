@@ -114,50 +114,54 @@ export default function Sidebar({
         </div>
       </div>
       <h3>Zustand</h3>
-      <div>
-        <input
-          type="checkbox"
-          onChange={handleChangeCondition}
-          value={"Wie neu"}
-        />
-        <label>Wie neu</label>
-      </div>
-      <div>
-        <input type="checkbox" onChange={handleChangeCondition} value={"Gut"} />
-        <label>Gut</label>
-      </div>
-      <div>
-        <input
-          type="checkbox"
-          onChange={handleChangeCondition}
-          value={"Deutliche Gebrauchsspuren"}
-        />
-        <label>Gebraucht</label>
-      </div>
-      <div>
-        <input
-          type="checkbox"
-          onChange={handleChangeCondition}
-          value={"Defekt"}
-        />
-        <label>Defekt</label>
+      <div className="sidebar_condition">
+        <div>
+          <input
+            type="checkbox"
+            onChange={handleChangeCondition}
+            value={"Wie neu"}
+          />
+          <label>Wie neu</label>
+        </div>
+        <div>
+          <input type="checkbox" onChange={handleChangeCondition} value={"Gut"} />
+          <label>Gut</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            onChange={handleChangeCondition}
+            value={"Deutliche Gebrauchsspuren"}
+          />
+          <label>Gebraucht</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            onChange={handleChangeCondition}
+            value={"Defekt"}
+          />
+          <label>Defekt</label>
+        </div>
       </div>
       <h3>Versand</h3>
-      <div>
-        <input
-          type="checkbox"
-          onChange={handleChangeDelivery}
-          value={"deliveryYes"}
-        />
-        <label>Lieferung: Ja</label>
-      </div>
-      <div>
-        <input
-          type="checkbox"
-          onChange={handleChangeDelivery}
-          value={"deliveryNo"}
-        />
-        <label>Lieferung: Nein</label>
+      <div className="sidebar_delivery">
+        <div>
+          <input
+            type="checkbox"
+            onChange={handleChangeDelivery}
+            value={"deliveryYes"}
+          />
+          <label>Lieferung: Ja</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            onChange={handleChangeDelivery}
+            value={"deliveryNo"}
+          />
+          <label>Lieferung: Nein</label>
+        </div>
       </div>
       <h3>Bewertung</h3>
       <div className="sidebar_rating">
@@ -188,7 +192,6 @@ export default function Sidebar({
         <p></p>
       </div>
       <div className="sidebar_buttons">
-        <button className="sidebar_btn">Anwenden</button>
         <button className="sidebar_btn_reset">Reset</button>
       </div>
     </div>
