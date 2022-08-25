@@ -1,5 +1,5 @@
 import "./sidebar.scss";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Sidebar({
   searchResults,
@@ -82,7 +82,7 @@ export default function Sidebar({
     });
     setFilteredResult(filteredByDelivery);
     console.log(filteredByDelivery);
-  }, [productCategory, productCondition, productDelivery, searchResults]);
+  }, [productCategory, productCondition, productDelivery, searchResults, setFilteredResult]);
 
   return (
     <div className="sidebar">

@@ -30,33 +30,16 @@ function updateProduct(id, updateProduct) {
   return new Promise((resolve, _) => {
     injectDB()
       .then((db) =>
-        db.collection(productsCollectionName).updateOne(
+        db.collection(productsCollectionName).findOneAndUpdate(
           { _id: ObjectId(id) },
-          {
-            $set: {
-              adType: updateProduct.adType,
-              delivery: updateProduct.delivery,
-              title: updateProduct.title,
-              description: updateProduct.description,
-              amount: updateProduct.amount,
-              price: updateProduct.price,
-              priceOptions: updateProduct.priceOptions,
-              category: updateProduct.category,
-              zip: updateProduct.zip,
-              city: updateProduct.city,
-              street: updateProduct.street,
-              name: updateProduct.name,
-              phone: updateProduct.phone,
-              filename: updateProduct.filename,
-            },
-          },
+          { $set: updateProduct },
           { returnDocument: "after" }
         )
       )
       .then((result) => {
         console.log(result);
         // if()
-        resolve(result);
+        resolve(result.value);
       });
   });
 }

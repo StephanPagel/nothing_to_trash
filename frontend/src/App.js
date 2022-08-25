@@ -36,10 +36,11 @@ function App() {
   const [productCondition, setProductCondition] = useState([]);
   const [productDelivery, setProductDelivery] = useState([]);
 
+  console.log(token)
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
       .then((allProducts) => allProducts.json())
-      .then((productsArray) => productsArray.filter((product) => { return product.sold == false }))
+      .then((productsArray) => productsArray.filter((product) => { return product.sold === false }))
       .then((productsforSale) => setAllProducts(productsforSale))
       .catch((err) => console.log(err));
   }, []);
@@ -52,8 +53,6 @@ function App() {
         setUserData={setUserData}
         userData={userData}
         setErrorMessage={setErrorMessage}
-
-
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -96,7 +95,11 @@ function App() {
             />
           }
         />
-        <Route path="editproduct/:id" element={<EditProduct />} />
+        <Route path="editproduct/:id" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <EditProduct />
+          </AuthRequired>
+        } />
         <Route
           path="set_product"
           element={
@@ -115,12 +118,15 @@ function App() {
             />
           }
         />
-        <Route path="product_details_user/:id" element={<ProductDetailUser
-          productDetails={productDetails}
-          setProductDetails={setProductDetails}
-          token={token}
-          setErrorMessage={setErrorMessage}
-        />} />
+        <Route path="product_details_user/:id" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <ProductDetailUser
+              productDetails={productDetails}
+              setProductDetails={setProductDetails}
+              token={token}
+              setErrorMessage={setErrorMessage}
+            />
+          </AuthRequired>} />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />

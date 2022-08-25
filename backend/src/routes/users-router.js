@@ -3,6 +3,7 @@ const { registerUser } = require("../use-cases/register-user");
 const { loginUser } = require("../use-cases/login-user");
 const { showUserProfil } = require("../use-cases/showUserProfil");
 const { makeDoAuthMiddleware } = require("./../auth/doAuthMiddleware");
+const { refreshUserToken } = require("../use-cases/refreshUserToken");
 
 const doAuthMiddleware = makeDoAuthMiddleware("access");
 const doRefreshTokenMiddleware = makeDoAuthMiddleware("refresh");

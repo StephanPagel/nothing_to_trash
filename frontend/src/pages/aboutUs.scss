@@ -1,0 +1,42 @@
+.AboutUs {
+    text-align: center;
+    padding: 15vh 0;
+    color: #272d4e;
+}
+
+.AboutHeadline {
+    font-size: 30px;
+}
+
+.teamHeadline {
+    padding: 2vh 0;
+    font-size: 20px;
+}
+
+.Team {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 20vw;
+}
+
+.Team div p {
+    color: #7854f7;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.Team div img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+.icontechnologies {
+    color: #7854f7;
+    font-size: 40px;
+    padding: 2vh 2vw;
+}
+
+.aboutttext {
+    padding-top: 2vh;
+}
