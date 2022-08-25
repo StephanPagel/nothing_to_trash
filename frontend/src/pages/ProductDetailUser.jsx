@@ -5,7 +5,7 @@ import EditProduct from "./../components/EditProduct";
 import "./productDetailUser.scss";
 
 
-const ProductDetailUser = ({ productDetails, setProductDetails }) => {
+const ProductDetailUser = ({ productDetails, setProductDetails, token }) => {
     const { id } = useParams();
 
     const [showEditor, setShowEditor] = useState(false);
@@ -18,6 +18,16 @@ const ProductDetailUser = ({ productDetails, setProductDetails }) => {
             .then((detailsArray) => setProductDetails(detailsArray));
     }, [id, setProductDetails]);
 
+    const changeStatusSold = () => {
+        fetch(`${apiBaseUrl}products/changestatus/`, {
+            method: "PUT",
+            headers: {
+                token: `JWT ${props.token}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ status }),
+        })
+    }
 
     const deleteProduct = () => {
         fetch(`${apiBaseUrl}products/deletedProduct/` + id, {
@@ -60,12 +70,12 @@ const ProductDetailUser = ({ productDetails, setProductDetails }) => {
                 <button className="btn_edit" onClick={() => setShowEditor(!showEditor)}>
                     Bearbeiten
                 </button>
-                <button className="btn_sold">Verkauft</button>
+                <button className="btn_sold" onClick={changeStatusSold}>Verkauft</button>
                 <button className="btn_delete" onClick={deleteProduct}>
                     Produkt löschen
                 </button>
             </div>
-            {showEditor && <EditProduct productId={id} />}
+            {showEditor && <EditProduct productId={id} productDetails={productDetails} />}
         </div >
     );
 }
