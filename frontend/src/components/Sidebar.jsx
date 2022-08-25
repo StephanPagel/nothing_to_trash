@@ -247,9 +247,6 @@ export default function Sidebar({
           />
         )}
       />
-      <div className="sidebar_buttons">
-        <button className="sidebar_btn_reset">Reset</button>
-      </div>
     </div>
   );
 }
