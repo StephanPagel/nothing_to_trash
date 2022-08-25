@@ -32,7 +32,6 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
     const productImage = e.target.files[0];
     setImageFile2(productImage);
   };
-
   const edit = (e) => {
     e.preventDefault();
 

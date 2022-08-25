@@ -15,9 +15,11 @@ export default function Marketplace({
   productCategory,
   setProductCategory,
   productCondition,
-  setProductCondition
+  setProductCondition,
+  productPrice,
+  setProductPrice,
 }) {
-  const [filteredResult, setFilteredResult] = useState([]);
+  const [filteredResult, setFilteredResult] = useState(allProducts);
 
   return (
     <div className="marketplace">
@@ -31,7 +33,10 @@ export default function Marketplace({
           setProductCondition={setProductCondition}
           productDelivery={productDelivery}
           setProductDelivery={setProductDelivery}
+          filteredResult={filteredResult}
           setFilteredResult={setFilteredResult}
+          productPrice={productPrice}
+          setProductPrice={setProductPrice}
         />
         <h1>Hilf mit die Umwelt zu schützen</h1>
         <p className="marketplace_p">
@@ -45,11 +50,12 @@ export default function Marketplace({
           allProducts={allProducts}
           setSearchResults={setSearchResults}
         />
-        {allProducts &&
+        {/* {allProducts &&
           !searchResults &&
           !productCondition &&
           !productDelivery &&
           !productCategory &&
+          !productPrice &&
           allProducts.map((product) => (
             <ProductCard
               key={product._id}
@@ -69,8 +75,14 @@ export default function Marketplace({
               token={token}
               setToken={setToken}
             />
-          ))}
+          ))} */}
         {filteredResult &&
+          allProducts &&
+          // !searchResults &&
+          // !productCondition &&
+          // !productDelivery &&
+          // !productCategory &&
+          // !productPrice &&
           filteredResult.map((searchResult) => (
             <ProductCard
               key={searchResult._id}
