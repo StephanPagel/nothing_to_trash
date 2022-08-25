@@ -1,5 +1,4 @@
 import SetProductForm from "../components/SetProductForm";
-import LogoutButton from "../components/LogoutButton";
 
 const SetProduct = (props) => {
 

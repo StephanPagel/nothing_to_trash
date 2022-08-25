@@ -4,8 +4,9 @@ import { apiBaseUrl } from "./../api";
 
 const AuthRequired = ({ token, children, setToken }) => {
     const [loading, setLoading] = useState(true);
-
+    console.log("inAuth", token)
     useEffect(() => {
+        console.log("inEffect", token)
         if (token) {
             setLoading(false);
             //Token already exists, no need to do anything
@@ -25,6 +26,7 @@ const AuthRequired = ({ token, children, setToken }) => {
             })
                 .then((response) => response.json())
                 .then((data) => {
+                    console.log("inFetch", data)
                     setLoading(false);
                     setToken(data.token);
 
@@ -47,7 +49,7 @@ const AuthRequired = ({ token, children, setToken }) => {
     }
 
     if (!token) {
-        return <Navigate to="/register" />;
+        return <Navigate to="/login" />;
     }
 
     return <>{children}</>;

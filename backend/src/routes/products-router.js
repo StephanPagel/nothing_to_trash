@@ -93,7 +93,10 @@ productsRouter.delete("/deletedProduct/:id", (req, res) => {
 productsRouter.put("/edit/:id", uploadMiddleware, (req, res) => {
   const productId = req.params.id;
   const updateProduct = req.body; // req body ist stellvertretend für alles key/value Paare im Object
-
+  console.log("file", req.file)
+  if (req.file) {
+    updateProduct.filename = req.file.filename
+  }
   updateProductById(productId, updateProduct)
     .then((updatedElement) => res.json(updatedElement))
     .catch((err) => console.log(err));

@@ -26,7 +26,6 @@ export default function Searchbar({ allProducts, setSearchResults }) {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <a className="search_btn" href="#"></a>
         <i className="fa_searchbar"></i>
       </div>
       <button className="btn_search">
