@@ -55,20 +55,23 @@ function App() {
         setErrorMessage={setErrorMessage}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="login"
-          element={
-            <Login
-              setToken={setToken}
-              errorMessage={errorMessage}
-              setErrorMessage={setErrorMessage}
-            />
-          }
+
+        <Route path="/" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <Home />
+          </AuthRequired>
+        } />
+
+        <Route path="login" element={
+          <Login
+            setToken={setToken}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
+          />
+        }
         />
-        <Route
-          path="marketplace"
-          element={
+        <Route path="marketplace" element={
+          <AuthRequired token={token} setToken={setToken}>
             <Marketplace
               allProducts={allProducts}
               searchResults={searchResults}
@@ -82,41 +85,31 @@ function App() {
               productDelivery={productDelivery}
               setProductDelivery={setProductDelivery}
             />
-          }
-        />
-        <Route path="login" element={<Login setToken={setToken} />} />
-        <Route
-          path="login"
-          element={
-            <Login
-              setToken={setToken}
-              errorMessage={errorMessage}
-              setErrorMessage={setErrorMessage}
-            />
-          }
+          </AuthRequired>}
         />
         <Route path="editproduct/:id" element={
           <AuthRequired token={token} setToken={setToken}>
             <EditProduct />
           </AuthRequired>
         } />
-        <Route
-          path="set_product"
-          element={
-            <AuthRequired token={token} setToken={setToken}>
-              <SetProduct token={token} setToken={setToken} />
-            </AuthRequired>
-          }
+        <Route path="set_product" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <SetProduct
+              token={token}
+              setToken={setToken}
+              setAllProducts={setAllProducts}
+              allProducts={allProducts} />
+          </AuthRequired>
+        }
         />
-        <Route path="set_product" element={<SetProduct token={token} />} />
-        <Route
-          path="product_details/:id"
-          element={
+        <Route path="product_details/:id" element={
+          <AuthRequired token={token} setToken={setToken}>
             <ProductDetail
               productDetails={productDetails}
               setProductDetails={setProductDetails}
             />
-          }
+          </AuthRequired>
+        }
         />
         <Route path="product_details_user/:id" element={
           <AuthRequired token={token} setToken={setToken}>
@@ -125,22 +118,25 @@ function App() {
               setProductDetails={setProductDetails}
               token={token}
               setErrorMessage={setErrorMessage}
+              setAllProducts={setAllProducts}
             />
           </AuthRequired>} />
         <Route path="sold" element={<AlreadySold />} />
-        <Route path="about_us" element={<AboutUs />} />
+        <Route path="about_us" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <AboutUs />
+          </AuthRequired>
+        } />
         <Route path="register" element={<Register />} />
-        <Route
-          path="usersproducts"
-          element={
-            <AuthRequired token={token} setToken={setToken}>
-              <UsersProducts userData={userData} setUserData={setUserData} />
-            </AuthRequired>
-          }
+        <Route path="usersproducts" element={
+          <AuthRequired token={token} setToken={setToken}>
+            <UsersProducts userData={userData} setUserData={setUserData} />
+          </AuthRequired>
+        }
         />
       </Routes>
       <Footer />
-    </div>
+    </div >
   );
 }
 
