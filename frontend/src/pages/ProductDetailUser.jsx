@@ -5,7 +5,7 @@ import EditProduct from "./../components/EditProduct";
 import "./productDetailUser.scss";
 
 
-const ProductDetailUser = ({ productDetails, setProductDetails, token }) => {
+const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorMessage }) => {
     const { id } = useParams();
 
     const [showEditor, setShowEditor] = useState(false);
@@ -19,14 +19,22 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token }) => {
     }, [id, setProductDetails]);
 
     const changeStatusSold = () => {
-        fetch(`${apiBaseUrl}products/changestatus/`, {
+        fetch(`${apiBaseUrl}products/changestatus`, {
             method: "PUT",
             headers: {
-                token: `JWT ${props.token}`,
+                token: `JWT ${token}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ status }),
+            body: JSON.stringify({ id, sold: true }),
         })
+            .then((res) => res.json())
+            .then((productData) => {
+                if (!productData._id) {
+                    setErrorMessage(productData.message || "Error loading product data.");
+                    return;
+                }
+                setProductDetails((prev) => ({ ...prev, ...productData }));
+            });
     }
 
     const deleteProduct = () => {

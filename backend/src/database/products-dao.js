@@ -100,11 +100,23 @@ async function findProductsByUserId(userId) {
   return productsOfUser;
 }
 
+async function findProductAndUpdateStatus({ productId, sold }) {
+  const db = await injectDB();
+  return db
+    .collection(productsCollectionName)
+    .findOneAndUpdate(
+      { _id: ObjectId(productId) },
+      { $set: { sold } },
+      { returnDocument: "after" }
+    );
+}
+
 module.exports = {
   addNewProduct,
   getAllProducts,
   findProductById,
   deleteProductById,
   updateProduct,
-  findProductsByUserId
+  findProductsByUserId,
+  findProductAndUpdateStatus
 };

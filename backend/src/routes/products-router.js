@@ -5,6 +5,7 @@ const { findProductDetails } = require("./../use-cases/findProductById");
 const { deleteProduct } = require("./../use-cases/deleteProduct");
 const { updateProductById } = require("./../use-cases/updateProduct");
 const { makeDoAuthMiddleware } = require("./../auth/doAuthMiddleware");
+const { changeSoldStatus } = require("./../use-cases/changeSoldStatus");
 const multer = require("multer");
 const doAuthMiddleware = makeDoAuthMiddleware("access");
 
@@ -89,7 +90,7 @@ productsRouter.delete("/deletedProduct/:id", (req, res) => {
     });
 });
 
-productsRouter.put("/edit/:id", (req, res) => {
+productsRouter.put("/edit/:id", uploadMiddleware, (req, res) => {
   const productId = req.params.id;
   const updateProduct = req.body; // req body ist stellvertretend für alles key/value Paare im Object
 
@@ -97,6 +98,20 @@ productsRouter.put("/edit/:id", (req, res) => {
     .then((updatedElement) => res.json(updatedElement))
     .catch((err) => console.log(err));
   console.log(req.body);
+});
+
+productsRouter.put("/changestatus", doAuthMiddleware, async (req, res) => {
+  try {
+    const productId = req.body.id;
+    const sold = req.body.sold;
+    const response = await changeSoldStatus({ productId, sold });
+    res.json(response);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: err.toString() || "Error changing status to sold",
+    });
+  }
 });
 
 module.exports = { productsRouter };
