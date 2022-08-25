@@ -15,8 +15,8 @@ export default function Sidebar({
   setProductPrice,
   allProducts,
 }) {
-  const min = 0;
-  const max = 1000;
+  const MIN = 0;
+  const MAX = 1000;
   const [values, setValues] = useState([0, 1000]);
 
   const handleChangeCategory = (e) => {
@@ -213,9 +213,9 @@ export default function Sidebar({
       </div>
       <h3>Preis</h3>
       <Range
-        step={0.5}
-        min={min}
-        max={max}
+        step={1}
+        min={MIN}
+        max={MAX}
         values={values}
         onChange={(values) => {
           setValues(values);
@@ -247,8 +247,10 @@ export default function Sidebar({
           />
         )}
       />
-      <div className="sidebar_buttons">
-        <button className="sidebar_btn_reset">Reset</button>
+      <div className="valueContainer">
+        <p>Filtern</p>
+        <p>Von:{values[0]} €</p>
+        <p>Bis:{values[1]} €</p>
       </div>
     </div>
   );
