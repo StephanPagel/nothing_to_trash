@@ -24,7 +24,7 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
         />
         <div className="product_facts">
           <h1>{productDetails.title}</h1>
-          <h2>{productDetails.price}</h2>
+          <h2>{productDetails.price} EUR</h2>
           <div className="facts_grid">
             <p>Zustand</p>
             <p>{productDetails.condition}</p>

@@ -111,6 +111,8 @@ async function findProductAndUpdateStatus({ productId, sold }) {
     );
 }
 
+
+
 module.exports = {
   addNewProduct,
   getAllProducts,

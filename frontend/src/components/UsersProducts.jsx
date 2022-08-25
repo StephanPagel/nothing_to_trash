@@ -1,8 +1,9 @@
 import ProductCardUser from "./../components/ProductCardUser";
+import "./userProducts.scss";
 
 const UsersProducts = (props) => {
     console.log(props.userData.products)
-    return (<div>
+    return (<div className="usersProducts">
         {props.userData &&
             props.userData.products.map((product) => (
                 <ProductCardUser

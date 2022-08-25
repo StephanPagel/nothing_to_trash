@@ -8,7 +8,7 @@ const ProductCardUser = (props) => {
             <div className="productCard">
                 <img src={props.filename && `${apiBaseUrl}/${props.filename}`} alt="product" />
                 <div className="productCard_title">
-                    <h3>{props.price}</h3>
+                    <h3>{props.price} EUR</h3>
                     <h3>{props.title}</h3>
                     <h4>{props.descriptionShort}</h4>
                     <div className="productCard_details">
