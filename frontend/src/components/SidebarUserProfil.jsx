@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { apiBaseUrl } from "./../api";
 import { Link } from "react-router-dom";
 
-const SidebarUserProfil = ({ token, userData, setUserData, setToken, setErrorMessage, setShowSidebarUserProfil }) => {
+const SidebarUserProfil = ({ token, userData, setUserData, setToken, setErrorMessage, setShowSidebarUserProfil, allProducts }) => {
 
     useEffect(() => {
         fetch(apiBaseUrl + "users/userprofil", {
@@ -18,7 +18,7 @@ const SidebarUserProfil = ({ token, userData, setUserData, setToken, setErrorMes
                 }
                 setUserData(profilData);
             });
-    }, [token, setErrorMessage, setUserData]);
+    }, [token, setErrorMessage, setUserData, allProducts]);
 
     return (<div className="sidebaruserprofil">
         <h2>{userData.username}</h2>

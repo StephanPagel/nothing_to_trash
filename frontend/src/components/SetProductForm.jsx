@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
 import { useNavigate } from "react-router-dom";
 
-const SetProductForm = ({ token, setAllProducts, allproducts }) => {
+const SetProductForm = ({ token, setAllProducts, allProducts }) => {
   const [adType, setAdType] = useState("");
   const [delivery, setDelivery] = useState("");
   const [title, setTitle] = useState("");
@@ -64,8 +64,8 @@ const SetProductForm = ({ token, setAllProducts, allproducts }) => {
     })
       .then((response) => response.json())
       .then((newProduct) => {
-        console.log(newProduct)
-        navigate("/marketplace")
+setAllProducts([...allProducts, newProduct]);
+        navigate("/usersproducts")
       }
       );
   };
