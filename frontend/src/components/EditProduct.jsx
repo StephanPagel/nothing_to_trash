@@ -1,10 +1,9 @@
 import "./editProduct.scss";
 import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 
-
-const EditProduct = ({ productId, productDetails }) => {
+const EditProduct = ({ productId }) => {
 
   const [adType2, setAdType2] = useState("");
   const [delivery2, setDelivery2] = useState("");
@@ -32,58 +31,72 @@ const EditProduct = ({ productId, productDetails }) => {
     setImageFile2(productImage);
   };
 
-  const edit = (e) => {
-    e.preventDefault();
 
-    const formData = new FormData();
+  // const formData = new FormData();
 
-    // Update the formData object
-    formData.append("adType", adType2);
-    formData.append("delivery", delivery2);
-    formData.append("title", title2);
-    formData.append("condition", condition2);
-    formData.append("brand", brand2);
-    formData.append("descriptionShort", descriptionShort2);
-    formData.append("descriptionLong", descriptionLong2);
-    formData.append("amount", amount2);
-    formData.append("price", price2);
-    formData.append("priceOptions", priceOptions2);
-    formData.append("category", category2);
-    formData.append("zip", zip2);
-    formData.append("city", city2);
-    formData.append("street", street2);
-    formData.append("name", name2);
-    formData.append("phone", phone2);
-    formData.append("imageFile", imageFile2, imageFile2.name); // Blob = Binary Large Object
+  // // Update the formData object
+  // formData.append("adType", adType);
+  // formData.append("delivery", delivery);
+  // formData.append("title", title);
+  // formData.append("condition", condition);
+  // formData.append("brand", brand);
+  // formData.append("descriptionShort", descriptionShort);
+  // formData.append("descriptionLong", descriptionLong);
+  // formData.append("amount", amount);
+  // formData.append("price", price);
+  // formData.append("priceOptions", priceOptions);
+  // formData.append("category", category);
+  // formData.append("zip", zip);
+  // formData.append("city", city);
+  // formData.append("street", street);
+  // formData.append("name", name);
+  // formData.append("phone", phone);
+  // formData.append("imageFile", imageFile, imageFile.name);
 
-    console.log(formData)
-
+  const edit = () => {
     fetch(`${apiBaseUrl}products/edit/${productId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        adType: adType2,
+        delivery: delivery2,
+        title: title2,
+        condition: condition2,
+        brand: brand2,
+        descriptionShort: descriptionShort2,
+        descriptionLong: descriptionLong2,
+        amount: amount2,
+        price: price2,
+        priceOptions: priceOptions2,
+        category: category2,
+        zip: zip2,
+        city: city2,
+        street: street2,
+        name: name2,
+        phone: phone2,
+        imageFile: imageFile2,
+      }),
     })
       .then((response) => response.json())
-      // .then((data) => setTitle(data.title));
-      .then(() => {
-        setAdType2("");
-        setDelivery2("");
-        setTitle2("");
-        setCondition2("");
-        setBrand2("");
-        setDescriptionShort2("");
-        setDescriptionLong2("");
-        setAmount2("");
-        setPrice2("");
-        setPriceOptions2("");
-        setZip2("");
-        setCity2("");
-        setStreet2("");
-        setName2("");
-        setPhone2("");
-        setImageFile2(null);
-        fileInputRef.current.value = null;
-        navigate("/marketplace");
+      .then((data) => {
+        console.log(data);
+        setAdType2(data.adType2);
+        setDelivery2(data.delivery2);
+        setTitle2(data.title2);
+        setCondition2(data.condition2);
+        setBrand2(data.brand2);
+        setDescriptionShort2(data.descriptionShort2);
+        setDescriptionLong2(data.descriptionLong2);
+        setAmount2(data.amount2);
+        setPrice2(data.price2);
+        setPriceOptions2(data.priceOptions2);
+        setCategory2(data.category2);
+        setZip2(data.zip2);
+        setCity2(data.city2);
+        setStreet2(data.street2);
+        setName2(data.name2);
+        setPhone2(data.phone2);
+        setImageFile2(data.imageFile2);
       });
   };
 
@@ -163,7 +176,7 @@ const EditProduct = ({ productId, productDetails }) => {
       <input
         type="radio"
         name="condition"
-        id="conditionAsNew"
+        id="Wie neu"
         value="Wie neu"
         checked={condition2 === "Wie neu"}
         onChange={(e) => {
@@ -189,7 +202,7 @@ const EditProduct = ({ productId, productDetails }) => {
       <input
         type="radio"
         name="condition"
-        id="conditionClearlyUsed"
+        id="Deutliche Gebrauchsspuren"
         value="Deutliche Gebrauchsspuren"
         checked={condition2 === "Deutliche Gebrauchsspuren"}
         onChange={(e) => {
@@ -202,7 +215,7 @@ const EditProduct = ({ productId, productDetails }) => {
       <input
         type="radio"
         name="condition"
-        id="conditionDefect"
+        id="Defekt"
         value="Defekt"
         checked={condition2 === "Defekt"}
         onChange={(e) => {
@@ -219,9 +232,8 @@ const EditProduct = ({ productId, productDetails }) => {
         id="descriptionShort"
         value={descriptionShort2}
         onChange={(e) => setDescriptionShort2(e.target.value)}
-      >
-
-      </input>
+      ></input>
+      
       <label>Beschreibung lang:</label>
 
       <textarea
@@ -231,8 +243,8 @@ const EditProduct = ({ productId, productDetails }) => {
         rows="5"
         value={descriptionLong2}
         onChange={(e) => setDescriptionLong2(e.target.value)}
-      >
-      </textarea>
+
+      ></textarea>
 
       <label>Anzahl:</label>
       <input
@@ -290,11 +302,13 @@ const EditProduct = ({ productId, productDetails }) => {
 
       <label>Zu verschenken</label>
       <label>Bilder:</label>
-      <input type="file"
+      <input
+        type="file"
         name="uploadImage"
         id="uploadImage"
         ref={fileInputRef}
-        onChange={onFileChange} />
+        onChange={onFileChange}
+      />
 
       <label>Kategorie:</label>
       <select
@@ -313,7 +327,6 @@ const EditProduct = ({ productId, productDetails }) => {
         type="text"
         name="zip"
         id="zip"
-        required
         placeholder="PLZ"
         value={zip2}
         onChange={(e) => setZip2(e.target.value)}
@@ -323,7 +336,6 @@ const EditProduct = ({ productId, productDetails }) => {
         type="text"
         name="city"
         id="city"
-        required
         placeholder="Ort"
         value={city2}
         onChange={(e) => setCity2(e.target.value)}
@@ -334,7 +346,6 @@ const EditProduct = ({ productId, productDetails }) => {
         type="text"
         name="street"
         id="street"
-        required
         placeholder="Straße/Nr."
         value={street2}
         onChange={(e) => setStreet2(e.target.value)}
@@ -345,7 +356,6 @@ const EditProduct = ({ productId, productDetails }) => {
         type="text"
         name="name"
         id="name"
-        required
         placeholder="Name"
         value={name2}
         onChange={(e) => setName2(e.target.value)}
@@ -355,15 +365,13 @@ const EditProduct = ({ productId, productDetails }) => {
         type="number"
         name="phone"
         id="phone"
-        required
         placeholder="Telefon"
         value={phone2}
         onChange={(e) => setPhone2(e.target.value)}
       />
       <button onClick={edit}>Änderungen speichern</button>
-    </form >
+    </form>
   );
 };
-
 
 export default EditProduct;
