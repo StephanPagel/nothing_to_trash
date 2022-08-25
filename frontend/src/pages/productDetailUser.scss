@@ -8,10 +8,12 @@
     .product_details_u {
         display: flex;
         justify-content: space-between;
-        padding: 10% 20% 5% 10%;
+        padding: 10% 20% 10% 10%;
+        height: 60vh;
+        margin-bottom: 15vh;
 
         img {
-            width: 40%;
+            height: 60vh;
             object-fit: cover;
             object-position: center;
         }
@@ -22,11 +24,20 @@
             flex-direction: column;
             justify-content: space-between;
 
+            h2 {
+                padding: 2vh 0;
+            }
+
             .facts_grid_u {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr 1fr;
                 gap: 10px;
+            }
+
+            span {
+                color: #7854f7;
+                padding: 2vh 0;
             }
         }
     }
@@ -52,7 +63,7 @@
 }
 
 .buttons {
-    padding-left: 10%;
+    padding: 10vh 0 0 10%;
 }
 
 .btn_wish_u {
@@ -79,4 +90,8 @@
         border-radius: 20px;
         text-align: center;
     }
+}
+
+.contacts {
+    padding: 2vh 0;
 }

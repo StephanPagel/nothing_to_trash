@@ -34,6 +34,10 @@ export default function ProductDetail({ productDetails, setProductDetails }) {
             <p>{productDetails.delivery === "deliveryYes" ? "Ja" : "Nein"}</p>
             <p>Anzahl</p>
             <p>{productDetails.amount}</p>
+            <div className="contacts">
+              <p>Verkäufer: {productDetails.name}</p>
+              <p>Tel: +49 {productDetails.phone}</p>
+            </div>
           </div>
           <button className="btn_wish">♡ Auf die Wunschliste</button>
           <span>Produktbeschreibung</span>

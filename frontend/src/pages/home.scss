@@ -22,18 +22,15 @@
     padding: 0 40vw 10vh 10vw;
 }
 
-.home_container button {
+.home_container a {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
     border: none;
     background-color: #7854F7;
     border-radius: 5px;
     padding: 2vh 4vw;
     margin: 0 20vh 0 10vw;
-}
-
-.home_container button a {
-    font-size: 16px;
-    font-weight: 300;
-    color: #fff;
 }
 
 .section_two {
