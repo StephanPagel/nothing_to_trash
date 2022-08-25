@@ -1,25 +1,35 @@
 .sidebar {
-    width: 18vw;
-    position: fixed;
-    top: 10vh;
-    padding: 5vh 0 0 3vw;
+  width: 18vw;
+  position: fixed;
+  top: 10vh;
+  padding: 5vh 0 0 3vw;
 }
 
 .sidebar h3 {
-    padding-bottom: 1vh;
+  padding-bottom: 1vh;
 }
 
 .sidebar_category,
 .sidebar_rating,
 .sidebar_condition,
 .sidebar_delivery {
-    padding-bottom: 3vh;
+  padding-bottom: 3vh;
 }
 
 .sidebar_buttons {
-    padding-top: 3vh;
+  padding-top: 3vh;
 }
 
 .sidebar div label {
-    padding-left: 1vw;
+  padding-left: 1vw;
+}
+
+.valueContainer {
+  margin-top: 20px;
+  width: 60%;
+  text-align: center;
+  color: white;
+  background-color: #7854f7;
+  padding: 10px;
+  border-radius: 5px;
 }
