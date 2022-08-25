@@ -23,7 +23,7 @@ const SidebarUserProfil = ({ token, userData, setUserData, setToken, setErrorMes
     return (<div className="sidebaruserprofil">
         <h2>{userData.username}</h2>
         <Link className="sidebaruserprofil_a" to="/usersproducts">Meine Produkte</Link>
-        <Link className="sidebaruserprofil_a" to="/wishlist">Mein Wunschzettel</Link>
+        <p className="sidebaruserprofil_a" to="">Mein Wunschzettel</p>
         <LogoutButton setToken={setToken} setShowSidebarUserProfil={setShowSidebarUserProfil} />
     </div>);
 }

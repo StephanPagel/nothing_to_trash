@@ -1,12 +1,13 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    height: 10vh;
-    padding: 0 3vw;
-    z-index: 5;
-    background-color: #E6EFFE;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  padding: 0 3vw;
+  z-index: 5;
+  background-color: #E6EFFE;
+  width: 100%;
 
   .navbar_li {
     display: flex;
@@ -63,12 +64,12 @@
 }
 
 .navbar_btn_log {
-    border: none;
-    background-color: transparent;
-    padding: 1vh 3vw;
-    cursor: pointer;
-    margin: 0 3vw 0 25vw;
-    border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  padding: 1vh 3vw;
+  cursor: pointer;
+  margin: 0 3vw 0 25vw;
+  border-radius: 5px;
 }
 
 .navbar_btn_log a {
@@ -78,18 +79,18 @@
 }
 
 .navbar_btn_log a:hover {
-    color: #7854F7;
+  color: #7854F7;
 }
 
 .profilfoto {
-    height: 6vh;
-    width: 6vh;
-    border-radius: 50%;
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
 
 }
 
 .btn_profilfoto {
-    margin: 0 3vw 0 45vw;
-    border: none;
-    background-color: transparent;
+  margin: 0 3vw 0 45vw;
+  border: none;
+  background-color: transparent;
 }

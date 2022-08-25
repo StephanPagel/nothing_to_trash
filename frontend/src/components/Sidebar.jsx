@@ -249,8 +249,7 @@ export default function Sidebar({
       />
       <div className="valueContainer">
         <p>Filtern</p>
-        <p>Von:{values[0]} €</p>
-        <p>Bis:{values[1]} €</p>
+        <p>{values[0]} € - {values[1]} €</p>
       </div>
     </div>
   );
