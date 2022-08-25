@@ -39,7 +39,8 @@ function App() {
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
       .then((allProducts) => allProducts.json())
-      .then((productsArray) => setAllProducts(productsArray))
+      .then((productsArray) => productsArray.filter((product) => { return product.sold == false }))
+      .then((productsforSale) => setAllProducts(productsforSale))
       .catch((err) => console.log(err));
   }, []);
 
@@ -118,6 +119,7 @@ function App() {
           productDetails={productDetails}
           setProductDetails={setProductDetails}
           token={token}
+          setErrorMessage={setErrorMessage}
         />} />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
