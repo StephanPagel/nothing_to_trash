@@ -14,7 +14,7 @@ export default function Searchbar({ allProducts, setSearchResults }) {
     });
     // console.log(filterProducts);
     return setSearchResults(filterProducts);
-  }, [search]);
+  }, [search, allProducts]);
 
   return (
     <div className="searchbar">

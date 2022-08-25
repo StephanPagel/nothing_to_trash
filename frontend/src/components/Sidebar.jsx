@@ -1,5 +1,6 @@
 import "./sidebar.scss";
 import { useState, useEffect } from "react";
+import { Range } from "react-range";
 
 export default function Sidebar({
   searchResults,
@@ -10,7 +11,14 @@ export default function Sidebar({
   productDelivery,
   setProductDelivery,
   setFilteredResult,
+  productPrice,
+  setProductPrice,
+  allProducts,
 }) {
+  const min = 0;
+  const max = 1000;
+  const [values, setValues] = useState([0, 1000]);
+
   const handleChangeCategory = (e) => {
     if (e.target.checked) {
       setProductCategory([...productCategory, e.target.value]);
@@ -54,7 +62,6 @@ export default function Sidebar({
         );
       }
     });
-    console.log(filteredByCategory);
     //############# condition !!!##############
     const filteredByCondition = filteredByCategory.filter((condition) => {
       if (productCondition.length === 0) {
@@ -68,7 +75,6 @@ export default function Sidebar({
         );
       }
     });
-    console.log(filteredByCondition);
     //############# Delivery !!!##############
     const filteredByDelivery = filteredByCondition.filter((delivery) => {
       if (productDelivery.length === 0) {
@@ -80,9 +86,24 @@ export default function Sidebar({
         );
       }
     });
-    setFilteredResult(filteredByDelivery);
-    console.log(filteredByDelivery);
-  }, [productCategory, productCondition, productDelivery, searchResults]);
+    //############# Price !!!##############
+    const filteredByPrice = filteredByDelivery.filter((price) => {
+      if (productPrice.length <= 0) {
+        return price;
+      } else {
+        return price.price >= productPrice[0] && price.price <= productPrice[1];
+      }
+    });
+    setFilteredResult(filteredByPrice);
+    console.log(filteredByPrice);
+  }, [
+    productCategory,
+    productCondition,
+    productDelivery,
+    searchResults,
+    productPrice,
+    allProducts,
+  ]);
 
   return (
     <div className="sidebar">
@@ -124,7 +145,11 @@ export default function Sidebar({
           <label>Wie neu</label>
         </div>
         <div>
-          <input type="checkbox" onChange={handleChangeCondition} value={"Gut"} />
+          <input
+            type="checkbox"
+            onChange={handleChangeCondition}
+            value={"Gut"}
+          />
           <label>Gut</label>
         </div>
         <div>
@@ -187,10 +212,41 @@ export default function Sidebar({
         </div>
       </div>
       <h3>Preis</h3>
-      <div>
-        <input type="range" name="" id="" />
-        <p></p>
-      </div>
+      <Range
+        step={0.5}
+        min={min}
+        max={max}
+        values={values}
+        onChange={(values) => {
+          setValues(values);
+          setProductPrice(values);
+        }}
+        renderTrack={({ props, children }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: "8px",
+              width: "60%",
+              backgroundColor: "#7854F7",
+              marginTop: "20px",
+            }}
+          >
+            {children}
+          </div>
+        )}
+        renderThumb={({ props }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: "24px",
+              width: "24px",
+              backgroundColor: "#999",
+            }}
+          />
+        )}
+      />
       <div className="sidebar_buttons">
         <button className="sidebar_btn_reset">Reset</button>
       </div>

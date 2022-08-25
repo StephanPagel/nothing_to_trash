@@ -35,14 +35,19 @@ function App() {
   const [productCategory, setProductCategory] = useState([]);
   const [productCondition, setProductCondition] = useState([]);
   const [productDelivery, setProductDelivery] = useState([]);
+  const [productPrice, setProductPrice] = useState([]);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}products/allproducts`)
       .then((allProducts) => allProducts.json())
-      .then((productsArray) => productsArray.filter((product) => { return product.sold == false }))
+      .then((productsArray) =>
+        productsArray.filter((product) => {
+          return product.sold == false;
+        })
+      )
       .then((productsforSale) => setAllProducts(productsforSale))
       .catch((err) => console.log(err));
-  }, []);
+  }, [productDelivery, productPrice]);
 
   return (
     <div className="App">
@@ -52,8 +57,6 @@ function App() {
         setUserData={setUserData}
         userData={userData}
         setErrorMessage={setErrorMessage}
-
-
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -82,6 +85,8 @@ function App() {
               setProductCondition={setProductCondition}
               productDelivery={productDelivery}
               setProductDelivery={setProductDelivery}
+              productPrice={productPrice}
+              setProductPrice={setProductPrice}
             />
           }
         />
@@ -115,12 +120,17 @@ function App() {
             />
           }
         />
-        <Route path="product_details_user/:id" element={<ProductDetailUser
-          productDetails={productDetails}
-          setProductDetails={setProductDetails}
-          token={token}
-          setErrorMessage={setErrorMessage}
-        />} />
+        <Route
+          path="product_details_user/:id"
+          element={
+            <ProductDetailUser
+              productDetails={productDetails}
+              setProductDetails={setProductDetails}
+              token={token}
+              setErrorMessage={setErrorMessage}
+            />
+          }
+        />
         <Route path="sold" element={<AlreadySold />} />
         <Route path="about_us" element={<AboutUs />} />
         <Route path="register" element={<Register />} />
