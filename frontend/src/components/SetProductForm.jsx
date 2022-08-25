@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
 import { useNavigate } from "react-router-dom";
 
-const SetProductForm = ({ token }) => {
+const SetProductForm = ({ token, setAllProducts, allproducts }) => {
   const [adType, setAdType] = useState("");
   const [delivery, setDelivery] = useState("");
   const [title, setTitle] = useState("");
@@ -63,26 +63,11 @@ const SetProductForm = ({ token }) => {
       // credentials: true
     })
       .then((response) => response.json())
-      .then(() => {
-        setAdType("");
-        setDelivery("");
-        setTitle("");
-        setCondition("");
-        setBrand("");
-        setDescriptionShort("");
-        setDescriptionLong("");
-        setAmount("");
-        setPrice("");
-        setPriceOptions("");
-        setZip("");
-        setCity("");
-        setStreet("");
-        setName("");
-        setPhone("");
-        setImageFile(null);
-        fileInputRef.current.value = null;
-        navigate("/marketplace");
-      });
+      .then((newProduct) => {
+        console.log(newProduct)
+        navigate("/marketplace")
+      }
+      );
   };
 
   return (

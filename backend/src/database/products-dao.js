@@ -57,9 +57,12 @@ function getAllProducts() {
 }
 
 function deleteProductById(id) {
-  return injectDB().then((db) =>
-    db.collection(productsCollectionName).deleteOne({ _id: ObjectId(id) })
-  );
+  return new Promise(() => {
+    injectDB()
+      .then((db) => {
+        db.collection(productsCollectionName).deleteOne({ _id: ObjectId(id) })
+      })
+  })
 }
 
 function findProductsByUserId(userId) {

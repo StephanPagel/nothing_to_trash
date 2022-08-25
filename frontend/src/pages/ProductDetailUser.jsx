@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Link } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "../api";
 import EditProduct from "./../components/EditProduct";
 import "./productDetailUser.scss";
 
 
-const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorMessage }) => {
+const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorMessage, setAllProducts }) => {
     const { id } = useParams();
 
     const [showEditor, setShowEditor] = useState(false);
@@ -42,7 +42,6 @@ const ProductDetailUser = ({ productDetails, setProductDetails, token, setErrorM
             method: "DELETE",
         })
             .then((res) => res.json())
-            .then(() => navigator("/usersproducts"))
             .catch((err) => console.log(err));
     };
 
