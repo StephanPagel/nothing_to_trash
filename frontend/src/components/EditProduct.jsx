@@ -244,6 +244,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div16">
           <input
+            className="input2"
             type="number"
             name="amount"
             id="amount"
@@ -256,6 +257,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div18">
           <input
+            className="input2"
             type="number"
             name="price"
             id="price"
@@ -332,6 +334,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div24">
           <input
+            className="input2"
             type="text"
             name="zip"
             id="zip"
@@ -341,6 +344,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
           />
 
           <input
+            className="input3"
             type="text"
             name="city"
             id="city"
@@ -354,6 +358,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div26">
           <input
+            className="input1"
             type="text"
             name="street"
             id="street"
@@ -367,6 +372,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div28">
           <input
+            className="input1"
             type="text"
             name="name"
             id="name"
@@ -380,6 +386,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
         <div className="div28">
           <input
+            className="input1"
             type="number"
             name="phone"
             id="phone"
@@ -390,7 +397,7 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
         </div>
       </div >
       <div>
-        <button onClick={edit}>Änderungen speichern</button>
+        <button className="btn-submitProduct" onClick={edit}>Änderungen speichern</button>
       </div>
     </form >
   );
