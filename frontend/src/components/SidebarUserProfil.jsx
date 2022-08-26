@@ -17,6 +17,7 @@ const SidebarUserProfil = ({ token, userData, setUserData, setToken, setErrorMes
                     return;
                 }
                 setUserData(profilData);
+                console.log(profilData)
             });
     }, [token, setErrorMessage, setUserData, allProducts]);
 

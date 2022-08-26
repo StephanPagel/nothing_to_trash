@@ -65,8 +65,10 @@ const SetProductForm = ({ token, setAllProducts, allProducts }) => {
       .then((response) => response.json())
       .then((newProduct) => {
         setAllProducts([...allProducts, newProduct]);
-        navigate("/usersproducts");
-      });
+
+        navigate("/marketplace")
+      }
+      );
   };
 
   return (

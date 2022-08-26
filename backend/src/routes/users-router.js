@@ -73,7 +73,7 @@ usersRouter.get("/userprofil", doAuthMiddleware, async (req, res) => {
 });
 
 usersRouter.get("/logout", async (req, res) => {
-  req.session.refreshToken = null;
+  req.session.token = null;
   res.status(204).end();
 });
 // refreshToken
