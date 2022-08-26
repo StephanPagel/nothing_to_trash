@@ -113,7 +113,7 @@ export default function Sidebar({
           <input
             type="checkbox"
             onChange={handleChangeCategory}
-            value={"möbel"}
+            value={"moebel"}
           />
           <label>Möbel</label>
         </div>

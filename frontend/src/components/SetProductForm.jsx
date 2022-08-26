@@ -14,7 +14,7 @@ const SetProductForm = ({ token, setAllProducts, allProducts }) => {
   const [amount, setAmount] = useState("");
   const [price, setPrice] = useState("");
   const [priceOptions, setPriceOptions] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("moebel");
   const [zip, setZip] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
@@ -64,7 +64,7 @@ const SetProductForm = ({ token, setAllProducts, allProducts }) => {
     })
       .then((response) => response.json())
       .then((newProduct) => {
-setAllProducts([...allProducts, newProduct]);
+        setAllProducts([...allProducts, newProduct]);
         navigate("/usersproducts")
       }
       );
@@ -311,7 +311,7 @@ setAllProducts([...allProducts, newProduct]);
         </div>
         <div className="div22">
           <select
-            value={category.value}
+            value={category}
             onChange={(e) => {
               setCategory(e.target.value);
             }}
