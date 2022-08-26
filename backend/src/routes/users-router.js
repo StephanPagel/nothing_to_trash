@@ -76,6 +76,7 @@ usersRouter.get("/logout", async (req, res) => {
   req.session.refreshToken = null;
   res.status(204).end();
 });
+// refreshToken
 
 module.exports = {
   usersRouter,
