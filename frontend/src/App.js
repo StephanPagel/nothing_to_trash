@@ -44,7 +44,7 @@ function App() {
       .then((productsArray) => productsArray.filter((product) => { return product.sold === false }))
       .then((productsforSale) => setAllProducts(productsforSale))
       .catch((err) => console.log(err));
-  }, [productDelivery, productPrice]);
+  }, []);
 
   return (
     <div className="App">
@@ -102,7 +102,8 @@ function App() {
           path="editproduct/:id"
           element={
             <AuthRequired token={token} setToken={setToken}>
-              <EditProduct />
+              <EditProduct setAllProducts={setAllProducts}
+                allProducts={allProducts} />
             </AuthRequired>
           }
         />

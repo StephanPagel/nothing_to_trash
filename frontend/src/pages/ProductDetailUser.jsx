@@ -53,7 +53,7 @@ const ProductDetailUser = ({
             });
     };
 
-    
+
     const deleteProduct = () => {
         const updatedProductArray = allProducts.filter((e) => e._id !== id);
         console.log(updatedProductArray);
@@ -116,6 +116,8 @@ const ProductDetailUser = ({
                     productId={id}
                     productDetails={productDetails}
                     setProductDetails={setProductDetails}
+                    setAllProducts={setAllProducts}
+                    allProducts={allProducts}
                 />
             )}
         </div>

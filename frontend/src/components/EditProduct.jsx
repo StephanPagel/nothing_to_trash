@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { apiBaseUrl } from "../api";
 import { useNavigate } from "react-router-dom"
 
-const EditProduct = ({ productId, productDetails, setProductDetails }) => {
+const EditProduct = ({ productId, productDetails, setProductDetails, setAllProducts, allProducts }) => {
 
   console.log("product:", productDetails)
 
@@ -63,7 +63,19 @@ const EditProduct = ({ productId, productDetails, setProductDetails }) => {
       body: formData
     })
       .then((response) => response.json())
-      .then((data) => setProductDetails(data));
+      .then((data) => {
+        console.log(data)
+        setProductDetails(data)
+        setAllProducts(allProducts.map((product) => {
+          if (product._id === productId) {
+            return data
+          }
+          else {
+            return product
+          }
+        }))
+      });
+
   };
 
   return (
